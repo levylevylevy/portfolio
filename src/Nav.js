@@ -95,7 +95,7 @@ class="menuActive"
             
             </div>
           
-{/* {this.window.location.href.includes("/projects")
+{/* {this.window.location.href.includes("/portfolio/projects")
 ? color: secondaryGold
 : color: primaryBlue,
 } */}
