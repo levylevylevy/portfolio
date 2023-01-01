@@ -1,0 +1,42 @@
+
+:root{
+    /* --backgroundcolor: linear-gradient(180deg, rgba(40, 51, 67, 0.089) 0%, rgba(54, 50, 64, 0.178) 55.91%, rgba(67, 40, 59, 0.178) 106.41%);  */
+  /* --backgroundcolor: rgba(40, 51, 67, 0.089); */
+  }
+
+body {
+  /* background-color: var(--backgroundcolor); */
+  background-color: #E0E0E2;
+  padding: 20px 20px 90px;
+  margin: 0;
+}
+
+
+@font-face {
+  font-family: "DMSerifText-Regular";
+  src: local("DMSerifText-Regular"),
+   url('./fonts/DMSerifText-Regular.ttf') format("truetype");
+  font-weight: regular;
+  }
+
+
+@font-face {
+    font-family: "Poppins-Regular";
+    src: local("Poppins-Regular"),
+     url('./fonts/Poppins-Regular.ttf') format("truetype");
+    font-weight: regular;
+    }
+
+@font-face {
+      font-family: "Poppins-Bold";
+      src: local("Poppins-Bold"),
+       url('./fonts/Poppins-Bold.ttf') format("truetype");
+      font-weight: bold;
+      }
+
+
+      
+      
+
+
+  

@@ -1,0 +1,121 @@
+.font-face-header1 {
+  font-family: "DMSerifText-Regular";
+  font-size: 64px;
+ }
+
+ .font-face-header2 {
+  font-family: "DMSerifText-Regular";
+  font-size: 36px;
+ }
+
+ .font-face-header3 {
+  font-family: "DMSerifText-Regular";
+  font-size: 24px;
+ }
+
+ .font-face-navFont {
+  font-family: "DMSerifText-Regular";
+  font-size: 16px;
+ }
+
+.unselected-menu-parent{
+  font-family: "DMSerifText-Regular";
+  font-size: 16px;
+  color: #27343A;
+
+}
+
+
+ .current-menu-parent {
+  font-family: "DMSerifText-Regular";
+  font-size: 16px;
+  color: #AD8029;
+  text-decoration: underline;
+ }
+
+ .font-face-subtitle{
+  font-family: "Poppins-Regular";
+  font-size: 16px;
+ }
+
+ .font-face-body{
+  font-family: "Poppins-Regular";
+  font-size: 14px;
+ }
+
+ .table{
+  justify-content: center;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 90px;
+
+}
+
+.sticky-bar{
+
+    position: sticky;
+    bottom: 0;
+  
+}
+
+.line {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  width:100%;
+  border-top: 1px solid #AD8029;
+  position: relative;
+  left:0;
+  bottom: 0;
+  right:0;
+
+}
+
+.vertical-line {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 3;
+  width:100%;
+  border-right: 1px solid #27343A;
+  position: relative;
+  height: 100vh;
+
+}
+
+.bottom-bar{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  width:100%;
+  position: relative;
+  left:0;
+  bottom: 0;
+  right:0;
+  height: 75px;
+
+
+
+}
+
+a:visited { 
+  text-decoration: none; 
+  color: #27343A; 
+ }
+
+ a:link { 
+  text-decoration: none; 
+  color: #27343A; 
+ }
+
+a:hover { text-decoration: none; color:#AD8029; }
+a:focus { text-decoration: none;  }
+a:active { text-decoration: none; }
+
+.active-button{
+  width: 111px;
+  height: 28px;
+  background: #27343A;
+  border-radius: 5px;
+
+}
