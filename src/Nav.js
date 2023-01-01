@@ -104,7 +104,7 @@ class="menuActive"
           
           <div className="content">
           <Routes>
-          <Route exact path="/" element={<Home/>}/> 
+          <Route exact path="/portfolio/" element={<Home/>}/> 
           <Route path="/projects/workexperience/generate" element={<ExperiencePage/>}/> 
           <Route path="/projects/workexperience/tesla" element={<ExperiencePageTesla/>}/> 
           <Route path="/projects/workexperience/willow" element={<ExperiencePageWillow/>}/> 
