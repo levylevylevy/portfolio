@@ -92,7 +92,7 @@ const CaseStudyButton = styled.div`
 <p className="font-face-body" style={{color: secondaryGold}}>  UI/UX Designer  <span style={{color: primaryBlue}}> - Figma - Adobe Illustrator - After Effects
 Generate Product Development Studio, 2021</span></p>
 <p className="font-face-subtitle" style={{color: primaryBlue}}>  A mobile app to help small business owners in India transport their goods on the Tiliti startup’s sustainable e-bike.</p>
-<NavLink to="/tiliti-case-study" target="_blank" 
+<NavLink to="/portfolio/tiliti-case-study" target="_blank" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
