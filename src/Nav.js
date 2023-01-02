@@ -62,7 +62,7 @@ class Nav extends Component {
         }}>
           <AppContents >
             <div>
-            <NavLink  to="/portfolio/"  style={({ isActive }) => ({
+            <NavLink  to="/"  style={({ isActive }) => ({
               
               color: isActive? secondaryGold : primaryBlue,
               textDecoration: isActive? 'underline' :'none',
