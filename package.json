@@ -1,9 +1,8 @@
 {
-  "homepage": "https://github.com/levylevylevy/portfolio.git",
+  "homepage": "https://github.io/levylevylevy/portfolio",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://levylevylevy.github.io/portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
