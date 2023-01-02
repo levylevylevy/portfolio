@@ -204,7 +204,7 @@ class Home extends Component {
 
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Hi, I’m Sadie! I’m a senior at Northeastern University in Boston. I am very passionate about product development and interaction technology. Feel free to read more about my experiences below...</p>
         <ul style={{color: 'primaryBlue'}} className='font-face-body'>
-        <a href="/tiliti-case-study" target="_blank"><li>My first UI case study</li></a>
+        <a href="https://levylevylevy.github.io/tiliti-case-study" target="_blank"><li>My first UI case study</li></a>
        
         <a href="/portfolio/projects/workexperience/willow" target="_blank"><li>Frontend Software Engineer Co-Op at fin-tech startup Willow</li></a>
         <a href="/portfolio/projects/workexperience/tesla" target="_blank"><li>Technical Program Manager, Software/Firmware Intern at Tesla</li></a>
