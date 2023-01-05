@@ -76,7 +76,7 @@ class Nav extends Component {
 
             <NavLink                
 
-            to="/portfolio/#/projects/workexperience/generate/" 
+            to="/portfolio/projects/workexperience/generate/" 
             // {...(window.location.href.includes('projects'))
             // ? class{"current-menu-parent"}
             // : class{"unselected-menu-parent"}}
@@ -106,21 +106,21 @@ class="menuActive"
           <div className="content">
           <Routes>
           <Route exact path="/portfolio/" element={<Home/>}/> 
-          <Route path="/portfolio/#/projects/workexperience/generate" element={<ExperiencePage/>}/> 
-          <Route path="/portfolio/#/projects/workexperience/tesla" element={<ExperiencePageTesla/>}/> 
-          <Route path="/portfolio/#/projects/workexperience/willow" element={<ExperiencePageWillow/>}/> 
-          <Route path="/portfolio/#/projects/workexperience/atem" element={<ExperiencePageAtem/>}/> 
-          <Route path="/portfolio/#/projects/workexperience/sharkninja" element={<ExperiencePageSharkNinja/>}/> 
+          <Route path="/portfolio/projects/workexperience/generate" element={<ExperiencePage/>}/> 
+          <Route path="/portfolio/projects/workexperience/tesla" element={<ExperiencePageTesla/>}/> 
+          <Route path="/portfolio/projects/workexperience/willow" element={<ExperiencePageWillow/>}/> 
+          <Route path="/portfolio/projects/workexperience/atem" element={<ExperiencePageAtem/>}/> 
+          <Route path="/portfolio/projects/workexperience/sharkninja" element={<ExperiencePageSharkNinja/>}/> 
 
-          <Route path="/portfolio/#/projects/hackathons/hackmit" element={<HackathonPage />} />
-          <Route path="/portfolio/#/projects/hackathons/hophacks" element={<HackathonPageHop />} />
-          <Route path="/portfolio/#/projects/hackathons/hackbeanpot" element={<HackathonPageBeanpot />} />
+          <Route path="/portfolio/projects/hackathons/hackmit" element={<HackathonPage />} />
+          <Route path="/portfolio/projects/hackathons/hophacks" element={<HackathonPageHop />} />
+          <Route path="/portfolio/projects/hackathons/hackbeanpot" element={<HackathonPageBeanpot />} />
 
 
-          <Route path="/portfolio/#/projects/makerprojects/phonebox" element={<MakerPage/>} />
-          <Route path="/portfolio/#/projects/makerprojects/turntable" element={<MakerTurntable/>} />
-          <Route path="/portfolio/#/projects/makerprojects/frogcomputer" element={<MakerFrog/>} />
-          <Route path="/portfolio/#/projects/makerprojects/kevin" element={<MakerKevin/>} />
+          <Route path="/portfolio/projects/makerprojects/phonebox" element={<MakerPage/>} />
+          <Route path="/portfolio/projects/makerprojects/turntable" element={<MakerTurntable/>} />
+          <Route path="/portfolio/projects/makerprojects/frogcomputer" element={<MakerFrog/>} />
+          <Route path="/portfolio/projects/makerprojects/kevin" element={<MakerKevin/>} />
           {/* <Route path="/tiliti-case-study" element={<TilitiCaseStudy/>} /> */}
 
           </Routes>
@@ -128,7 +128,7 @@ class="menuActive"
 
           <div className="case-studies">
             <Routes>
-            <Route path="/portfolio/#/tiliti-case-study" element={<TilitiCaseStudy/>} />
+            <Route path="/portfolio/tiliti-case-study" element={<TilitiCaseStudy/>} />
             </Routes>
           </div>
         </div>

@@ -162,20 +162,20 @@ class ExperiencePage extends Component {
         <Row>
 
         <AppContents class="font-face-navFont">
-        <NavLink to="/portfolio/#/projects/workexperience/generate" 
+        <NavLink to="/portfolio/projects/workexperience/generate" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
     })} ><SelectedButton>Generate</SelectedButton></NavLink> 
 
-     <NavLink to="/portfolio/#/projects/workexperience/tesla" 
+     <NavLink to="/portfolio/projects/workexperience/tesla" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
     })}
     >Tesla</NavLink> 
 
-     <NavLink to="/portfolio/#/projects/workexperience/willow" 
+     <NavLink to="/portfolio/projects/workexperience/willow" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
@@ -183,14 +183,14 @@ class ExperiencePage extends Component {
     })}
     >Willow</NavLink> 
 
-    <NavLink to="/portfolio/#/projects/workexperience/atem" 
+    <NavLink to="/portfolio/projects/workexperience/atem" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
     })}
     >ATEM</NavLink> 
 
-<NavLink to="/portfolio/#/projects/workexperience/sharkninja" 
+<NavLink to="/portfolio/projects/workexperience/sharkninja" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
