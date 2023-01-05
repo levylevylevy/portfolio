@@ -53,7 +53,7 @@ class Nav extends Component {
   render() {
     return (
  
-        <HashRouter>
+        <BrowserRouter>
         <div 
                     {...active == false}
 
@@ -132,7 +132,7 @@ class="menuActive"
             </Routes>
           </div>
         </div>
-        </HashRouter>
+        </BrowserRouter>
         
     );
   }
