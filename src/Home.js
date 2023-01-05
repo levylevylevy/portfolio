@@ -204,14 +204,14 @@ class Home extends Component {
 
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Hi, I’m Sadie! I’m a senior at Northeastern University in Boston. I am very passionate about product development and interaction technology. Feel free to read more about my experiences below...</p>
         <ul style={{color: 'primaryBlue'}} className='font-face-body'>
-        <a href="https://levylevylevy.github.io/tiliti-case-study" target="_blank"><li>My first UI case study</li></a>
+        <a href="https://levylevylevy.github.io/portfolio/#/tiliti-case-study" target="_blank"><li>My first UI case study</li></a>
        
-        <a href="/portfolio/projects/workexperience/willow" target="_blank"><li>Frontend Software Engineer Co-Op at fin-tech startup Willow</li></a>
-        <a href="/portfolio/projects/workexperience/tesla" target="_blank"><li>Technical Program Manager, Software/Firmware Intern at Tesla</li></a>
+        <a href="/portfolio/#/projects/workexperience/willow" target="_blank"><li>Frontend Software Engineer Co-Op at fin-tech startup Willow</li></a>
+        <a href="/portfolio/#/projects/workexperience/tesla" target="_blank"><li>Technical Program Manager, Software/Firmware Intern at Tesla</li></a>
         <a href="https://blog.adobe.com/en/publish/2021/03/08/adobe-research-women-in-tech-scholarship-winners" target="_blank"><li>Selected as an Adobe Women in Technology Scholar</li></a>
         <a href="https://www.congressionalappchallenge.us/about/" target="_blank"><li>Served as an Alumni Advisory Board Member for the US House of Representatives Congressional App Challenge</li> </a>
-        <a href="/portfolio/projects/hackathons/hackmit" target="_blank"><li>Many all-nighters completing hackathon projects</li></a>
-        <a href="/portfolio/projects/workexperience/generate" target="_blank"><li>...And more in the Projects tab!</li></a>
+        <a href="/portfolio/#/projects/hackathons/hackmit" target="_blank"><li>Many all-nighters completing hackathon projects</li></a>
+        <a href="/portfolio/#/projects/workexperience/generate" target="_blank"><li>...And more in the Projects tab!</li></a>
         </ul>
         {/* <li>Frontend Software Engineer Co-Op at fin-tech startup Willow</li>
         <li>Technical Program Manager, Software/Firmware Intern at Tesla</li>
