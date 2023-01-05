@@ -161,20 +161,20 @@ class HackathonPage extends Component {
         <Row>
 
         <AppContents class="font-face-navFont">
-        <NavLink to="/portfolio/projects/hackathons/hackmit" 
+        <NavLink to="/portfolio/#/projects/hackathons/hackmit" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
     })} ><SelectedButton>HackMIT</SelectedButton></NavLink> 
 
-     <NavLink to="/portfolio/projects/hackathons/hackbeanpot" 
+     <NavLink to="/portfolio/#/projects/hackathons/hackbeanpot" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
     })}
     >HackBeanpot</NavLink> 
 
-     <NavLink to="/portfolio/projects/hackathons/hophacks" 
+     <NavLink to="/portfolio/#/projects/hackathons/hophacks" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',

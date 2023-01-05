@@ -184,20 +184,20 @@ class MakerTurntAble extends Component {
         <Row>
 
         <AppContents class="font-face-navFont">
-        <NavLink to="/portfolio/projects/makerprojects/phonebox" 
+        <NavLink to="/portfolio/#/projects/makerprojects/phonebox" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
     })} >Phone Box2Stand</NavLink> 
 
-     <NavLink to="/portfolio/projects/makerprojects/turntable" 
+     <NavLink to="/portfolio/#/projects/makerprojects/turntable" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
     })}
     ><SelectedButton>TurntAble</SelectedButton></NavLink> 
 
-     <NavLink to="/portfolio/projects/makerprojects/frogcomputer" 
+     <NavLink to="/portfolio/#/projects/makerprojects/frogcomputer" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
@@ -205,7 +205,7 @@ class MakerTurntAble extends Component {
     })}
     >Frog Computer</NavLink> 
     
-     <NavLink to="/portfolio/projects/makerprojects/kevin" 
+     <NavLink to="/portfolio/#/projects/makerprojects/kevin" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',

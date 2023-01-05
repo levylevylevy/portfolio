@@ -63,7 +63,7 @@ class Nav extends Component {
         }}>
           <AppContents >
             <div>
-            <NavLink  to="/portfolio/#"  style={({ isActive }) => ({
+            <NavLink  to="/portfolio/"  style={({ isActive }) => ({
               
               color: isActive? secondaryGold : primaryBlue,
               textDecoration: isActive? 'underline' :'none',
@@ -76,7 +76,7 @@ class Nav extends Component {
 
             <NavLink                
 
-            to="/portfolio/projects/#/workexperience/generate/" 
+            to="/portfolio/#/projects/workexperience/generate/" 
             // {...(window.location.href.includes('projects'))
             // ? class{"current-menu-parent"}
             // : class{"unselected-menu-parent"}}
@@ -117,10 +117,10 @@ class="menuActive"
           <Route path="/portfolio/#/projects/hackathons/hackbeanpot" element={<HackathonPageBeanpot />} />
 
 
-          <Route path="/portfolio/projects/#/makerprojects/phonebox" element={<MakerPage/>} />
-          <Route path="/portfolio/projects/#/makerprojects/turntable" element={<MakerTurntable/>} />
-          <Route path="/portfolio/projects/#/makerprojects/frogcomputer" element={<MakerFrog/>} />
-          <Route path="/portfolio/projects/#/makerprojects/kevin" element={<MakerKevin/>} />
+          <Route path="/portfolio/#/projects/makerprojects/phonebox" element={<MakerPage/>} />
+          <Route path="/portfolio/#/projects/makerprojects/turntable" element={<MakerTurntable/>} />
+          <Route path="/portfolio/#/projects/makerprojects/frogcomputer" element={<MakerFrog/>} />
+          <Route path="/portfolio/#/projects/makerprojects/kevin" element={<MakerKevin/>} />
           {/* <Route path="/tiliti-case-study" element={<TilitiCaseStudy/>} /> */}
 
           </Routes>

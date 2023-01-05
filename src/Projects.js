@@ -193,20 +193,20 @@ class Projects extends Component {
 
         }}>
           <AppContents>
-          <NavLink to="/portfolio/projects/workexperience/generate" 
+          <NavLink to="/portfolio/#/projects/workexperience/generate" 
           style={({ active }) => ({
             color: menuActive()? primaryBlue : unselectedBlue,
             textDecoration: menuActive()? 'underline' :'none',
           })}
           className = "font-face-header2">Work Experiences</NavLink>
-    <NavLink to="/portfolio/projects/hackathons/hackmit" 
+    <NavLink to="/portfolio/#/projects/hackathons/hackmit" 
     style={({ active }) => ({
       color: menuActiveHack()? primaryBlue : unselectedBlue,
       textDecoration: menuActiveHack()? 'underline' :'none',
     })}
     className = "font-face-header2">Hackathons</NavLink>
 
-    <NavLink to="/portfolio/projects/makerprojects/phonebox" 
+    <NavLink to="/portfolio/#/projects/makerprojects/phonebox" 
     style={({ active }) => ({
       color: menuActiveProject()? primaryBlue : unselectedBlue,
       textDecoration: menuActiveProject()? 'underline' :'none',
