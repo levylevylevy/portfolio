@@ -5,7 +5,8 @@ import {
   Routes,
   NavLink,
   BrowserRouter,
-  HashRouter
+  HashRouter,
+  Switch
 } from "react-router-dom";
 import Home from "./Home";
 import Projects from "./Projects";
@@ -104,7 +105,7 @@ class="menuActive"
           </AppContents>
           
           <div className="content">
-          <Routes>
+          <Switch>
           <Route exact path="/portfolio/" element={<Home/>}/> 
           <Route path="/portfolio/projects/workexperience/generate" element={<ExperiencePage/>}/> 
           <Route path="/portfolio/projects/workexperience/tesla" element={<ExperiencePageTesla/>}/> 
@@ -122,15 +123,16 @@ class="menuActive"
           <Route path="/portfolio/projects/makerprojects/frogcomputer" element={<MakerFrog/>} />
           <Route path="/portfolio/projects/makerprojects/kevin" element={<MakerKevin/>} />
           {/* <Route path="/tiliti-case-study" element={<TilitiCaseStudy/>} /> */}
+          <Route path="/portfolio/tiliti-case-study" element={<TilitiCaseStudy/>} />
 
-          </Routes>
+          </Switch>
           </div>
 
-          <div className="case-studies">
+          {/* <div className="case-studies">
             <Routes>
             <Route path="/portfolio/tiliti-case-study" element={<TilitiCaseStudy/>} />
             </Routes>
-          </div>
+          </div> */}
         </div>
         </BrowserRouter>
         
