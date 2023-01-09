@@ -105,7 +105,7 @@ class="menuActive"
           </AppContents>
           
           <div className="content">
-          <Switch>
+          <Routes>
           <Route exact path="/portfolio/" element={<Home/>}/> 
           <Route path="/portfolio/projects/workexperience/generate" element={<ExperiencePage/>}/> 
           <Route path="/portfolio/projects/workexperience/tesla" element={<ExperiencePageTesla/>}/> 
@@ -125,7 +125,7 @@ class="menuActive"
           {/* <Route path="/tiliti-case-study" element={<TilitiCaseStudy/>} /> */}
           <Route path="/portfolio/tiliti-case-study" element={<TilitiCaseStudy/>} />
 
-          </Switch>
+          </Routes>
           </div>
 
           {/* <div className="case-studies">
