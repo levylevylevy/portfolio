@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Projects from '../projects.js'
+import Projects from '../Projects.js'
 import {
     Link,
     Route,
