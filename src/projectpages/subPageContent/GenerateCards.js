@@ -1,16 +1,21 @@
 //Generate Tiliti card
 import React, { Component } from "react";
+import { useState } from 'react';
+import Popup from "../caseStudyContent/Popup.js";
+import '../caseStudyContent/style.css';
+import TilitiCaseStudy from '../caseStudyContent/tilitiCaseStudy'
+
 import Projects from '../../Projects.js'
 import {
-    Link,
-    Route,
-    Routes,
-    NavLink,
-    BrowserRouter
-  } from "react-router-dom";
-  import styled from "styled-components";
-  import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText } from "../../colors.js";
-  import ScrollButton from "../../ScrollButton.js";
+  Link,
+  Route,
+  Routes,
+  NavLink,
+  BrowserRouter
+} from "react-router-dom";
+import styled from "styled-components";
+import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText } from "../../colors.js";
+import ScrollButton from "../../ScrollButton.js";
 
 const RowContents = styled.div`
 display: flex;
@@ -41,7 +46,7 @@ padding: 24px;
 
 `;
 
-const CardTitle=styled.h1`
+const CardTitle = styled.h1`
 display: flex;
 flex-direction: column;
 margin-top: 32px;
@@ -77,38 +82,48 @@ const CaseStudyButton = styled.div`
   align-items: center;
   justify-content: center;
   color: ${backgroundColorMain};
+  cursor: pointer;
 `;
 
-  class GenerateCards extends Component {
-    render() {
-      return (
-        <>
-  <CardContainers>
-      <ProjectCard>
-        <Row>
-<Col>
-<CardTitle className="font-face-header1" style={{color: primaryBlue}}>  TILITI</CardTitle>
-
-<p className="font-face-body" style={{color: secondaryGold}}>  UI/UX Designer  <span style={{color: primaryBlue}}> - Figma - Adobe Illustrator - After Effects
-Generate Product Development Studio, 2021</span></p>
-<p className="font-face-subtitle" style={{color: primaryBlue}}>  A mobile app to help small business owners in India transport their goods on the Tiliti startup’s sustainable e-bike.</p>
-<NavLink to="/portfolio/tiliti-case-study" target="_blank" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })} ><CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}>Read Case Study</CaseStudyButton></NavLink> 
 
 
-</Col>
-<ExamplePhoto src={require('../../../src/images/tiliti-home-betterquality.png')} />
-</Row>
+function GenerateCards() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  }
+
+  return (
+    <>
+      <CardContainers>
+        <ProjectCard>
+          <Row>
+            <Col>
+              <CardTitle className="font-face-header1" style={{ color: primaryBlue }}>  TILITI</CardTitle>
+
+              <p className="font-face-body" style={{ color: secondaryGold }}>  UI/UX Designer  <span style={{ color: primaryBlue }}> - Figma - Adobe Illustrator - After Effects
+                Generate Product Development Studio, 2021</span></p>
+              <p className="font-face-subtitle" style={{ color: primaryBlue }}>  A mobile app to help small business owners in India transport their goods on the Tiliti startup’s sustainable e-bike.</p>
+              <CaseStudyButton onClick={togglePopup} className="font-face-subtitle" style={{ color: primaryBlue }}>Read Case Study</CaseStudyButton>
+              {/* <CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}>Read Case Study</CaseStudyButton> */}
+              {isOpen && <Popup
+                content={<>
+                <TilitiCaseStudy/>
+                </>}
+                handleClose={togglePopup}
+              />}
+            </Col>
+            <ExamplePhoto src={require('../../../src/images/tiliti-home-betterquality.png')} />
+          </Row>
         </ProjectCard>
-        
-     
-      
-    </CardContainers>
-    </>
-      );
-    }}
+       
 
-    export default GenerateCards;
+
+      </CardContainers>
+    </>
+  );
+}
+
+export default GenerateCards;

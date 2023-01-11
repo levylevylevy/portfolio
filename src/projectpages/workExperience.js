@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { useState } from "react";
+import Popup from "./caseStudyContent/Popup.js";
 import Projects from '../Projects.js'
 import {
     Link,

@@ -211,10 +211,10 @@ class ExperiencePageWillow extends Component {
     Willow is a fin-tech startup that partners with financial advisors and institutions to empower women financially. 
     At Willow, I used React.js, Html, Css, Django, AWS, and Figma to develop frontend for the company website. 
    My main project was developing a new interactive product for the company's customer website. </p>    
-   <p className="font-face-body" style={{color: primaryBlue}}> I worked locally using React.js, Html, and Css on VS Code, developing designs passed off by the UI Designer. I utilized flexbox to arrange items, and created dynamic mobile responsive pages. I implemented a components based design using styled-components.</p>
+   <p className="font-face-body" style={{color: primaryBlue}}> I worked in the development environment locally using React.js, Html, and Css on VS Code, developing designs passed off by the UI Designer. I utilized flexbox to arrange items, and created dynamic mobile responsive pages. I implemented a components based design using styled-components.</p>
    <p className="font-face-body" style={{color: primaryBlue}}>I worked with the backend engineer and with Django to determine what APIs were needed for the new product to display different user and company data. 
    Then, I integrated those APIs into the frontend code, and I created development data. Additionally, I troubleshooted bugs using Dev Tools and working on the staging server. 
-   I used AWS to manage resources within the website, and I used Trello to manage my tickets.</p>    
+   I used AWS to manage resources within the website, and I used Trello to manage my tickets. I used git to interact with the staging environment. I used git and Github to interact with the production environment.</p>    
     
   </Col>
     </RowSubMenuContents>

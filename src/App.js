@@ -30,6 +30,7 @@ class App extends Component {
 
       <Fragment>
       <Nav/>
+      {/* popup component that takes a prop of hidden or not, default is hidden */}
       </Fragment>    
     );
   }

@@ -84,6 +84,7 @@ const WholePageContainer = styled.div`
   // position: absolute;
   text-align: justify;
   gap:20px;
+  margin-bottom: 200px;
 `;
 
 const ExamplePhoto = styled.img`
