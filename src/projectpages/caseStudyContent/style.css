@@ -25,6 +25,7 @@
   }
    
   .close-icon {
+    z-index: 12;
     content: 'x';
     cursor: pointer;
     position: fixed;
