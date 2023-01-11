@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.ab6e4a2c.css",
+    "main.css": "/portfolio/static/css/main.ef98a562.css",
     "main.js": "/portfolio/static/js/main.9dcddced.js",
     "static/media/Persist Energy Workflow.png": "/portfolio/static/media/Persist Energy Workflow.e1a9a1418539dd3c7512.png",
     "static/media/tiliti-hifi-full.mp4": "/portfolio/static/media/tiliti-hifi-full.66bdb8735e629710361f.mp4",
@@ -58,11 +58,11 @@
     "static/media/atem7.jpg": "/portfolio/static/media/atem7.dfd1b0388be42ef8c3f8.jpg",
     "static/media/tilitilogo2.png": "/portfolio/static/media/tilitilogo2.2aeb5b2a50e1235e86ef.png",
     "index.html": "/portfolio/index.html",
-    "main.ab6e4a2c.css.map": "/portfolio/static/css/main.ab6e4a2c.css.map",
+    "main.ef98a562.css.map": "/portfolio/static/css/main.ef98a562.css.map",
     "main.9dcddced.js.map": "/portfolio/static/js/main.9dcddced.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab6e4a2c.css",
+    "static/css/main.ef98a562.css",
     "static/js/main.9dcddced.js"
   ]
 }
