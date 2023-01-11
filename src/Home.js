@@ -194,7 +194,7 @@ class Home extends Component {
         </div>
         {/* </NameSummary> */}
         <CaptionText>
-        <p style={{color: 'primaryBlue'}} className='font-face-subtitle'> Currently searching for a full-time UI/UX, technical PM, or front-end swe position following a Spring 2023 graduation from Northeastern University - Bachelors in Computer Engineering, Minor in Computer Science</p>
+        <p style={{color: 'primaryBlue'}} className='font-face-subtitle'> Currently searching for a full-time UI/UX, technical PM, or front-end SWE position following a Spring 2023 graduation from Northeastern University - Bachelors in Computer Engineering, Minor in Computer Science</p>
         </CaptionText>
         </ColIntro>
         </RowIntro>
