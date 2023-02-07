@@ -430,7 +430,7 @@ class TilitiCaseStudy extends Component {
        <TextWrapBody className = "font-face-body">The sixth flow is payment. The user had to purchase their bike previous to signing up on the app, but they can make it more affordable through paying in increments on the app. They also pay for battery charge sessions on the app.</TextWrapBody>
        <TextWrapBody className = "font-face-body">The seventh flow is profile/settings. The user can view their bike ID information, change their settings or profile info, and control location permissions here. The user can also send feedback.</TextWrapBody>
 
-<DisplayVideo width="200" controls autoplay><source src={require('../../.../src/images/sadie_levy_tiliti_final-figma.mp4')} type="video/mp4"/></DisplayVideo>
+<DisplayVideo width="200" controls autoplay><source src={require('../../.../src/videos/sadie_levy_tiliti_final-figma.mp4')} type="video/mp4"/></DisplayVideo>
         {/* <TilitiGif src={require('../../../src/videos/tiliti-hifi-signin_AdobeExpress.gif')} />
 
         <TilitiGif src={require('../../../src/videos/tiliti-hifi-home_AdobeExpress.gif')} />
