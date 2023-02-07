@@ -233,7 +233,7 @@ class Projects extends Component {
 <HorizontalLine/>
 <RowIcons>
 <a href="mailto:sadie.levy.eng@gmail.com"><IconMail/></a>
-  <IconGithub/>
+  <a href="https://github.com/levylevylevy/portfolio"><IconGithub/></a>
   <a href="https://www.linkedin.com/in/sadie-s-l/" target="_blank"><IconLinkedin/></a>
 </RowIcons>
 </NavBottom> 
