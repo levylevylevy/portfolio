@@ -92,7 +92,8 @@ const CaseStudyButton = styled.div`
 <p className="font-face-body" style={{color: secondaryGold}}>  Design Lead  <span style={{color: primaryBlue}}> - Figma - Jira - UI/UX - Brand - Management
 Generate Product Development Studio, 2022</span></p>
 <p className="font-face-subtitle" style={{color: primaryBlue}}>  A mobile/web app to connect under-served athletes with college sports recruiters.</p>
-{/* <CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}>Read Case Study</CaseStudyButton> */}
+<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}onClick={()=> window.open("https://www.figma.com/file/Q9XuR02L0djGdGgvDcTcyA/ShowNxt-UX%2FUI-(Handoff)?node-id=3%3A17&t=iVzq0S2xbpq9mad9-1", "_blank")}>Figma</CaseStudyButton>
+
 </Col>
 <ExamplePhoto src={require('../../../src/images/shownxt-home-betterquality.png')} />
 </Row>
