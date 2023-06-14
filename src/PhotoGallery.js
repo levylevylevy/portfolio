@@ -31,6 +31,10 @@ const AtemImage = styled.img`
 
 `;
 
+const AtemVideo = styled.div`
+width: 100px;
+`;
+
 class PhotoGallery extends Component {
   render() {
     return (
@@ -75,8 +79,15 @@ class PhotoGallery extends Component {
 <ImageContainer>
 <AtemImage src={require('./images/atem12.jpg')} />
 </ImageContainer>
+<ImageContainer>
+<AtemImage src={require('./images/ali-deucher-illustration-updated_orig.jpg')}/>
+</ImageContainer>
+<ImageContainer><iframe width="337" height="200" src="https://www.youtube.com/embed/H7dh6g_Y-HU" title="ATEM Rubiks Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></ImageContainer>
+
 </Row>
+
 </GalleryContainer>
+
 
     );
   }

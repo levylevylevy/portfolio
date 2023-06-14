@@ -207,11 +207,11 @@ class ExperiencePageSharkNinja extends Component {
     <Col>
     <ChangeMarginText className="font-face-navFont" style={{color: secondaryGold}}>  Test Engineer Co-Op, 2021 </ChangeMarginText>
     <p className="font-face-body" style={{color: primaryBlue}}>Python - DFMEA - Connected-Product - QA - Github</p>    
-    <p className="font-face-body" style={{color: primaryBlue}}> At SharkNinja, I independently developed Python/JSON Programs that automated cloud-based API commands, data collection, data
+    <p className="font-face-body" style={{color: primaryBlue}}>At SharkNinja, I independently developed Python/JSON Programs that automated cloud-based API commands, data collection, data
 analysis, and excel editing, cutting hours-long processes down to seconds. </p>  
-<p className="font-face-body" style={{color: primaryBlue}}> I completed connected-product hardware and mobile app QA tests, and collaborated with team members to troubleshoot,
-determine root cause, brainstorm corrective actions, create documentation, and explain recommendations to managers. </p>  
-<p className="font-face-body" style={{color: primaryBlue}}> Lastly, I conducted collaborative design failure mode and effect analysis product development brainstorming.</p>    
+<p className="font-face-body" style={{color: primaryBlue}}>I conducted rigorous QA tests on connected-product hardware and mobile app, employing qualitative and quantitative methods to ensure robust functionality, performance, and a seamless user experience.
+ </p>  
+<p className="font-face-body" style={{color: primaryBlue}}>Lastly, I engaged in collaborative design failure mode and effect analysis sessions, contributing to product development brainstorming, and providing insights and recommendations to enhance product features based on business cases, scope, product requirements, and data analysis.</p>    
     
   </Col>
     </RowSubMenuContents>

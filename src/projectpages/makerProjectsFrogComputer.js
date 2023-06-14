@@ -185,6 +185,11 @@ class MakerFrog extends Component {
         <Row>
 
         <AppContents class="font-face-navFont">
+        <NavLink to="/portfolio/projects/makerprojects/games" 
+    style={({ isActive }) => ({
+      color: isActive? selectedButtonText : unselectedBlue,
+      textDecoration: isActive? 'none' :'none',
+    })} >Games</NavLink> 
         <NavLink to="/portfolio/projects/makerprojects/phonebox" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,

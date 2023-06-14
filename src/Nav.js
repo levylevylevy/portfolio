@@ -27,7 +27,8 @@ import MakerKevin from './projectpages/makerProjectsKevin';
 import MakerFrog from './projectpages/makerProjectsFrogComputer';
 import MakerTurntable from './projectpages/makerProjectsTurntAble';
 import TilitiCaseStudy from './projectpages/caseStudyContent/tilitiCaseStudy';
-
+import HareOfRuin from './projectpages/subPageContent/HareOfRuinCard'
+import MakerPageGames from './projectpages/games'
 
 
 const AppContents = styled.ul`
@@ -117,12 +118,13 @@ class="menuActive"
           <Route path="/portfolio/projects/hackathons/hophacks" element={<HackathonPageHop />} />
           <Route path="/portfolio/projects/hackathons/hackbeanpot" element={<HackathonPageBeanpot />} />
 
-
+          <Route path="/portfolio/projects/makerprojects/games" element={<MakerPageGames/>} />
           <Route path="/portfolio/projects/makerprojects/phonebox" element={<MakerPage/>} />
           <Route path="/portfolio/projects/makerprojects/turntable" element={<MakerTurntable/>} />
           <Route path="/portfolio/projects/makerprojects/frogcomputer" element={<MakerFrog/>} />
           <Route path="/portfolio/projects/makerprojects/kevin" element={<MakerKevin/>} />
           {/* <Route path="/tiliti-case-study" element={<TilitiCaseStudy/>} /> */}
+          <Route path ="/portfolio/projects/games/hareofruin" element={<HareOfRuin/>}/>
           <Route path="/portfolio/tiliti-case-study" element={<TilitiCaseStudy/>} />
 
           </Routes>

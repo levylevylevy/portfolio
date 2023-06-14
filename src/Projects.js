@@ -206,12 +206,12 @@ class Projects extends Component {
     })}
     className = "font-face-header2">Hackathons</NavLink>
 
-    <NavLink to="/portfolio/projects/makerprojects/phonebox" 
+    <NavLink to="/portfolio/projects/makerprojects/games" 
     style={({ active }) => ({
       color: menuActiveProject()? primaryBlue : unselectedBlue,
       textDecoration: menuActiveProject()? 'underline' :'none',
     })}
-    className = "font-face-header2">Maker Projects</NavLink> 
+    className = "font-face-header2">Games/Maker Projects</NavLink> 
 
             </AppContents>
           

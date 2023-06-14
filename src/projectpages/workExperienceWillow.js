@@ -207,15 +207,13 @@ class ExperiencePageWillow extends Component {
     <Col>
     <ChangeMarginText className="font-face-navFont" style={{color: secondaryGold}}>  Software Engineer Co-Op, 2022 </ChangeMarginText>
     <p className="font-face-body" style={{color: primaryBlue}}>React.js - HTML - CSS - Django - AWS - Github - Figma</p>    
-    <p className="font-face-body" style={{color: primaryBlue}}> I completed my Co-Op at Willow during Fall 2022. 
-    Willow is a fin-tech startup that partners with financial advisors and institutions to empower women financially. 
-    At Willow, I used React.js, Html, Css, Django, AWS, and Figma to develop frontend for the company website. 
-   My main project was developing a new interactive product for the company's customer website. </p>    
-   <p className="font-face-body" style={{color: primaryBlue}}> I worked in the development environment locally using React.js, Html, and Css on VS Code, developing designs passed off by the UI Designer. I utilized flexbox to arrange items, and created dynamic mobile responsive pages. I implemented a components based design using styled-components.</p>
-   <p className="font-face-body" style={{color: primaryBlue}}>I worked with the backend engineer and with Django to determine what APIs were needed for the new product to display different user and company data. 
-   Then, I integrated those APIs into the frontend code, and I created development data. Additionally, I troubleshooted bugs using Dev Tools and working on the staging server. 
-   I used AWS to manage resources within the website, and I used Trello to manage my tickets. I used git to interact with the staging environment. I used git and Github to interact with the production environment.</p>    
-    
+    <p className="font-face-body" style={{color: primaryBlue}}> During the fall of 2022, I had the opportunity to complete a Co-Op at Willow, a fin-tech startup dedicated to empowering women financially through partnerships with financial advisors and institutions. In this role, I utilized various technologies such as React.js, HTML, CSS, Django, AWS, and Figma to develop frontend for a new interface on the company's website.</p>    
+   <p className="font-face-body" style={{color: primaryBlue}}> Working in a local development environment using tools like VS Code, I leveraged React.js, HTML, and CSS to bring to life the designs provided by the UI Designer. By employing flexbox, I adeptly arranged elements and ensured dynamic mobile responsiveness. To maintain a structured and scalable codebase, I adopted a components-based design approach using styled-components.
+
+</p>
+   <p className="font-face-body" style={{color: primaryBlue}}>Collaboration was pivotal in my role, as I closely worked with the backend engineer and Django to identify the necessary APIs for showcasing diverse user and company data within the new product. While integrating these APIs into the frontend code, I also generated development data to facilitate seamless testing and troubleshooting. To diagnose and resolve issues, I utilized Dev Tools and worked on the staging server.</p>    
+   <p className="font-face-body" style={{color: primaryBlue}}>To manage and optimize website resources, I leveraged the capabilities of AWS. Additionally, I employed Trello as a project management tool, effectively organizing and prioritizing my tickets. Version control was a crucial aspect of my work, and I utilized Git for interactions with the staging environment, while leveraging Git and Github for seamless collaboration within the production environment.</p>
+   <p className="font-face-body" style={{color: primaryBlue}}>Through my Co-Op experience at Willow, I further honed my technical skills, collaborated with cross-functional teams, and contributed to the development of an innovative fintech solution aimed at empowering women in their financial journey.</p>
   </Col>
     </RowSubMenuContents>
 

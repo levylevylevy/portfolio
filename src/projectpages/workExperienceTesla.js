@@ -205,13 +205,15 @@ class ExperiencePageTesla extends Component {
 </Row>
     {/* //insert images */}
     <Col>
-    <ChangeMarginText className="font-face-navFont" style={{color: secondaryGold}}>  Technical Program Manager Intern, Software/Firmware, 2022 </ChangeMarginText>
+    <ChangeMarginText className="font-face-navFont" style={{color: secondaryGold}}>  Technical Program Manager Intern, Energy Software/Firmware, 2022 </ChangeMarginText>
     <p className="font-face-body" style={{color: primaryBlue}}>Jira - Roadmap - Dependencies - Code Branching Strategy - Confluence</p>    
-    <p className="font-face-body" style={{color: primaryBlue}}> I completed my internship at Tesla during Summer 2022. I have always been interested in sustainability and I think it is one of the most important problems the world is facing.
-    The challenges of sustainable energy excite me and stump me, and there is nothing I like to do more than sit down with other engineers and attack a hard problem. At Tesla, I worked on the energy side of the company on three main projects.</p>    
-    <p className="font-face-body" style={{color: primaryBlue}}>For my first project, I owned Tesla’s first time implementing firmware control of a new power source. I brought internal and international external stakeholders together to scope the program, managed a Jira development and validation roadmap, technical dependencies, weekly syncs, documentation, and release/branching strategy.</p>
-    <p className="font-face-body" style={{color: primaryBlue}}>For my second project, I researched and determined testing coverage metrics of a next-gen industrial product and proposed recommendations to pursue full coverage.</p>
-    <p className="font-face-body" style={{color: primaryBlue}}>For my third project, I owned the internal pilot timeline and dependencies of a next-gen charging product: firmware development, system testing, hardware readiness/retrofitting, legal impact, and user feedback preparation.</p>
+    <p className="font-face-body" style={{color: primaryBlue}}>During my summer internship at Tesla in 2022, I had the privilege of working on impactful projects within the sustainable energy sector. My passion for sustainability and the significant global challenges it poses motivated me to contribute to these initiatives. Collaborating with fellow engineers to tackle complex problems has always been a rewarding experience for me. I worked on three projects over the course of the summer.</p>    
+    <p className="font-face-body" style={{color: primaryBlue}}>For my first project, I owned the pioneering initiative to establish Tesla’s first smart firmware control of wind power with turbines and storage accumulators within a microgrid, orchestrating collaboration among internal and external stakeholders of energy technology. I was in charge of defining program scope and managing the Jira development and validation roadmap, as well as managing technical dependencies, contracts, cost controls, weekly syncs, Confluence documentation, QA and simulation testing, and release/branching strategy. This will result in the first and only energy-autonomous island in Greece, contributing to Tesla's business goals of a fully sustainable energy ecosystem.</p>
+    <p className="font-face-body" style={{color: primaryBlue}}>For my second project, I conducted extensive research to determine testing coverage metrics for a next-gen industrial product. Based on my findings, I proposed recommendations to pursue comprehensive coverage.
+
+</p>
+    <p className="font-face-body" style={{color: primaryBlue}}>For my third project, I owned the internal pilot timeline and dependencies of a next-gen charging product: firmware development, system testing, hardware readiness/retrofitting, legal/policy considerations, and preparation of consumer-facing surveys.</p>
+    <p className="font-face-body" style={{color: primaryBlue}}>Overall, my internship at Tesla provided me with invaluable experience and the opportunity to make a meaningful contribution to the advancement of sustainable energy solutions.</p>
   </Col>
     </RowSubMenuContents>
 

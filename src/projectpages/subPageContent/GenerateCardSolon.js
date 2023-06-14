@@ -91,7 +91,7 @@ const CaseStudyButton = styled.div`
 
 <p className="font-face-body" style={{color: secondaryGold}}>  Product Designer <span style={{color: primaryBlue}}> - Figma - 3D Prototype - User Research
 Generate Product Development Studio, 2021</span></p>
-<p className="font-face-subtitle" style={{color: primaryBlue}}>  A cryptocurrency wallet that offers a unique user interaction experience, combining a screen UI and a physical device with buttons.</p>
+<p className="font-face-subtitle" style={{color: primaryBlue}}>  A cryptocurrency wallet that offers a unique user interaction experience, combining a digital screen UI and a physical 3D-printed device with buttons.</p>
 {/* <CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}>Read Case Study</CaseStudyButton> */}
 </Col>
 <ExamplePhoto src={require('../../../src/images/solonprototype.png')} />

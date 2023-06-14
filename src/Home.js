@@ -194,7 +194,7 @@ class Home extends Component {
         </div>
         {/* </NameSummary> */}
         <CaptionText>
-        <p style={{color: 'primaryBlue'}} className='font-face-subtitle'> Currently searching for a full-time UI/UX, technical PM, or front-end SWE position following a Spring 2023 graduation from Northeastern University - Bachelors in Computer Engineering, Minor in Computer Science</p>
+        <p style={{color: 'primaryBlue'}} className='font-face-subtitle'>Currently pursuing full-time or contractor opportunities in the fields of UI/UX design, technical project/program management, frontend SWE, or games positions.</p>
         </CaptionText>
         </ColIntro>
         </RowIntro>
@@ -202,16 +202,17 @@ class Home extends Component {
         <ColAboutMe>
         <ChangeMarginText className='font-face-header3'>About Me</ChangeMarginText>
 
-        <p style={{color: 'primaryBlue'}} className='font-face-body'>Hi, I’m Sadie! I’m a senior at Northeastern University in Boston. I am very passionate about product development and interaction technology. Feel free to read more about my experiences below...</p>
+        <p style={{color: 'primaryBlue'}} className='font-face-body'>Hi, I’m Sadie! I recently graduated in May 2023 from Northeastern University in Boston with a Bachelors in Computer Engineering and a minor in Computer Science. I am very passionate about product development and interaction technology. Feel free to read more about my experiences below...</p>
         <ul style={{color: 'primaryBlue'}} className='font-face-body'>
         {/* <a href="https://levylevylevy.github.io/portfolio/#/tiliti-case-study" target="_blank"><li>My first UI case study</li></a> */}
        
         {/* <a href="/portfolio/#/projects/workexperience/willow" target="_blank"><li>Frontend Software Engineer Co-Op at fin-tech startup Willow</li></a>
         <a href="/portfolio/#/projects/workexperience/tesla" target="_blank"><li>Technical Program Manager, Software/Firmware Intern at Tesla</li></a> */}
         <a href="https://blog.adobe.com/en/publish/2021/03/08/adobe-research-women-in-tech-scholarship-winners" target="_blank"><li>Selected as an Adobe Women in Technology Scholar</li></a>
+        <a href="https://technical.ly/professional-development/entertainment-software-association-scholarships/" target="_blank"><li>Selected as an Entertainment Software Association Foundation Computer and Video Game Arts And Science Scholar</li></a>
         <a href="https://www.congressionalappchallenge.us/about/" target="_blank"><li>Served as an Alumni Advisory Board Member for the US House of Representatives Congressional App Challenge</li> </a>
         {/* <a href="/portfolio/#/projects/hackathons/hackmit" target="_blank"><li>Many all-nighters completing hackathon projects</li></a> */}
-        <li>...And read about my work experiences, hackathons, and maker projects in the Projects tab!</li>
+        <li>...And read about my work experiences, hackathons, games and maker projects in the Projects tab!</li>
         </ul>
         {/* <li>Frontend Software Engineer Co-Op at fin-tech startup Willow</li>
         <li>Technical Program Manager, Software/Firmware Intern at Tesla</li>
@@ -223,7 +224,10 @@ class Home extends Component {
      
 
 
-        <p style={{color: 'primaryBlue'}} className='font-face-body'>Besides tech, I love to listen to music, draw, read, play board games, and hike ⋆.𖡼.𖤣𖥧𖡼.𖤣𖥧.</p>
+        <p style={{color: 'primaryBlue'}} className='font-face-body'>Besides tech, I love live music, drawing, reading fantasy, playing board games, and hiking ⋆.𖡼.𖤣𖥧𖡼.𖤣𖥧.</p>
+    <p style={{color: 'primaryBlue'}} className='font-face-body'> (˚ˎ 。7  This custom website was made with react.js, html, css, & designed with Figma ˙ᵕ˙</p> 
+
+
 
         {/* <p style={{color: 'primaryBlue'}} className='font-face-body'>Scroll down to leave a doodle in my guest book ✎〰 </p> */}
 

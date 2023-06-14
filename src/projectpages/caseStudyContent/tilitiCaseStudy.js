@@ -107,12 +107,10 @@ margin-top: 20px;
 
 const DisplayVideo = styled.video`
 display: flex;
-flex-direction: column;
-width: 30%;
+width: 20%;
 margin-top: 20px;
 background-color: #E0E0E2;
 border-radius: 20px;
-align-items: center;
 `;
 
 const ExamplePhoto3 = styled.img`
@@ -286,27 +284,26 @@ class TilitiCaseStudy extends Component {
           <TopSegmentCol>
             <ChangeMarginText className="font-face-header2">Overview</ChangeMarginText>
             <TextWrapBody className="font-face-body" style={{ color: secondaryGold }}>Scope: January 2021 - May 2021</TextWrapBody>
-            <TextWrapBody className="font-face-body">Tiliti is a startup developing an electronic bike that can carry large amounts of goods for small business owners in India.
-              Additionally, the bike will have a network of charging stations at which the user can recharge the bike's built in batteries. Tiliti's technology will allow small business owners who need a sustainable and affordable solution for delivering goods to achieve their goals.
-              While our client was developing the physical bike, they realized the user would need a mobile app to fully use many of the features of the bike. </TextWrapBody>
-            <TextWrapBody className="font-face-body">I worked as a UI/UX designer with 1 other designer to develop the user experience of the connected product and the app itself + 6 engineers to develop our design into working software.</TextWrapBody>
+            <TextWrapBody className="font-face-body">Tiliti is a startup dedicated to creating an electronic bike designed specifically for small business owners in India. This innovative bike offers ample cargo capacity, enabling efficient transportation of goods. Complementing the bike is a network of charging stations strategically placed for convenient battery recharging. Tiliti's technology addresses the need for sustainable and cost-effective delivery solutions for small business owners.
+
+</TextWrapBody>
+            <TextWrapBody className="font-face-body">During the project, I collaborated as a UI/UX designer with one other designer to design the UI/UX of the bike's accompanying mobile app and a team of six software engineers to develop our design into working software. Our goal was to seamlessly integrate the bike's features into a user-friendly interface that optimizes functionality and user satisfaction.</TextWrapBody>
           </TopSegmentCol>
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Problem</ChangeMarginText>
-            <TextWrapBody className="font-face-body">Small business owners in India cannot transport large amounts of goods. They use scooters or motorcyles to transport goods, and can only carry a little at a time. The options are also not sustainable, which is an important value of the client and of a modern transportation infrastructure system.</TextWrapBody>
+            <TextWrapBody className="font-face-body">Small business owners in India face limitations when it comes to transporting large quantities of goods. Currently, they rely on scooters or motorcycles, which have limited carrying capacity. These options are also not aligned with the client's emphasis on sustainability, which is a vital aspect of modern transportation infrastructure systems.</TextWrapBody>
           </TopSegmentCol>
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Research</ChangeMarginText>
-            <TextWrapBody className="font-face-body">We researched competitors in the sustainable transportation field.
-              One competitor was called Bolt. It is a sustainable delivery service, however delivery drivers sign up to deliver for small businesses through the app, instead of small business owners getting the vehicles themselves. Because of the focus on the business owner itself, Tiliti is for bigger business related loads, rather than the small one-product delivery at a time that a service like Bolt provides. Tiliti's unique network of charging stations will also be emphasized within the app.</TextWrapBody>
+            <TextWrapBody className="font-face-body">We conducted competitor research in the sustainable transportation sector and identified Bolt as one of the competitors. Bolt operates as a sustainable delivery service, where delivery drivers sign up to deliver for small businesses through the app. In contrast, Tiliti caters to larger business-related loads, rather than the individual product delivery model offered by Bolt. Tiliti also highlights its distinctive network of charging stations within the app as a key feature.</TextWrapBody>
           </TopSegmentCol>
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Personas</ChangeMarginText>
-            <TextWrapBody className="font-face-body">In order to clarify the user base, we created personas to narrow down the user of the app. During this process we met with the client with specific, prepared questions, to make sure we fully understood their user base's needs and problems.</TextWrapBody>
-            <TextWrapBody className="font-face-body">We narrowed down our app's user to the bike owner. The owner can login/signup to the app, use the dashboard, enter ride mode, submit payments, interact with the charging station map, submit maintenance requests, and edit their profile/settings.</TextWrapBody>
+            <TextWrapBody className="font-face-body">To refine our target audience, we developed personas to precisely identify the app's users. Through focused meetings with the client and strategic questioning, we gained a deep understanding of their specific needs and challenges.</TextWrapBody>
+            <TextWrapBody className="font-face-body">We narrowed down our app's user base to bike owners. These users have access to various features, including login/signup, dashboard utilization, ride mode activation, payment submission, interaction with the charging station map, maintenance request submission, and profile/settings customization.</TextWrapBody>
             <ColImages>
               <Carousel>
                 <CarouselItem><ExamplePhoto2 src={require('../../../src/images/UX Persona.png')} /></CarouselItem>
@@ -319,7 +316,7 @@ class TilitiCaseStudy extends Component {
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Flow Diagram</ChangeMarginText>
-            <TextWrapBody className="font-face-body">We created a workflow diagram in order to come up with the best user flow for the bike owner, and have a source of truth to pass off to the software engineers as they programmed the flow of the app.</TextWrapBody>
+            <TextWrapBody className="font-face-body">We crafted a comprehensive workflow diagram to optimize the user flow for bike owners and provide a definitive reference for the software engineers during app development.</TextWrapBody>
             <ColImages>
               <ExamplePhoto2 src={require('../../../src/images/Persist Energy Workflow.png')} />
             </ColImages>
@@ -327,7 +324,7 @@ class TilitiCaseStudy extends Component {
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Lo-fi Flows</ChangeMarginText>
-            <p className="font-face-body">We began with the lo-fi stage, creating a low fidelity version of our workflow diagram. We worked out the details of the user interactions between pages and on a certain pages. This was a very iterative process, and we went through many different versions, of which some examples are below!</p>
+            <p className="font-face-body">During the initial lo-fi stage, we developed a low fidelity workflow diagram to outline user interactions and page details. This iterative process involved multiple versions, a few of which are illustrated below.</p>
             <ColImages>
 
               <Carousel>
@@ -387,14 +384,14 @@ class TilitiCaseStudy extends Component {
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">User Testing</ChangeMarginText>
-            <TextWrapBody className="font-face-body">In order to user test, we created a version of our Lo-Fi design with Lorem Ipsum language. This would test that our app could clearly communicate its functionalities without language signaling. This was important, as we were designing an app that would mainly be used in India. </TextWrapBody>
-            <TextWrapBody className="font-face-body"> Additionally, we prototyped our Figma design so it was interactive. Then, we imported our prototype into the user testing product Useberry. Within Useberry, we could make a user test for completing a specific task. For example, we made a test for the task of logging in. The user would click through the login flow until they completed the goal. We gathered data on completion rates of our tasks. We also created question forms from which we gathered written feedback from the users. Having this easy to use, remote user testing available was extremely important, as it allowed us to user test with actual small business owners in India who want to use the product, while we could stay located in Boston!</TextWrapBody>
-            <TextWrapBody className="font-face-body">Our user testing led to important insights. For instance, we figured out that the user interaction on the charging map page was not clear to users. There was a very low completion rate on our task of finding the nearest charging station. This led us to redesign the charging map page to have more user-friendly icons and buttons.</TextWrapBody>
+            <TextWrapBody className="font-face-body">To conduct user testing, we created a Lorem Ipsum version of our Lo-Fi design, ensuring clear communication of app functionalities without language dependencies, which was crucial for our target audience in India.</TextWrapBody>
+            <TextWrapBody className="font-face-body">Furthermore, we utilized interactive prototypes in Figma, which were imported into the user testing platform Useberry. Through Useberry, we designed task-specific user tests, such as 'login to your account', capturing completion rates and gathering written feedback from small business owners in India. This remote user testing capability proved invaluable, allowing us to gather insights while remaining in Boston.</TextWrapBody>
+            <TextWrapBody className="font-face-body">The user testing process yielded significant findings, notably identifying a lack of clarity in user interaction on the charging map page. A low completion rate in locating the nearest charging station prompted us to revamp the page with more intuitive icons and buttons, enhancing user-friendliness.</TextWrapBody>
           </TopSegmentCol>
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Brand</ChangeMarginText>
-            <TextWrapBody className="font-face-body">We created a consistent brand, choosing dark mode to match the aesthetics of the physical bike. After communicating with the clients and and obtaining a sign off, we developed a brand book which would inform our decisions in turning our Lo-Fi design to a Hi-Fi design. We decided on a dark blue background and bright neon components. We also used components in Figma, so that if we changed our source component, all the child components would show that change. This allowed us to continue iterating on our hi-fi design in a clean and organized, component-based way.</TextWrapBody>
+            <TextWrapBody className="font-face-body">We established a cohesive brand by aligning with the dark mode aesthetics of the physical bike. Following client communication and approval, we created a brand book to guide the transformation from Lo-Fi to Hi-Fi design. Our design incorporated a dark blue background and vibrant neon components. Leveraging Figma's component functionality, any changes made to the source component automatically propagated to all child components. This streamlined approach enabled efficient iteration and maintained a clean, organized, and component-based design process.</TextWrapBody>
 
             <ColImages>
               <Carousel>
@@ -416,21 +413,32 @@ class TilitiCaseStudy extends Component {
 
             <ChangeMarginText className="font-face-header2" >Hi-fidelity Design</ChangeMarginText>
             <ColImages>
+            <DisplayVideo width="250" controls autoplay><source src={require('../../../src/videos/sadie_levy_tiliti_final-figma.mp4')} type="video/mp4" /></DisplayVideo>
+
               {/* <DisplayVideo width="250" controls autoplay><source src={require('../../../src/videos/tiliti-hifi-signin.mp4')} type="video/mp4"/></DisplayVideo>
                <DisplayVideo width="250" controls autoplay><source src={require('../../../src/videos/tiliti-hifi-dashboard.mp4')} type="video/mp4"/></DisplayVideo>
                <DisplayVideo width="250" controls autoplay><source src={require('../../../src/videos/tiliti-hifi-map.mp4')} type="video/mp4"/></DisplayVideo>
                <DisplayVideo width="250" controls autoplay><source src={require('../../../src/videos/tiliti-payment-hifi.mp4')} type="video/mp4"/></DisplayVideo>
                <DisplayVideo width="250" controls autoplay><source src={require('../../../src/videos/tiliti-hifi-maintenance.mp4')} type="video/mp4"/></DisplayVideo>
                <DisplayVideo width="250" controls autoplay><source src={require('../../../src/videos/tiliti-hifi-profile.mp4')} type="video/mp4"/></DisplayVideo> */}
-              <TextWrapBody className="font-face-body">Our final design consists of 7 flows, in which our branding has been applied to create a high fidelity design. The first flow is the sign-in/log-in process. Tiliti uses 2 factor authentication in order to verify the login.</TextWrapBody>
-              <TextWrapBody className="font-face-body">The second flow is the onboarding process. Tiliti brings the user through an interactive tutorial on what functionalities are available in the app, from how to view their payments on the app to how they can remove batteries from the bike itself. Due to clear communication and getting ahead of scope creep, I was able to create the illustrations of the bike as a last minute addition to the scope, while still finishing within our initial timeline for the app. </TextWrapBody>
-              <TextWrapBody className="font-face-body">The third flow is the dashboard. The user can view stats on battery health, bike usage, and past trips. When the app detects that the bike is moving, a speedometer pops up and the user enters ride mode. We made this full screen in order to deter distractoins, however the user can swap out of ride mode and go back to the app if needed.</TextWrapBody>
-              <TextWrapBody className="font-face-body">The fourth flow is the charging station map. The user can favorite stations, search for stations, move around the map, and see stats at a specific station, like how many chargers are available for use there. The user can also submit a service request if something is wrong at that station.</TextWrapBody>
-              <TextWrapBody className="font-face-body">The fifth flow is bike maintenance. The user can view a FAQ section about their bike. The user can also submit a help request and attach photos. If it is an emergency, there is also an option to call a help line.</TextWrapBody>
-              <TextWrapBody className="font-face-body">The sixth flow is payment. The user had to purchase their bike previous to signing up on the app, but they can make it more affordable through paying in increments on the app. They also pay for battery charge sessions on the app.</TextWrapBody>
-              <TextWrapBody className="font-face-body">The seventh flow is profile/settings. The user can view their bike ID information, change their settings or profile info, and control location permissions here. The user can also send feedback.</TextWrapBody>
-
-              <DisplayVideo width="200" controls autoplay><source src={require('../../../src/videos/sadie_levy_tiliti_final-figma.mp4')} type="video/mp4" /></DisplayVideo>
+<TextWrapBody>
+<TextWrapBody className="font-face-body">Our final design comprises 7 flows with applied branding, resulting in a high fidelity design. 
+</TextWrapBody>
+<TextWrapBody className="font-face-body">1. Sign-in/log-in process, which utilizes 2-factor authentication for login verification.
+</TextWrapBody>
+<TextWrapBody className="font-face-body">2. The onboarding process, where Tiliti guides the user through an interactive tutorial showcasing the app's functionalities. This includes instructions on viewing payments and removing batteries from the bike. Through effective communication and proactive scope management, I successfully incorporated illustrations of the bike into the project, staying within the initial timeline.
+</TextWrapBody>
+<TextWrapBody className="font-face-body">3. The dashboard, where users can access battery health, bike usage, and past trip statistics. When the bike is in motion, a full-screen speedometer appears, entering ride mode. However, users can easily switch back to the app if necessary, as we prioritize minimizing distractions.
+</TextWrapBody>
+<TextWrapBody className="font-face-body">4. The charging station map, enabling users to favorite, search, and navigate stations. Detailed statistics, such as the number of available chargers, are displayed for each station. Additionally, users can report any issues or submit service requests for a specific station.
+</TextWrapBody>
+<TextWrapBody className="font-face-body">5. Bike maintenance, providing users with a FAQ section for bike-related inquiries. Users can also submit help requests and attach photos. In case of emergencies, an option to contact a help line is available.
+</TextWrapBody>
+<TextWrapBody className="font-face-body">6. Payment, where users can make incremental payments for their purchased bike through the app. Furthermore, they can pay for battery charge sessions directly within the app.
+</TextWrapBody>
+<TextWrapBody className="font-face-body">7. Profile and settings section, allowing users to access their bike ID information, modify settings and profile details, and manage location permissions. Users can also provide feedback through this section.
+</TextWrapBody>
+</TextWrapBody>
               {/* <TilitiGif src={require('../../../src/videos/tiliti-hifi-signin_AdobeExpress.gif')} />
 
         <TilitiGif src={require('../../../src/videos/tiliti-hifi-home_AdobeExpress.gif')} />
@@ -448,8 +456,9 @@ class TilitiCaseStudy extends Component {
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Learnings</ChangeMarginText>
-            <TextWrapBody className="font-face-body">This project taught me a lot about the importance of communication with the client. At the beginning of the project, our team wasn't very sure about what functionalities would be needed for the app. Since it was hard to find time to meet due to the time difference between Boston and India, we prepared very specific questions for our meetings with the client, in order to make the most of our limited time. It is very important to have open communication with the client. For instance, it was important that we got the branding approved before applying it to our hi-fi's, otherwise that would have been time wasted if they wanted the branding changed. The open communication also allowed us to get ahead of any scope-creep.</TextWrapBody>
-            <TextWrapBody className="font-face-body">Another important learning was about the importance of a component-based design. This made the iterative design process more efficient. We stopped running into issues with inconsistency and duplication when we implemented components. Additionally, throughout the process of designing the app, we were passing off designs to the software engineers so they could update their programmed version of our design. Components made this hand-off process much easier for everyone involved. There was a clear, singular place in our Figma where the most recent iterations of components could be found. This way, the software engineers could make a component, and if we changed our parent component in Figma, they could simply edit that one component to change it across their code base. This cut down on a lot of time and confusion for the software engineers.</TextWrapBody>
+            <TextWrapBody className="font-face-body">This project provided valuable insights into effective client communication. Despite challenges posed by the time difference between Boston and India, our team prioritized efficient meetings by preparing specific questions. Maintaining open communication with the client proved crucial, ensuring timely approval of branding and addressing potential scope creep.</TextWrapBody>
+            <TextWrapBody className="font-face-body">Another key learning was the significance of a component-based design approach. Implementing components facilitated an efficient and consistent iterative design process. By centralizing the most recent iterations in Figma, software engineers could easily update their codebase, reducing time and confusion.</TextWrapBody>
+            <TextWrapBody className="font-face-body">Overall, this project underscored the importance of proactive communication and streamlined design methodologies, resulting in enhanced collaboration and project success.</TextWrapBody>
           </TopSegmentCol>
 
 
