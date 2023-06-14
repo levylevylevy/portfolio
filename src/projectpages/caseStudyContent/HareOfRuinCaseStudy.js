@@ -387,7 +387,7 @@ The Hare of Ruin? Glory awaits…</TextWrapBody>
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Gold Master Release GDD</ChangeMarginText>
-            <ColImagesPDF><iframe src="https://drive.google.com/file/d/1nvZ2VMn2SFOoTLjc6lzKHZYVHf7G4El-/preview" width="640" height="480" allow="autoplay"></iframe>
+            <ColImagesPDF><iframe src="https://drive.google.com/file/d/1fRuPL6Igf4GNArAYSFg3PemJjivTo67H/preview" width="640" height="480" allow="autoplay"></iframe>
           
           </ColImagesPDF>
           </TopSegmentCol>
