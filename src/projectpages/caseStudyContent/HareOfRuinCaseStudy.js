@@ -157,6 +157,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin-bottom: 20px;
+margin-top: 20px;
 `;
 
 const ColImagesPDF = styled.div`
@@ -391,6 +392,20 @@ The Hare of Ruin? Glory awaits…</TextWrapBody>
           
           </ColImagesPDF>
           </TopSegmentCol>
+
+          <TopSegmentCol>
+
+<ChangeMarginText className="font-face-header2">Level Layouts</ChangeMarginText>
+<ColImages>
+  <Carousel>
+    <CarouselItem><ExamplePhoto2 src={require('../../../src/images/level 1 env.png')} /></CarouselItem>
+    <CarouselItem><ExamplePhoto2 src={require('../../../src/images/level 2 env.png')} /></CarouselItem>
+    <CarouselItem><ExamplePhoto2 src={require('../../../src/images/level 3 env.png')} /></CarouselItem>
+
+  </Carousel>
+
+</ColImages>
+</TopSegmentCol>
 
           <TopSegmentCol>
 
