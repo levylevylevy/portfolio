@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.ef98a562.css",
-    "main.js": "/portfolio/static/js/main.f4b6afba.js",
+    "main.css": "/portfolio/static/css/main.7d5e698f.css",
+    "main.js": "/portfolio/static/js/main.5766737d.js",
+    "static/media/HareOfRuinFinalDemo.mp4": "/portfolio/static/media/HareOfRuinFinalDemo.67f0fb952586878059ec.mp4",
     "static/media/sadie_levy_tiliti_final-figma.mp4": "/portfolio/static/media/sadie_levy_tiliti_final-figma.b3a8f7d3a8fe3de31578.mp4",
     "static/media/Persist Energy Workflow.png": "/portfolio/static/media/Persist Energy Workflow.e1a9a1418539dd3c7512.png",
     "static/media/UX Persona.png": "/portfolio/static/media/UX Persona.3903e4c8e96d554cec3d.png",
@@ -28,7 +29,9 @@
     "static/media/tiliti-home-betterquality.png": "/portfolio/static/media/tiliti-home-betterquality.d6a0d154a8725dbbdc2e.png",
     "static/media/tiliti-brand-7.png": "/portfolio/static/media/tiliti-brand-7.db3bdc80d1d0b6d05132.png",
     "static/media/tiliti-brand-4.png": "/portfolio/static/media/tiliti-brand-4.e455d0549ba4b728e81e.png",
+    "static/media/hareofruinstartscreen.jpg": "/portfolio/static/media/hareofruinstartscreen.d07b1158a1efa463e87e.jpg",
     "static/media/frog-sketches_orig.jpg": "/portfolio/static/media/frog-sketches_orig.2d4c9b1fdad275fae936.jpg",
+    "static/media/harry-rabbit-illustration.png": "/portfolio/static/media/harry-rabbit-illustration.919a1ff75e60dee5471b.png",
     "static/media/tiliti-brand-2.png": "/portfolio/static/media/tiliti-brand-2.e178ed6da7c0906f9dff.png",
     "static/media/buttons-poc_orig.jpg": "/portfolio/static/media/buttons-poc_orig.35f403377cd430fce0ba.jpg",
     "static/media/Poppins-Regular.ttf": "/portfolio/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -36,6 +39,7 @@
     "static/media/crank-poc_orig.jpg": "/portfolio/static/media/crank-poc_orig.682dc8f4456a8f26f436.jpg",
     "static/media/aiscoopcoverphoto.png": "/portfolio/static/media/aiscoopcoverphoto.7aed5897c4a499225696.png",
     "static/media/tiliti-brand-1.png": "/portfolio/static/media/tiliti-brand-1.ae5d225ce383603f7bb9.png",
+    "static/media/ali-deucher-illustration-updated_orig.jpg": "/portfolio/static/media/ali-deucher-illustration-updated_orig.0d3c52dfb357a818eeb2.jpg",
     "static/media/atem5.jpg": "/portfolio/static/media/atem5.237f8344382a1e3e43a3.jpg",
     "static/media/atem9.jpg": "/portfolio/static/media/atem9.0ff87e13fa1e4e43e400.jpg",
     "static/media/atem12.jpg": "/portfolio/static/media/atem12.4776751c0370ab67e173.jpg",
@@ -58,11 +62,11 @@
     "static/media/atem7.jpg": "/portfolio/static/media/atem7.dfd1b0388be42ef8c3f8.jpg",
     "static/media/tilitilogo2.png": "/portfolio/static/media/tilitilogo2.2aeb5b2a50e1235e86ef.png",
     "index.html": "/portfolio/index.html",
-    "main.ef98a562.css.map": "/portfolio/static/css/main.ef98a562.css.map",
-    "main.f4b6afba.js.map": "/portfolio/static/js/main.f4b6afba.js.map"
+    "main.7d5e698f.css.map": "/portfolio/static/css/main.7d5e698f.css.map",
+    "main.5766737d.js.map": "/portfolio/static/js/main.5766737d.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef98a562.css",
-    "static/js/main.f4b6afba.js"
+    "static/css/main.7d5e698f.css",
+    "static/js/main.5766737d.js"
   ]
 }
