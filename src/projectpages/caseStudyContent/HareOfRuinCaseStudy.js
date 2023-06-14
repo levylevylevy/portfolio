@@ -160,6 +160,13 @@ margin-bottom: 20px;
 margin-top: 20px;
 `;
 
+const ColImages2 = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+`;
+
 const ColImagesPDF = styled.div`
 display: flex;
 flex-direction: column;
@@ -378,11 +385,11 @@ The Hare of Ruin? Glory awaits…</TextWrapBody>
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Game Demo</ChangeMarginText>
-            <ColImages>
+            <ColImages2>
             <DisplayVideo width="100%" controls autoplay><source src={require('../../../src/videos/HareOfRuinFinalDemo.mp4')} type="video/mp4" /></DisplayVideo>
             <TextWrapBody className="font-face-body" style={{ color: secondaryGold }}>*Skip to 3:35 in Demo Video to view game trailer!*
  </TextWrapBody> 
-            </ColImages>
+            </ColImages2>
           </TopSegmentCol>
 
           <TopSegmentCol>
