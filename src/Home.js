@@ -194,7 +194,7 @@ class Home extends Component {
         </div>
         {/* </NameSummary> */}
         <CaptionText>
-        <p style={{color: 'primaryBlue'}} className='font-face-subtitle'>Currently pursuing full-time or contractor opportunities in the fields of UI/UX design, technical project/program management, frontend SWE, or games positions.</p>
+        <p style={{color: 'primaryBlue'}} className='font-face-subtitle'>Currently pursuing contractor opportunities in the fields of UI/UX design, technical project/program management, frontend SWE, or games positions.</p>
         </CaptionText>
         </ColIntro>
         </RowIntro>
