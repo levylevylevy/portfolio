@@ -1,13 +1,7 @@
-import { secondaryGold } from "./colors";
 import styled from "styled-components";
 import React, { Component } from "react";
-import PhotoAlbum from "react-photo-album";
 
-//Components
-
-const GalleryContainer = styled.div`
-// margin-bottom: -500px;
-`;
+const GalleryContainer = styled.div``;
 
 const Row = styled.div`
  display: flex;
@@ -43,7 +37,7 @@ class PhotoGalleryKevin extends Component {
 <AtemImage src={require('./images/kevin-ss.jpg')} />
 </ImageContainer>
 <ImageContainer>
-<iframe height="480" width="500" src="https://www.youtube.com/embed/hFMq3_eoI2c"></iframe></ImageContainer>
+<iframe height="480" width="500" src="https://www.youtube.com/embed/hFMq3_eoI2c" title="KEVIN Robot Demo"></iframe></ImageContainer>
 </Row>
 </GalleryContainer>
 

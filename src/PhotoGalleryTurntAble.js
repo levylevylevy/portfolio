@@ -1,13 +1,7 @@
-import { secondaryGold } from "./colors";
 import styled from "styled-components";
 import React, { Component } from "react";
-import PhotoAlbum from "react-photo-album";
 
-//Components
-
-const GalleryContainer = styled.div`
-// margin-bottom: -500px;
-`;
+const GalleryContainer = styled.div``;
 
 const Row = styled.div`
  display: flex;

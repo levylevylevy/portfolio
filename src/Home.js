@@ -1,17 +1,11 @@
 import React, { Component } from "react";
-import { Fragment } from 'react';
 import styled from 'styled-components';
-import {primaryBlue} from './colors.js'
+import { primaryBlue } from './colors.js'
 import { secondaryGold } from "./colors.js";
-import { View } from 'react';
-// import { BottomBarLine } from "./BottomBar.js";
 import HorizontalLine from "./BottomBar.js";
-import {ChevronLeft, ChevronRight, ChevronsRight, ChevronsLeft, XCircle, Maximize, Edit3, CornerRightUp, GitHub, Linkedin, Mail} from 'react-feather';
+import { GitHub, Linkedin, Mail } from 'react-feather';
 import ScrollButton from "./ScrollButton.js";
-import { Content } from './Styles';
 
-
-//Components
 const Circle = styled.img`
   display: flex;
   min-width: 177px;
@@ -86,13 +80,7 @@ const ColIntro = styled.div`
 const ColAboutMe = styled.div`
   display: flex;
   flex-direction: column;
-  // column-gap: -36px;
 `;
-
-// const NameSummary = styled.div`
-//   margin-bottom: -30px;
-//   margin-top: -15px;
-// `;
 
 const CaptionText = styled.p`
   margin-top: -48px;
@@ -208,9 +196,9 @@ class Home extends Component {
        
         {/* <a href="/portfolio/#/projects/workexperience/willow" target="_blank"><li>Frontend Software Engineer Co-Op at fin-tech startup Willow</li></a>
         <a href="/portfolio/#/projects/workexperience/tesla" target="_blank"><li>Technical Program Manager, Software/Firmware Intern at Tesla</li></a> */}
-        <a href="https://blog.adobe.com/en/publish/2021/03/08/adobe-research-women-in-tech-scholarship-winners" target="_blank"><li>Selected as an Adobe Women in Technology Scholar</li></a>
-        <a href="https://technical.ly/professional-development/entertainment-software-association-scholarships/" target="_blank"><li>Selected as an Entertainment Software Association Foundation Computer and Video Game Arts And Science Scholar</li></a>
-        <a href="https://www.congressionalappchallenge.us/about/" target="_blank"><li>Served as an Alumni Advisory Board Member for the US House of Representatives Congressional App Challenge</li> </a>
+        <a href="https://blog.adobe.com/en/publish/2021/03/08/adobe-research-women-in-tech-scholarship-winners" target="_blank" rel="noopener noreferrer"><li>Selected as an Adobe Women in Technology Scholar</li></a>
+        <a href="https://technical.ly/professional-development/entertainment-software-association-scholarships/" target="_blank" rel="noopener noreferrer"><li>Selected as an Entertainment Software Association Foundation Computer and Video Game Arts And Science Scholar</li></a>
+        <a href="https://www.congressionalappchallenge.us/about/" target="_blank" rel="noopener noreferrer"><li>Served as an Alumni Advisory Board Member for the US House of Representatives Congressional App Challenge</li> </a>
         {/* <a href="/portfolio/#/projects/hackathons/hackmit" target="_blank"><li>Many all-nighters completing hackathon projects</li></a> */}
         <li>...And read about my work experiences, hackathons, games and maker projects in the Projects tab!</li>
         </ul>
@@ -225,13 +213,7 @@ class Home extends Component {
 
 
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Besides tech, I love live music, drawing, reading fantasy, playing board games, and hiking ⋆.𖡼.𖤣𖥧𖡼.𖤣𖥧.</p>
-    <p style={{color: 'primaryBlue'}} className='font-face-body'> (˚ˎ 。7  This custom website was made with react.js, html, css, & designed with Figma ˙ᵕ˙</p> 
-
-
-
-        {/* <p style={{color: 'primaryBlue'}} className='font-face-body'>Scroll down to leave a doodle in my guest book ✎〰 </p> */}
-
-        {/* <p style={{color: 'primaryBlue'}} className='font-face-body'>((This website was made with react.js, html, css, & designed with Figma ->> website code))</p> */}
+        <p style={{color: 'primaryBlue'}} className='font-face-body'> (˚ˎ 。7  This custom website was made with react.js, html, css, & designed with Figma ˙ᵕ˙</p> 
         </ColAboutMe>
 
       </CenterContents>
@@ -241,8 +223,8 @@ class Home extends Component {
       <HorizontalLine/>
       <RowIcons>
       <a href="mailto:sadie.levy.eng@gmail.com"><IconMail/></a>
-      <a href="https://github.com/levylevylevy/portfolio" target="_blank"><IconGithub/></a>
-        <a href="https://www.linkedin.com/in/sadie-s-l/" target="_blank"><IconLinkedin/></a>
+      <a href="https://github.com/levylevylevy/portfolio" target="_blank" rel="noopener noreferrer"><IconGithub/></a>
+        <a href="https://www.linkedin.com/in/sadie-s-l/" target="_blank" rel="noopener noreferrer"><IconLinkedin/></a>
       </RowIcons>
       </NavBottom> 
       </WholePageContainer>

@@ -1,15 +1,8 @@
 import React, { Component } from "react";
-import {
-  Link,
-  Route,
-  Routes,
-  NavLink,
-  BrowserRouter
-} from "react-router-dom";
 import styled from "styled-components";
-import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText, white } from "../../colors.js";
+import { primaryBlue, secondaryGold, backgroundColorMain } from "../../colors.js";
 import HorizontalLine from "../../../src/BottomBar";
-import { ChevronLeft, ChevronRight, ChevronsRight, ChevronsLeft, XCircle, Maximize, Edit3, CornerRightUp, GitHub, Linkedin, Mail } from 'react-feather';
+import { GitHub, Linkedin, Mail } from 'react-feather';
 import ScrollButton from "../../../src/ScrollButton.js";
 import Carousel, { CarouselItem } from "./Carousel";
 
@@ -395,7 +388,7 @@ The Hare of Ruin? Glory awaits…</TextWrapBody>
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Gold Master Release GDD</ChangeMarginText>
-            <ColImagesPDF><iframe src="https://drive.google.com/file/d/1fRuPL6Igf4GNArAYSFg3PemJjivTo67H/preview" width="640" height="480" allow="autoplay"></iframe>
+            <ColImagesPDF><iframe src="https://drive.google.com/file/d/1fRuPL6Igf4GNArAYSFg3PemJjivTo67H/preview" width="640" height="480" allow="autoplay" title="Hare of Ruin Game Documentation 1"></iframe>
           
           </ColImagesPDF>
           </TopSegmentCol>
@@ -417,15 +410,15 @@ The Hare of Ruin? Glory awaits…</TextWrapBody>
           <TopSegmentCol>
 
 <ChangeMarginText className="font-face-header2">Beta Release GDD/Playtesting Notes</ChangeMarginText>
-<ColImagesPDF><iframe src="https://drive.google.com/file/d/11FXUwsawdpgDTGBiVMo96Q6ZCyngiR1z/preview" width="640" height="480" allow="autoplay"></iframe>
+<ColImagesPDF><iframe src="https://drive.google.com/file/d/11FXUwsawdpgDTGBiVMo96Q6ZCyngiR1z/preview" width="640" height="480" allow="autoplay" title="Hare of Ruin Game Documentation 2"></iframe>
 
 </ColImagesPDF></TopSegmentCol>
 
           <TopSegmentCol>
 
             <ChangeMarginText className="font-face-header2">Initial Prototype/GDD Pitch</ChangeMarginText>
-            <ColImagesPDF><iframe src="https://drive.google.com/file/d/1Hsi0Dao9C98S2pHTNyPNZSVpmjyXnxEE/preview" width="640" height="480" allow="autoplay"></iframe>
-            <iframe src="https://drive.google.com/file/d/1jE7l7k_QHYlE2oahCNRPMrQ14ijueKrv/preview" width="640" height="480" allow="autoplay"></iframe>
+            <ColImagesPDF><iframe src="https://drive.google.com/file/d/1Hsi0Dao9C98S2pHTNyPNZSVpmjyXnxEE/preview" width="640" height="480" allow="autoplay" title="Hare of Ruin Level Design 1"></iframe>
+            <iframe src="https://drive.google.com/file/d/1jE7l7k_QHYlE2oahCNRPMrQ14ijueKrv/preview" width="640" height="480" allow="autoplay" title="Hare of Ruin Level Design 2"></iframe>
           </ColImagesPDF></TopSegmentCol>
           
 
@@ -436,8 +429,8 @@ The Hare of Ruin? Glory awaits…</TextWrapBody>
             <HorizontalLine />
             <RowIcons>
               <a href="mailto:sadie.levy.eng@gmail.com"><IconMail /></a>
-              <a href="https://github.com/levylevylevy/portfolio" target="_blank"><IconGithub /></a>
-              <a href="https://www.linkedin.com/in/sadie-s-l/" target="_blank"><IconLinkedin /></a>
+              <a href="https://github.com/levylevylevy/portfolio" target="_blank" rel="noopener noreferrer"><IconGithub /></a>
+              <a href="https://www.linkedin.com/in/sadie-s-l/" target="_blank" rel="noopener noreferrer"><IconLinkedin /></a>
             </RowIcons>
           </NavBottom>
         </WholePageContainer>

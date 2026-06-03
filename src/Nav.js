@@ -4,15 +4,11 @@ import {
   Route,
   Routes,
   NavLink,
-  BrowserRouter,
-  HashRouter,
-  Switch
+  BrowserRouter
 } from "react-router-dom";
 import Home from "./Home";
-import Projects from "./Projects";
 import styled from 'styled-components';
-import { primaryBlue } from './colors';
-import { secondaryGold } from './colors';
+import { primaryBlue, secondaryGold } from './colors';
 import HackathonPage from './projectpages/Hackathons'
 import HackathonPageBeanpot from './projectpages/hackbeanpot'
 import HackathonPageHop from './projectpages/hophacks'
@@ -41,24 +37,12 @@ const AppContents = styled.ul`
   color: ${primaryBlue};
 `;
 
-const MenuContents = styled.div`
-  z-index: 10;
-`;
-
-const active = true;
-function menuActive()
-{
-    return window.location.href.includes('projects') ? active == true : active == false;
-}
-
 class Nav extends Component {
   render() {
     return (
  
         <BrowserRouter>
         <div 
-                    {...active == false}
-
         style={{
           fontSize: '16px',
 
@@ -79,20 +63,11 @@ class Nav extends Component {
             <NavLink                
 
             to="/portfolio/projects/workexperience/generate/" 
-            // {...(window.location.href.includes('projects'))
-            // ? class{"current-menu-parent"}
-            // : class{"unselected-menu-parent"}}
             className = "font-face-navFont" 
-           
-class="menuActive"
-            style={({ active }) => ({
-              
-          
-              color: menuActive()? secondaryGold: primaryBlue,
-              textDecoration: menuActive()? 'underline' :'none',
-            })} 
-            eslint-disable-next-line
-            > 
+            style={({ isActive }) => ({
+              color: isActive || window.location.href.includes('/projects/') ? secondaryGold : primaryBlue,
+              textDecoration: isActive || window.location.href.includes('/projects/') ? 'underline' : 'none',
+            })}> 
               Projects</NavLink>
 
             

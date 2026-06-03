@@ -1,15 +1,8 @@
 import React, { Component } from "react";
-import {
-  Link,
-  Route,
-  Routes,
-  NavLink,
-  BrowserRouter
-} from "react-router-dom";
 import styled from "styled-components";
-import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText, white } from "../../colors.js";
+import { primaryBlue, secondaryGold, backgroundColorMain } from "../../colors.js";
 import HorizontalLine from "../../../src/BottomBar";
-import { ChevronLeft, ChevronRight, ChevronsRight, ChevronsLeft, XCircle, Maximize, Edit3, CornerRightUp, GitHub, Linkedin, Mail } from 'react-feather';
+import { GitHub, Linkedin, Mail } from 'react-feather';
 import ScrollButton from "../../../src/ScrollButton.js";
 import Carousel, { CarouselItem } from "./Carousel";
 
@@ -467,8 +460,8 @@ class TilitiCaseStudy extends Component {
             <HorizontalLine />
             <RowIcons>
               <a href="mailto:sadie.levy.eng@gmail.com"><IconMail /></a>
-              <a href="https://github.com/levylevylevy/portfolio" target="_blank"><IconGithub /></a>
-              <a href="https://www.linkedin.com/in/sadie-s-l/" target="_blank"><IconLinkedin /></a>
+              <a href="https://github.com/levylevylevy/portfolio" target="_blank" rel="noopener noreferrer"><IconGithub /></a>
+              <a href="https://www.linkedin.com/in/sadie-s-l/" target="_blank" rel="noopener noreferrer"><IconLinkedin /></a>
             </RowIcons>
           </NavBottom>
         </WholePageContainer>
