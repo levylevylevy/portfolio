@@ -10,6 +10,7 @@ import AIScoopCard from "./subPageContent/AiScoopCard";
 import GardenShareCard from "./subPageContent/GardenShareCard";
 import VolunteerGoCard from "./subPageContent/VolunteerGoCard.js";
 import OnceADailyCard from "./subPageContent/onceadailydocard.js";
+import MusicaCard from "./subPageContent/MusicaCard.js";
 import VerticalLine from "../SideBar.js";
 
 
@@ -132,6 +133,7 @@ class HackathonPage extends Component {
             <Projects/>
             <ProjectLayout>
               <CardContainers>
+                <MusicaCard/>
                 <AIScoopCard/>
                 <VolunteerGoCard/>
                 <GardenShareCard/>
