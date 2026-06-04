@@ -169,6 +169,7 @@ const RowIcons = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding-top: 10px;
   
   @media (max-width: 768px) {
     gap: 60px;
@@ -211,13 +212,12 @@ const NavBottom = styled.div`
   flex-direction: column;
   background-color: ${backgroundColorMain};
   width: 100%;
-  padding-bottom: 10px;
+  padding: 0 0 14px;
   z-index: 3;
   text-align: center;
   position: fixed;
   bottom: 0;
   right: 0;
-  // border-radius: 20px 20px 0 0;
 `;
 
 const IconGithub = styled(GitHub)`

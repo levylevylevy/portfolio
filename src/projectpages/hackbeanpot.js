@@ -163,7 +163,20 @@ class HackathonPageBeanpot extends Component {
         <Row>
 
         <AppContents class="font-face-navFont">
-        <NavLink to="/portfolio/projects/hackathons/hackmit" 
+        <NavLink to="/portfolio/projects/workexperience/generate" 
+    style={({ isActive }) => ({
+      color: isActive? selectedButtonText : unselectedBlue,
+      textDecoration: isActive? 'none' :'none',
+    })} >Generate</NavLink> 
+
+    <NavLink to="/portfolio/projects/workexperience/atem" 
+    style={({ isActive }) => ({
+      color: isActive? selectedButtonText : unselectedBlue,
+      textDecoration: isActive? 'none' :'none',
+    })}
+    >ATEM</NavLink> 
+
+    <NavLink to="/portfolio/projects/hackathons/hackmit" 
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
@@ -180,9 +193,15 @@ class HackathonPageBeanpot extends Component {
     style={({ isActive }) => ({
       color: isActive? selectedButtonText : unselectedBlue,
       textDecoration: isActive? 'none' :'none',
-
     })}
     >HopHacks</NavLink> 
+
+    <NavLink to="/portfolio/projects/makerprojects/games" 
+    style={({ isActive }) => ({
+      color: isActive? selectedButtonText : unselectedBlue,
+      textDecoration: isActive? 'none' :'none',
+    })}
+    >Games</NavLink> 
 
     </AppContents>
     <VerticalLine/>

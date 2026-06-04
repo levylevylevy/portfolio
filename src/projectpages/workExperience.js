@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { useState } from "react";
 import Popup from "./caseStudyContent/Popup.js";
 import Projects from '../Projects.js'
+import ProjectLayout from '../components/ui/ProjectLayout.jsx'
 import {
     Link,
     Route,
@@ -271,64 +272,16 @@ class ExperiencePage extends Component {
     render() {
       return (
         <>
-            <WholePageContainer>
-        {/* Sub Menu */}
-        <Projects/>
-         {/* Project below */}
-         <RowSubMenuContents>
-           {/* Sub menu 2 */}
-        {/* <CenterContents> */}
-        <Row>
-
-        <AppContents class="font-face-navFont">
-        <NavLink to="/portfolio/projects/workexperience/generate" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })} ><SelectedButton>Generate</SelectedButton></NavLink> 
-
-     <NavLink to="/portfolio/projects/workexperience/tesla" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })}
-    >Tesla</NavLink> 
-
-     <NavLink to="/portfolio/projects/workexperience/willow" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-
-    })}
-    >Willow</NavLink> 
-
-    <NavLink to="/portfolio/projects/workexperience/atem" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })}
-    >ATEM</NavLink> 
-
-<NavLink to="/portfolio/projects/workexperience/sharkninja" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })}
-   >SharkNinja</NavLink> 
-    </AppContents>
-    <VerticalLine/>
-</Row>
-    {/* //insert cards */}
-    <CardContainers>
-    <GenerateCards/>
-    <GenerateCardsShowNxt/>
-    <GenerateCardSolon/>
-    </CardContainers>
-    </RowSubMenuContents>
-
-   
-    {/* </CenterContents> */}
-    </WholePageContainer>
+          <WholePageContainer>
+            <Projects/>
+            <ProjectLayout>
+              <CardContainers>
+                <GenerateCards/>
+                <GenerateCardsShowNxt/>
+                <GenerateCardSolon/>
+              </CardContainers>
+            </ProjectLayout>
+          </WholePageContainer>
         </>
       );
     }

@@ -126,6 +126,7 @@ const RowIcons = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding-top: 10px;
   
   @media (max-width: 768px) {
     gap: 60px;
@@ -134,7 +135,6 @@ const RowIcons = styled.div`
   @media (max-width: 480px) {
     gap: 40px;
   }
-
 `;
 
 const NavBottom = styled.div`
@@ -143,9 +143,8 @@ const NavBottom = styled.div`
   background-color: #FAF8F5;
   justify-content: center;
   align-items: center;
-  height: 50px;
   width: 100%;
-  padding-bottom: 10px;
+  padding: 0 0 14px;
   z-index: 3;
   text-align: center;
   position: fixed;
@@ -183,41 +182,6 @@ class Projects extends Component {
   render() {
     return (
       <>
-        <TopSegment>
-
-<RowSubMenuContents>
-        <div style={{
-          fontSize: '16px',
-        }}>
-          <AppContents>
-          <NavLink to="/portfolio/projects/workexperience/generate" 
-          style={({ active }) => ({
-            color: menuActive()? primaryBlue : unselectedBlue,
-            textDecoration: menuActive()? 'underline' :'none',
-          })}
-          className = "font-face-header2">Work Experiences</NavLink>
-    <NavLink to="/portfolio/projects/hackathons/hackmit" 
-    style={({ active }) => ({
-      color: menuActiveHack()? primaryBlue : unselectedBlue,
-      textDecoration: menuActiveHack()? 'underline' :'none',
-    })}
-    className = "font-face-header2">Hackathons</NavLink>
-
-    <NavLink to="/portfolio/projects/makerprojects/games" 
-    style={({ active }) => ({
-      color: menuActiveProject()? primaryBlue : unselectedBlue,
-      textDecoration: menuActiveProject()? 'underline' :'none',
-    })}
-    className = "font-face-header2">Games/Maker Projects</NavLink> 
-
-            </AppContents>
-          
-         
-        </div>
-
-        </RowSubMenuContents>
-        </TopSegment>
-
       <RowContents>
 <NavBottom> 
 <ScrollButton/>

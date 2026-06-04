@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Projects from '../Projects.js'
+import ProjectLayout from '../components/ui/ProjectLayout.jsx'
 import {
     Link,
     Route,
@@ -270,64 +271,16 @@ class ExperiencePageAtem extends Component {
     render() {
       return (
         <>
-            <WholePageContainer>
-        {/* Sub Menu */}
-        <Projects/>
-         {/* Project below */}
-         <RowSubMenuContents>
-           {/* Sub menu 2 */}
-        {/* <CenterContents> */}
-        <Row>
-
-        <AppContents class="font-face-navFont">
-        <NavLink to="/portfolio/projects/workexperience/generate" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })} >Generate</NavLink> 
-
-     <NavLink to="/portfolio/projects/workexperience/tesla" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })}
-    >Tesla</NavLink> 
-
-     <NavLink to="/portfolio/projects/workexperience/willow" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-
-    })}
-    >Willow</NavLink> 
-
-    <NavLink to="/portfolio/projects/workexperience/atem" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })}
-    ><SelectedButton>ATEM</SelectedButton></NavLink> 
-
-<NavLink to="/portfolio/projects/workexperience/sharkninja" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })}
-   >SharkNinja</NavLink> 
-    </AppContents>
-    <VerticalLine/>
-</Row>
-    {/* //insert images */}
-    <Col>
-    <ChangeMarginText className="font-face-navFont" style={{color: secondaryGold}}>  Graphic Design Intern, 2020 </ChangeMarginText>
-    <p className="font-face-body" style={{color: primaryBlue}}>Adobe Illustrator - Adobe Photoshop - After Effects - 3D Mockup</p>    
-  <PhotoGallery/>
-  </Col>
-    </RowSubMenuContents>
-
-   
-    {/* </CenterContents> */}
-    </WholePageContainer>
+          <WholePageContainer>
+            <Projects/>
+            <ProjectLayout>
+              <Col>
+                <ChangeMarginText className="font-face-navFont" style={{color: secondaryGold}}>  Graphic Design Intern, 2020 </ChangeMarginText>
+                <p className="font-face-body" style={{color: primaryBlue}}>Adobe Illustrator - Adobe Photoshop - After Effects - 3D Mockup</p>    
+                <PhotoGallery/>
+              </Col>
+            </ProjectLayout>
+          </WholePageContainer>
         </>
       );
     }

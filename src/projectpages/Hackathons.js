@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Projects from '../Projects.js'
+import ProjectLayout from '../components/ui/ProjectLayout.jsx'
 import {
     NavLink
   } from "react-router-dom";
@@ -7,6 +8,8 @@ import {
   import { primaryBlue, backgroundColorMain, unselectedBlue, selectedButtonText } from "../colors.js";
 import AIScoopCard from "./subPageContent/AiScoopCard";
 import GardenShareCard from "./subPageContent/GardenShareCard";
+import VolunteerGoCard from "./subPageContent/VolunteerGoCard.js";
+import OnceADailyCard from "./subPageContent/onceadailydocard.js";
 import VerticalLine from "../SideBar.js";
 
 
@@ -126,50 +129,17 @@ class HackathonPage extends Component {
     render() {
       return (
         <>
-            <WholePageContainer>
-        {/* Sub Menu */}
-        <Projects/>
-         {/* Project below */}
-         <RowSubMenuContents>
-           {/* Sub menu 2 */}
-        {/* <CenterContents> */}
-        <Row>
-
-        <AppContents class="font-face-navFont">
-        <NavLink to="/portfolio/projects/hackathons/hackmit" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })} ><SelectedButton>HackMIT</SelectedButton></NavLink> 
-
-     <NavLink to="/portfolio/projects/hackathons/hackbeanpot" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })}
-    >HackBeanpot</NavLink> 
-
-     <NavLink to="/portfolio/projects/hackathons/hophacks" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-
-    })}
-    >HopHacks</NavLink> 
-
-    </AppContents>
-    <VerticalLine/>
-</Row>
-    {/* //insert cards */}
-    <CardContainers>
-    <AIScoopCard/>
-    <GardenShareCard/>
-    </CardContainers>
-    </RowSubMenuContents>
-
-   
-    {/* </CenterContents> */}
-    </WholePageContainer>
+          <WholePageContainer>
+            <Projects/>
+            <ProjectLayout>
+              <CardContainers>
+                <AIScoopCard/>
+                <GardenShareCard/>
+                <VolunteerGoCard/>
+                <OnceADailyCard/>
+              </CardContainers>
+            </ProjectLayout>
+          </WholePageContainer>
         </>
       );
     }
