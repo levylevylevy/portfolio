@@ -16,6 +16,7 @@ import ExperiencePageAtem from './projectpages/workExperienceAtem'
 import TilitiCaseStudy from './projectpages/caseStudyContent/tilitiCaseStudy';
 import HareOfRuin from './projectpages/subPageContent/HareOfRuinCard'
 import MakerPageGames from './projectpages/games'
+import Guestbook from './Guestbook'
 
 
 const AppContents = styled.ul`
@@ -78,13 +79,19 @@ class Nav extends Component {
             })}> 
               Projects</NavLink>
 
-            
             </div>
-          
-{/* {this.window.location.href.includes("/portfolio/projects")
-? color: secondaryGold
-: color: primaryBlue,
-} */}
+
+            <div>
+            <NavLink
+              to="/portfolio/guestbook"
+              className="font-face-navFont"
+              style={({ isActive }) => ({
+                color: isActive ? secondaryGold : primaryBlue,
+                textDecoration: isActive ? 'underline' : 'none',
+              })}>
+              Guestbook
+            </NavLink>
+            </div>
             
           </AppContents>
           
@@ -101,15 +108,10 @@ class Nav extends Component {
           <Route path="/portfolio/projects/makerprojects/games" element={<MakerPageGames/>} />
           <Route path ="/portfolio/projects/games/hareofruin" element={<HareOfRuin/>}/>
           <Route path="/portfolio/tiliti-case-study" element={<TilitiCaseStudy/>} />
+          <Route path="/portfolio/guestbook" element={<Guestbook/>} />
 
           </Routes>
           </div>
-
-          {/* <div className="case-studies">
-            <Routes>
-            <Route path="/portfolio/tiliti-case-study" element={<TilitiCaseStudy/>} />
-            </Routes>
-          </div> */}
         </div>
         </BrowserRouter>
         

@@ -60,7 +60,7 @@ const TextGroup = styled.div`
 
 const Label = styled.span`
   font-size: 10px;
-  font-family: "Poppins-Regular";
+  font-family: "Inter", sans-serif;
   color: ${primaryBlue};
   opacity: 0.5;
   text-transform: uppercase;
@@ -69,7 +69,7 @@ const Label = styled.span`
 
 const TrackName = styled.span`
   font-size: 13px;
-  font-family: "Poppins-Bold";
+  font-family: "Inter", sans-serif;
   color: ${primaryBlue};
   white-space: nowrap;
   overflow: hidden;
@@ -78,7 +78,7 @@ const TrackName = styled.span`
 
 const ArtistName = styled.span`
   font-size: 12px;
-  font-family: "Poppins-Regular";
+  font-family: "Inter", sans-serif;
   color: ${primaryBlue};
   opacity: 0.7;
   white-space: nowrap;

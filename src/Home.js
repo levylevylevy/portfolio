@@ -96,7 +96,7 @@ const BlinqTitle = styled.p`
   margin: 0;
   font-size: 18px;
   color: ${primaryBlue};
-  font-family: "Poppins-Bold";
+  font-family: "Inter", sans-serif;
 `;
 
 const BlinqSub = styled.p`
@@ -104,14 +104,14 @@ const BlinqSub = styled.p`
   font-size: 13px;
   color: ${primaryBlue};
   opacity: 0.7;
-  font-family: "Poppins-Regular";
+  font-family: "Inter", sans-serif;
 `;
 
 const BlinqArrow = styled.span`
   font-size: 12px;
   color: ${primaryBlue};
   opacity: 0.5;
-  font-family: "Poppins-Regular";
+  font-family: "Inter", sans-serif;
   margin-top: 4px;
   display: block;
 `;
@@ -336,7 +336,7 @@ class Home extends Component {
 
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Over the past few years I've helped launch AI-powered platforms, renewable energy initiatives, startup products, and consumer-facing experiences. From leading user experience for startups as a freelancer, to helping deliver the first energy-autonomous island in Greece as a Technical Program Manager at Tesla, to building internal AI tools as a Full-Stack Software Engineer at John Hancock, I've always been drawn to innovation.</p>
 
-        <p style={{color: 'primaryBlue'}} className='font-face-body'>When I'm not working, I'm usually planning my next trip, reading fantasy novels, drawing at my easel, baking my friends' birthday cakes, playing board games, or listening to live music.</p>
+        <p style={{color: 'primaryBlue'}} className='font-face-body'>When I'm not working, I'm usually planning my next trip, reading fantasy novels, drawing at my easel, baking my friends' birthday cakes, playing board games or with my cat, + listening to live music.</p>
         
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Take a look around to see some of the projects I've worked on.</p>
 

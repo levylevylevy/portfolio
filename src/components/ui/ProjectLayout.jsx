@@ -63,7 +63,7 @@ const SidebarLabel = styled.p`
   color: ${unselectedBlue};
   padding: 0 12px;
   margin: 0 0 8px 0;
-  font-family: "Poppins-Bold", sans-serif;
+  font-family: "Inter", sans-serif, sans-serif;
 
   @media (max-width: 768px) {
     display: none;
@@ -76,7 +76,7 @@ const SidebarItem = styled(NavLink)`
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 13.5px;
-  font-family: "Poppins-Regular", sans-serif;
+  font-family: "Inter", sans-serif, sans-serif;
   color: ${unselectedBlue};
   text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease;
@@ -90,7 +90,7 @@ const SidebarItem = styled(NavLink)`
   &.active {
     background-color: ${primaryBlue};
     color: ${backgroundColorMain};
-    font-family: "Poppins-Bold", sans-serif;
+    font-family: "Inter", sans-serif, sans-serif;
   }
 `;
 
