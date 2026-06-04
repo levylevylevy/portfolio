@@ -220,6 +220,17 @@ const NowPlayingWrapper = styled.div`
   }
 `;
 
+const NowPlayingMobile = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+`;
+
 const NavBottom = styled.div`
   display: flex;
   flex-direction: column;
@@ -341,6 +352,9 @@ class Home extends Component {
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Take a look around to see some of the projects I've worked on.</p>
 
         <p style={{color: 'primaryBlue'}} className='font-face-body'> (˚ˎ 。7  This custom website was made with react.js, html, css, & designed with Figma ˙ᵕ˙</p> 
+        <NowPlayingMobile>
+          <NowPlaying />
+        </NowPlayingMobile>
         </ColAboutMe>
 
       </CenterContents>
