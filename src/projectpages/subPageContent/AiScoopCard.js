@@ -11,6 +11,7 @@ import {
   import styled from "styled-components";
   import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText } from "../../colors.js";
   import ScrollButton from "../../ScrollButton.js";
+import CardButton from '../../components/ui/CardButton.js'
 
 const RowContents = styled.div`
 display: flex;
@@ -26,6 +27,11 @@ margin-top: 30px;
 
 const CardContainers = styled.div`
 display: block;
+
+@media (max-width: 768px) {
+  width: 100%;
+  height: auto;
+}
 `;
 
 const ProjectCard = styled.div`
@@ -33,12 +39,17 @@ const ProjectCard = styled.div`
 position: absolute; 
 width: 641px;
 height: 265px;
-//background: #DCDCDE;
-background: #E0E0E2;
+background: #FAF8F5;
 box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 padding: 24px;
 
+@media (max-width: 768px) {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
 `;
 
 const CardTitle=styled.h1`
@@ -47,12 +58,21 @@ flex-direction: column;
 margin-top: 32px;
 margin-bottom: -14px;
 
+@media (max-width: 768px) {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
 `;
 const Col = styled.div`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 margin-top: -50px;
+
+@media (max-width: 768px) {
+  margin-top: 0;
+  width: 100%;
+}
 `;
 
 const Row = styled.div`
@@ -60,6 +80,12 @@ display: flex;
 flex-direction: row;
 gap: 78px;
 height: 260px;
+
+@media (max-width: 768px) {
+  flex-direction: column;
+  gap: 16px;
+  height: auto;
+}
 `;
 
 const RowButtons = styled.div`
@@ -71,6 +97,13 @@ gap: 20px;
 const ExamplePhoto = styled.img`
 display: flex;
 height: 70%;
+
+@media (max-width: 768px) {
+  height: auto;
+  width: 100%;
+  max-width: 200px;
+  align-self: center;
+}
 `;
 
 const CaseStudyButton = styled.div`
@@ -95,15 +128,13 @@ const CaseStudyButton = styled.div`
 <Col>
 <CardTitle className="font-face-header1" style={{color: primaryBlue}}>  The AI Scoop</CardTitle>
 
-<p className="font-face-body" style={{color: secondaryGold}}>  HackMIT 2021, Microsoft Challenge 2nd Place  <span style={{color: primaryBlue}}> </span></p>
-<p className="font-face-subtitle" style={{color: primaryBlue}}>  The AI Scoop is a revolutionary educational ai-powered service allowing anyone — parents, teachers, even kids — to create a kids magazine 100% automatically from ANY article link!</p>
+<div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 6, marginBottom: 4 }}>
+  <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "#FEF3C7", border: "1px solid #FDE68A", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 700, color: "#92400E", letterSpacing: "0.04em" }}>2nd Place · Microsoft Challenge @ HackMIT 2021</span>
+</div>
+<p className="font-face-subtitle" style={{color: primaryBlue, marginTop: 6}}>  An AI-powered service that auto-generates a kids magazine from any article link — for parents, teachers, and kids.</p>
 <RowButtons>
-<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}
-onClick={()=> window.open("https://github.com/vasuz/ai-scoop", "_blank")}
->Github</CaseStudyButton>
-<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}
-onClick={()=> window.open("https://youtu.be/ESZJUNBE8Hc", "_blank")}
->Walkthrough Video</CaseStudyButton>
+<CardButton href="https://github.com/vasuz/ai-scoop" target="_blank" rel="noopener noreferrer" variant="outline">GitHub ↗</CardButton>
+<CardButton href="https://youtu.be/ESZJUNBE8Hc" target="_blank" rel="noopener noreferrer" variant="outline">Walkthrough ↗</CardButton>
 </RowButtons>
 </Col>
 <ExamplePhoto src={require('../../../src/images/aiscoopcoverphoto.png')} />

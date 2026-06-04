@@ -55,7 +55,7 @@ const ProjectCard = styled.div`
   width: 641px;
   height: 340px;
   //background: #DCDCDE;
-  background: #E0E0E2;
+  background: #FAF8F5;
   box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 24px;

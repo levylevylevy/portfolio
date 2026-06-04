@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import Projects from '../Projects.js'
+import ProjectLayout from '../components/ui/ProjectLayout.jsx'
 import {
-    Link,
-    Route,
-    Routes,
-    NavLink,
-    BrowserRouter
+    NavLink
   } from "react-router-dom";
   import styled from "styled-components";
-  import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText } from "../colors.js";
-  import ScrollButton from "../ScrollButton.js";
+  import { primaryBlue, backgroundColorMain, unselectedBlue, selectedButtonText } from "../colors.js";
 import AIScoopCard from "./subPageContent/AiScoopCard";
 import GardenShareCard from "./subPageContent/GardenShareCard";
+import VolunteerGoCard from "./subPageContent/VolunteerGoCard.js";
+import OnceADailyCard from "./subPageContent/onceadailydocard.js";
+import MusicaCard from "./subPageContent/MusicaCard.js";
 import VerticalLine from "../SideBar.js";
 
 
@@ -20,23 +19,13 @@ const WholePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 90px;
-  // position: absolute;
   gap: 20px;
   text-align: justify;
-
-`;
-
-const RowContents = styled.div`
-  display: flex;
-  justify-content: space-around;
-  overflowY: scroll;
-`;
-
-const CenterContents = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-top: 30px;
-  gap: 300px;
+  
+  @media (max-width: 768px) {
+    padding-bottom: 70px;
+    gap: 15px;
+  }
 `;
 
 const CardContainers = styled.div`
@@ -45,49 +34,36 @@ const CardContainers = styled.div`
   flex-direction: column;
   gap: 345px;
   width: 641px;
-  height: 100vh;
-  margin-bottom: -150px;
+  margin-bottom: 175px;
+  
+  @media (max-width: 968px) {
+    width: 90%;
+    max-width: 641px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    gap: 24px;
+    margin-bottom: 40px;
+    height: auto;
+  }
 `;
-const ProjectCard = styled.div`
-
-  position: absolute; 
-  width: 641px;
-  height: 340px;
-  //background: #DCDCDE;
-  background: #E0E0E2;
-  box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  padding: 24px;
-
-`;
-
-const CardTitle=styled.h1`
-display: flex;
-flex-direction: column;
-margin-top: 32px;
-margin-bottom: -14px;
-
-`;
-const Col = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 5px;
-`;
-
-const ColCards = styled.div`
-  // margin-top: 445px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: -100px;
-  `;
-
 
 const Row = styled.div`
   display: flex;
   flex-direction: row;
   gap: 78px;
   height: 340px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 15px;
+  }
 `;
 
 
@@ -104,12 +80,6 @@ border-radius: 5px;
 
 `;
 
-const UnSelectedButton = styled.div`
-width: 111px;
-height: 28px;
-border-radius: 5px;
-`;
-
 const AppContents = styled.ul`
 display: flex;
 justify-content: flex-start;
@@ -119,6 +89,18 @@ color: ${primaryBlue};
 width: 111px;
 height: 28px;
 
+@media (max-width: 768px) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+}
+
+@media (max-width: 480px) {
+  gap: 10px;
+}
+
 `;
 
 const RowSubMenuContents = styled.div`
@@ -127,74 +109,34 @@ const RowSubMenuContents = styled.div`
   justify-content: center;
   gap: 68px;
   overflowY: scroll;
-  // margin-left: 244px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 20px;
+  }
 `;
-
-const ExamplePhoto = styled.img`
-display: flex;
-min-width: 170px;
-`;
-
-const CaseStudyButton = styled.div`
-  width: 169px;
-  height: 42px;
-  border: 1px solid ${primaryBlue};
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${backgroundColorMain};
-`;
-
 
 class HackathonPage extends Component {
     render() {
       return (
         <>
-            <WholePageContainer>
-        {/* Sub Menu */}
-        <Projects/>
-         {/* Project below */}
-         <RowSubMenuContents>
-           {/* Sub menu 2 */}
-        {/* <CenterContents> */}
-        <Row>
-
-        <AppContents class="font-face-navFont">
-        <NavLink to="/portfolio/projects/hackathons/hackmit" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })} ><SelectedButton>HackMIT</SelectedButton></NavLink> 
-
-     <NavLink to="/portfolio/projects/hackathons/hackbeanpot" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-    })}
-    >HackBeanpot</NavLink> 
-
-     <NavLink to="/portfolio/projects/hackathons/hophacks" 
-    style={({ isActive }) => ({
-      color: isActive? selectedButtonText : unselectedBlue,
-      textDecoration: isActive? 'none' :'none',
-
-    })}
-    >HopHacks</NavLink> 
-
-    </AppContents>
-    <VerticalLine/>
-</Row>
-    {/* //insert cards */}
-    <CardContainers>
-    <AIScoopCard/>
-    <GardenShareCard/>
-    </CardContainers>
-    </RowSubMenuContents>
-
-   
-    {/* </CenterContents> */}
-    </WholePageContainer>
+          <WholePageContainer>
+            <Projects/>
+            <ProjectLayout>
+              <CardContainers>
+                <MusicaCard/>
+                <AIScoopCard/>
+                <VolunteerGoCard/>
+                <GardenShareCard/>
+                <OnceADailyCard/>
+              </CardContainers>
+            </ProjectLayout>
+          </WholePageContainer>
         </>
       );
     }

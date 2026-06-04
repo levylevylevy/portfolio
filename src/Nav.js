@@ -4,28 +4,15 @@ import {
   Route,
   Routes,
   NavLink,
-  BrowserRouter,
-  HashRouter,
-  Switch
+  BrowserRouter
 } from "react-router-dom";
 import Home from "./Home";
-import Projects from "./Projects";
 import styled from 'styled-components';
-import { primaryBlue } from './colors';
-import { secondaryGold } from './colors';
+import { primaryBlue, secondaryGold } from './colors';
 import HackathonPage from './projectpages/Hackathons'
-import HackathonPageBeanpot from './projectpages/hackbeanpot'
-import HackathonPageHop from './projectpages/hophacks'
 
-import MakerPage from './projectpages/makerProjects'
 import ExperiencePage from './projectpages/workExperience'
-import ExperiencePageTesla from './projectpages/workExperienceTesla'
-import ExperiencePageWillow from './projectpages/workExperienceWillow'
 import ExperiencePageAtem from './projectpages/workExperienceAtem'
-import ExperiencePageSharkNinja from './projectpages/workExperienceSharkNinja'
-import MakerKevin from './projectpages/makerProjectsKevin';
-import MakerFrog from './projectpages/makerProjectsFrogComputer';
-import MakerTurntable from './projectpages/makerProjectsTurntAble';
 import TilitiCaseStudy from './projectpages/caseStudyContent/tilitiCaseStudy';
 import HareOfRuin from './projectpages/subPageContent/HareOfRuinCard'
 import MakerPageGames from './projectpages/games'
@@ -39,17 +26,24 @@ const AppContents = styled.ul`
   margin-right: 94px;
   margin-top: 34px;
   color: ${primaryBlue};
+  
+  @media (max-width: 968px) {
+    margin-right: 50px;
+    gap: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-right: 0;
+    gap: 25px;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 20px;
+    margin-top: 15px;
+  }
 `;
-
-const MenuContents = styled.div`
-  z-index: 10;
-`;
-
-const active = true;
-function menuActive()
-{
-    return window.location.href.includes('projects') ? active == true : active == false;
-}
 
 class Nav extends Component {
   render() {
@@ -57,8 +51,6 @@ class Nav extends Component {
  
         <BrowserRouter>
         <div 
-                    {...active == false}
-
         style={{
           fontSize: '16px',
 
@@ -79,20 +71,11 @@ class Nav extends Component {
             <NavLink                
 
             to="/portfolio/projects/workexperience/generate/" 
-            // {...(window.location.href.includes('projects'))
-            // ? class{"current-menu-parent"}
-            // : class{"unselected-menu-parent"}}
             className = "font-face-navFont" 
-           
-class="menuActive"
-            style={({ active }) => ({
-              
-          
-              color: menuActive()? secondaryGold: primaryBlue,
-              textDecoration: menuActive()? 'underline' :'none',
-            })} 
-            eslint-disable-next-line
-            > 
+            style={({ isActive }) => ({
+              color: isActive || window.location.href.includes('/projects/') ? secondaryGold : primaryBlue,
+              textDecoration: isActive || window.location.href.includes('/projects/') ? 'underline' : 'none',
+            })}> 
               Projects</NavLink>
 
             
@@ -109,21 +92,13 @@ class="menuActive"
           <Routes>
           <Route exact path="/portfolio/" element={<Home/>}/> 
           <Route path="/portfolio/projects/workexperience/generate" element={<ExperiencePage/>}/> 
-          <Route path="/portfolio/projects/workexperience/tesla" element={<ExperiencePageTesla/>}/> 
-          <Route path="/portfolio/projects/workexperience/willow" element={<ExperiencePageWillow/>}/> 
           <Route path="/portfolio/projects/workexperience/atem" element={<ExperiencePageAtem/>}/> 
-          <Route path="/portfolio/projects/workexperience/sharkninja" element={<ExperiencePageSharkNinja/>}/> 
 
           <Route path="/portfolio/projects/hackathons/hackmit" element={<HackathonPage />} />
-          <Route path="/portfolio/projects/hackathons/hophacks" element={<HackathonPageHop />} />
-          <Route path="/portfolio/projects/hackathons/hackbeanpot" element={<HackathonPageBeanpot />} />
+          <Route path="/portfolio/projects/hackathons/hophacks" element={<HackathonPage />} />
+          <Route path="/portfolio/projects/hackathons/hackbeanpot" element={<HackathonPage />} />
 
           <Route path="/portfolio/projects/makerprojects/games" element={<MakerPageGames/>} />
-          <Route path="/portfolio/projects/makerprojects/phonebox" element={<MakerPage/>} />
-          <Route path="/portfolio/projects/makerprojects/turntable" element={<MakerTurntable/>} />
-          <Route path="/portfolio/projects/makerprojects/frogcomputer" element={<MakerFrog/>} />
-          <Route path="/portfolio/projects/makerprojects/kevin" element={<MakerKevin/>} />
-          {/* <Route path="/tiliti-case-study" element={<TilitiCaseStudy/>} /> */}
           <Route path ="/portfolio/projects/games/hareofruin" element={<HareOfRuin/>}/>
           <Route path="/portfolio/tiliti-case-study" element={<TilitiCaseStudy/>} />
 

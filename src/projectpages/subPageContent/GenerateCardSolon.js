@@ -26,6 +26,11 @@ margin-top: 30px;
 
 const CardContainers = styled.div`
 display: block;
+
+@media (max-width: 768px) {
+  width: 100%;
+  height: auto;
+}
 `;
 
 const ProjectCard = styled.div`
@@ -33,12 +38,17 @@ const ProjectCard = styled.div`
 position: absolute; 
 width: 641px;
 height: 265px;
-//background: #DCDCDE;
-background: #E0E0E2;
+background: #FAF8F5;
 box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 padding: 24px;
 
+@media (max-width: 768px) {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
 `;
 
 const CardTitle=styled.h1`
@@ -47,12 +57,21 @@ flex-direction: column;
 margin-top: 32px;
 margin-bottom: -14px;
 
+@media (max-width: 768px) {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
 `;
 const Col = styled.div`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 margin-top: -50px;
+
+@media (max-width: 768px) {
+  margin-top: 0;
+  width: 100%;
+}
 `;
 
 const Row = styled.div`
@@ -60,12 +79,26 @@ display: flex;
 flex-direction: row;
 gap: 78px;
 height: 260px;
+
+@media (max-width: 768px) {
+  flex-direction: column;
+  gap: 16px;
+  height: auto;
+}
 `;
 
 const ExamplePhoto = styled.img`
 display: flex;
 width: 130px;
 min-height: 260px;
+
+@media (max-width: 768px) {
+  width: 100%;
+  max-width: 200px;
+  min-height: auto;
+  height: auto;
+  align-self: center;
+}
 `;
 
 const CaseStudyButton = styled.div`
@@ -89,9 +122,12 @@ const CaseStudyButton = styled.div`
 <Col>
 <CardTitle className="font-face-header1" style={{color: primaryBlue}}>  Solon</CardTitle>
 
-<p className="font-face-body" style={{color: secondaryGold}}>  Product Designer <span style={{color: primaryBlue}}> - Figma - 3D Prototype - User Research
-Generate Product Development Studio, 2021</span></p>
-<p className="font-face-subtitle" style={{color: primaryBlue}}>  A cryptocurrency wallet that offers a unique user interaction experience, combining a digital screen UI and a physical 3D-printed device with buttons.</p>
+<div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8, marginBottom: 4 }}>
+  <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>Product Design</span>
+  <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>Figma · 3D Prototype</span>
+  <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>Generate Studio · 2021</span>
+</div>
+<p className="font-face-subtitle" style={{color: primaryBlue, marginTop: 6}}>  A crypto wallet combining a digital screen UI with a physical 3D-printed device.</p>
 {/* <CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}>Read Case Study</CaseStudyButton> */}
 </Col>
 <ExamplePhoto src={require('../../../src/images/solonprototype.png')} />

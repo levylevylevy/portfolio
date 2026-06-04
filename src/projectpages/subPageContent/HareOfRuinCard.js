@@ -1,9 +1,9 @@
 //Generate Tiliti card
 import React, { Component } from "react";
 import { useState } from 'react';
-import Popup from "../caseStudyContent/Popup.js";
-import '../caseStudyContent/style.css';
+import CaseStudyModal from "../caseStudyContent/CaseStudyModal.js";
 import HareOfRuinCaseStudy from '../caseStudyContent/HareOfRuinCaseStudy'
+import CardButton from '../../components/ui/CardButton.js'
 
 import Projects from '../../Projects.js'
 import {
@@ -31,6 +31,11 @@ margin-top: 30px;
 
 const CardContainers = styled.div`
 display: block;
+
+@media (max-width: 768px) {
+  width: 100%;
+  height: auto;
+}
 `;
 
 const ProjectCard = styled.div`
@@ -45,11 +50,18 @@ flex-direction: row;
 flex-wrap: wrap;
 //background: #DCDCDE;
 justify-content: left;
-background: #E0E0E2;
+background: #FAF8F5;
 box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 padding: 24px;
 
+@media (max-width: 768px) {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  box-sizing: border-box;
+}
 `;
 
 const CardTitle = styled.h1`
@@ -58,12 +70,21 @@ flex-direction: column;
 margin-top: 32px;
 margin-bottom: -14px;
 
+@media (max-width: 768px) {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
 `;
 const Col = styled.div`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 margin-top: -50px;
+
+@media (max-width: 768px) {
+  margin-top: 0;
+  width: 100%;
+}
 `;
 
 const Row = styled.div`
@@ -71,12 +92,26 @@ display: flex;
 flex-direction: row;
 gap: 78px;
 height: 260px;
+
+@media (max-width: 768px) {
+  flex-direction: column;
+  gap: 16px;
+  height: auto;
+}
 `;
 
 const ExamplePhoto = styled.img`
 display: flex;
 // width: 500px;
 min-height: 300px;
+
+@media (max-width: 768px) {
+  min-height: auto;
+  height: auto;
+  width: 100%;
+  max-width: 200px;
+  align-self: center;
+}
 `;
 
 const CaseStudyButton = styled.div`
@@ -117,28 +152,21 @@ function HareOfRuinCard() {
             <Col>
               <CardTitle className="font-face-header1" style={{ color: primaryBlue }}> Hare Of Ruin</CardTitle>
 
-              <p className="font-face-body" style={{ color: secondaryGold }}>  Game Programmer/Designer/Writer  <span style={{ color: primaryBlue }}> - Unity - C# - Photoshop -
-                Game Programming Course, 2023</span></p>
-              <p className="font-face-subtitle" style={{ color: primaryBlue }}>  A 3D 1-player action-RPG game developed with Unity in a team of 4.</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8, marginBottom: 4 }}>
+                <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>Game Dev · Unity · C#</span>
+                <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>UI Design · Photoshop</span>
+                <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>2023</span>
+              </div>
+              <p className="font-face-subtitle" style={{ color: primaryBlue, marginTop: 6 }}>  A 3D 1-player action-RPG game developed with Unity in a team of 4.</p>
               <RowButtons>
-              <CaseStudyButton onClick={togglePopup} className="font-face-subtitle" style={{ color: primaryBlue }}>Read Case Study</CaseStudyButton>
-              {/* <CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}>Read Case Study</CaseStudyButton> */}
-              {isOpen && <Popup
-                content={<>
-                <HareOfRuinCaseStudy/>
-                </>}
-                handleClose={togglePopup}
-              />}
-<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}
-onClick={()=> window.open("https://github.com/aidancapaldi/HareOfRuinPrototype", "_blank")}
->Github</CaseStudyButton>
-<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}
-onClick={()=> window.open("https://youtu.be/iyV6Rw5sG1o", "_blank")}
->Demo Video</CaseStudyButton>
-<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}
-onClick={()=> window.open("https://play.unity.com/mg/other/webgl-builds-336086", "_blank")}
->Play Game</CaseStudyButton>
-</RowButtons>
+              <CardButton onClick={togglePopup} variant="primary">Read Case Study</CardButton>
+              <CaseStudyModal isOpen={isOpen} onClose={togglePopup}>
+                <HareOfRuinCaseStudy />
+              </CaseStudyModal>
+              <CardButton href="https://github.com/aidancapaldi/HareOfRuinPrototype" target="_blank" rel="noopener noreferrer" variant="outline">GitHub ↗</CardButton>
+              <CardButton href="https://youtu.be/iyV6Rw5sG1o" target="_blank" rel="noopener noreferrer" variant="outline">Demo ↗</CardButton>
+              <CardButton href="https://play.unity.com/mg/other/webgl-builds-336086" target="_blank" rel="noopener noreferrer" variant="outline">Play Game ↗</CardButton>
+              </RowButtons>
             </Col>
             <ExamplePhoto src={require('../../../src/images/harry-rabbit-illustration.png')} />
           </Row>

@@ -1,99 +1,118 @@
 //Generate Tiliti card
-import React, { Component } from "react";
+import React from "react";
 import { useState } from 'react';
-import Popup from "../caseStudyContent/Popup.js";
-import '../caseStudyContent/style.css';
-import TilitiCaseStudy from '../caseStudyContent/tilitiCaseStudy'
-
-import Projects from '../../Projects.js'
-import {
-  Link,
-  Route,
-  Routes,
-  NavLink,
-  BrowserRouter
-} from "react-router-dom";
+import CaseStudyModal from "../caseStudyContent/CaseStudyModal.js";
+import TilitiCaseStudy from '../caseStudyContent/tilitiCaseStudy';
+import CardButton from '../../components/ui/CardButton.js';
 import styled from "styled-components";
-import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText } from "../../colors.js";
-import ScrollButton from "../../ScrollButton.js";
-
-const RowContents = styled.div`
-display: flex;
-justify-content: space-around;
-overflowY: scroll;
-`;
-
-const CenterContents = styled.div`
-display: flex;
-flex-direction: row;
-margin-top: 30px;
-`;
+import { primaryBlue, backgroundColorMain } from "../../colors.js";
 
 const CardContainers = styled.div`
-display: block;
+  display: block;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const ProjectCard = styled.div`
+  position: absolute; 
+  width: 641px;
+  height: 265px;
+  background: #FAF8F5;
+  box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 24px;
 
-position: absolute; 
-width: 641px;
-height: 265px;
-//background: #DCDCDE;
-background: #E0E0E2;
-box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-padding: 24px;
+  @media (max-width: 968px) {
+    width: 90%;
+    max-width: 550px;
+    height: auto;
+    min-height: 265px;
+  }
 
+  @media (max-width: 768px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 16px;
+  }
 `;
 
 const CardTitle = styled.h1`
-display: flex;
-flex-direction: column;
-margin-top: 32px;
-margin-bottom: -14px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  margin-bottom: -14px;
 
+  @media (max-width: 768px) {
+    margin-top: 20px;
+    margin-bottom: -10px;
+  }
 `;
+
 const Col = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-margin-top: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: -50px;
+
+  @media (max-width: 768px) {
+    margin-top: -30px;
+    width: 100%;
+  }
 `;
 
 const Row = styled.div`
-display: flex;
-flex-direction: row;
-gap: 78px;
-height: 260px;
+  display: flex;
+  flex-direction: row;
+  gap: 78px;
+  height: 260px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
 `;
 
 const ExamplePhoto = styled.img`
-display: flex;
-width: 130px;
-min-height: 260px;
-`;
-
-const CaseStudyButton = styled.div`
-  width: 169px;
-  height: 42px;
-  border: 1px solid ${primaryBlue};
-  border-radius: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${backgroundColorMain};
-  cursor: pointer;
+  width: 130px;
+  min-height: 260px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 200px;
+    min-height: auto;
+    height: auto;
+    align-self: center;
+  }
 `;
 
-
+const tag = {
+  display: "inline-flex",
+  alignItems: "center",
+  background: "rgba(28,25,23,0.06)",
+  borderRadius: 100,
+  padding: "3px 10px",
+  fontSize: 11,
+  fontWeight: 600,
+  color: "#3D3530",
+  letterSpacing: "0.03em",
+};
 
 function GenerateCards() {
-
   const [isOpen, setIsOpen] = useState(false);
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  }
+  const togglePopup = () => setIsOpen(!isOpen);
 
   return (
     <>
@@ -101,26 +120,24 @@ function GenerateCards() {
         <ProjectCard>
           <Row>
             <Col>
-              <CardTitle className="font-face-header1" style={{ color: primaryBlue }}>  TILITI</CardTitle>
+              <CardTitle className="font-face-header1" style={{ color: primaryBlue }}>TILITI</CardTitle>
 
-              <p className="font-face-body" style={{ color: secondaryGold }}>  UI/UX Designer  <span style={{ color: primaryBlue }}> - Figma - Adobe Illustrator - After Effects
-                Generate Product Development Studio, 2021</span></p>
-              <p className="font-face-subtitle" style={{ color: primaryBlue }}>  A mobile app to help small business owners in India transport their goods on the Tiliti startup’s sustainable e-bike.</p>
-              <CaseStudyButton onClick={togglePopup} className="font-face-subtitle" style={{ color: primaryBlue }}>Read Case Study</CaseStudyButton>
-              {/* <CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}>Read Case Study</CaseStudyButton> */}
-              {isOpen && <Popup
-                content={<>
-                <TilitiCaseStudy/>
-                </>}
-                handleClose={togglePopup}
-              />}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8, marginBottom: 4 }}>
+                <span style={tag}>UI/UX Design</span>
+                <span style={tag}>Figma · Illustrator</span>
+                <span style={tag}>Generate Studio · 2021</span>
+              </div>
+              <p className="font-face-subtitle" style={{ color: primaryBlue, marginTop: 6 }}>
+                A mobile app to help small business owners in India transport their goods on Tiliti's sustainable e-bike.
+              </p>
+              <CardButton onClick={togglePopup} variant="primary">Read Case Study</CardButton>
+              <CaseStudyModal isOpen={isOpen} onClose={togglePopup}>
+                <TilitiCaseStudy />
+              </CaseStudyModal>
             </Col>
             <ExamplePhoto src={require('../../../src/images/tiliti-home-betterquality.png')} />
           </Row>
         </ProjectCard>
-       
-
-
       </CardContainers>
     </>
   );

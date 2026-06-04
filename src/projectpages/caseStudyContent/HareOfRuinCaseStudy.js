@@ -1,449 +1,271 @@
-import React, { Component } from "react";
-import {
-  Link,
-  Route,
-  Routes,
-  NavLink,
-  BrowserRouter
-} from "react-router-dom";
-import styled from "styled-components";
-import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText, white } from "../../colors.js";
-import HorizontalLine from "../../../src/BottomBar";
-import { ChevronLeft, ChevronRight, ChevronsRight, ChevronsLeft, XCircle, Maximize, Edit3, CornerRightUp, GitHub, Linkedin, Mail } from 'react-feather';
-import ScrollButton from "../../../src/ScrollButton.js";
+import React from "react";
 import Carousel, { CarouselItem } from "./Carousel";
 
+const accent = "#C2714F";
+const dark = "#1C1917";
+const card = "#FFFFFF";
 
+const sectionCard = {
+  background: card,
+  borderRadius: 16,
+  padding: "28px 32px",
+  boxShadow: "0 1px 4px rgba(28,25,23,0.08)",
+  border: "1px solid rgba(28,25,23,0.07)",
+};
 
+const sectionLabel = {
+  fontSize: 11,
+  fontWeight: 700,
+  letterSpacing: "0.13em",
+  textTransform: "uppercase",
+  color: accent,
+  marginBottom: 10,
+};
 
-//Components
-const IconGithub = styled(GitHub)`
-  height: 30px;
-  width: 30px;
-  stroke: ${primaryBlue};
-  stroke-width: 1px;
-  padding: 2px 0;
-  display: block;
-  vertical-align: top;
-  margin: 0 auto;
-`;
+const h2Style = {
+  fontSize: 22,
+  fontWeight: 700,
+  color: dark,
+  margin: "0 0 12px",
+  lineHeight: 1.25,
+};
 
-const IconMail = styled(Mail)`
-  height: 30px;
-  width: 30px;
-  stroke: ${primaryBlue};
-  stroke-width: 1px;
-  padding: 2px 0;
-  display: block;
-  vertical-align: top;
-  margin: 0 auto;
-`;
+const bodyText = {
+  fontSize: 15,
+  color: "#3D3530",
+  lineHeight: 1.75,
+  margin: 0,
+};
 
-const IconLinkedin = styled(Linkedin)`
-  height: 30px;
-  width: 30px;
-  stroke: ${primaryBlue};
-  stroke-width: 1px;
-  padding: 2px 0;
-  display: block;
-  vertical-align: top;
-  margin: 0 auto;
-`;
+const levelImages = [
+  { src: require("../../../src/images/level 1 env.png"), label: "Level 1" },
+  { src: require("../../../src/images/level 2 env.png"), label: "Level 2" },
+  { src: require("../../../src/images/level 3 env.png"), label: "Level 3" },
+];
 
-const RowIcons = styled.div`
-  display: flex;
-  gap: 100px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+function HareOfRuinCaseStudy() {
+  return (
+    <div style={{ background: "#F5F2EE", minHeight: "100%", fontFamily: "inherit" }}>
+      {/* Hero */}
+      <div style={{ position: "relative", background: "#0d1b0f", overflow: "hidden" }}>
+        <img
+          src={require("../../../src/images/hareofruinstartscreen.jpg")}
+          alt="Hare of Ruin start screen"
+          style={{ width: "100%", maxHeight: 340, objectFit: "cover", objectPosition: "center top", opacity: 0.7, display: "block" }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            padding: "0 24px 36px",
+            textAlign: "center",
+            background: "linear-gradient(to bottom, transparent 30%, rgba(13,27,15,0.85) 100%)",
+          }}
+        >
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.01em" }}>
+            Hare of Ruin
+          </h1>
+          <p style={{ fontSize: 15, color: "rgba(255,255,255,0.8)", margin: "0 0 16px", maxWidth: 460, lineHeight: 1.5, fontStyle: "italic" }}>
+            A 3D action-RPG where an apprentice rabbit battles to save his mentor from an ancient evil
+          </p>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center", marginBottom: 16 }}>
+            {["Game Dev", "Unity · C#", "UI Design"].map((tag) => (
+              <span
+                key={tag}
+                style={{
+                  background: "rgba(255,255,255,0.12)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  borderRadius: 100,
+                  padding: "4px 14px",
+                  fontSize: 12,
+                  color: "rgba(255,255,255,0.8)",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
+            <a
+              href="https://github.com/aidancapaldi/HareOfRuinPrototype"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: "rgba(255,255,255,0.15)",
+                border: "1px solid rgba(255,255,255,0.3)",
+                borderRadius: 8,
+                padding: "8px 18px",
+                fontSize: 13,
+                color: "#fff",
+                textDecoration: "none",
+                fontWeight: 600,
+              }}
+            >
+              GitHub ↗
+            </a>
+            <a
+              href="https://play.unity.com/mg/other/webgl-builds-336086"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: "rgba(255,255,255,0.15)",
+                border: "1px solid rgba(255,255,255,0.3)",
+                borderRadius: 8,
+                padding: "8px 18px",
+                fontSize: 13,
+                color: "#fff",
+                textDecoration: "none",
+                fontWeight: 600,
+              }}
+            >
+              Play Game ↗
+            </a>
+          </div>
+        </div>
+      </div>
 
-`;
+      {/* Content */}
+      <div
+        style={{
+          maxWidth: 780,
+          margin: "0 auto",
+          padding: "36px 24px 60px",
+          display: "flex",
+          flexDirection: "column",
+          gap: 20,
+        }}
+      >
+        {/* Meta strip */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+          {[
+            { label: "Role", value: "Developer · Designer · Writer" },
+            { label: "Timeline", value: "Jan – May 2023" },
+            { label: "Tools", value: "Unity · C# · Photoshop · GitHub" },
+          ].map(({ label, value }) => (
+            <div
+              key={label}
+              style={{ background: card, borderRadius: 12, padding: "16px 18px", border: "1px solid rgba(28,25,23,0.07)" }}
+            >
+              <div style={sectionLabel}>{label}</div>
+              <div style={{ fontSize: 14, color: dark, fontWeight: 600 }}>{value}</div>
+            </div>
+          ))}
+        </div>
 
-const NavBottom = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: #E0E0E2;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 100%;
-  padding-bottom: 10px;
-  z-index: 3;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  // border-radius: 20px 20px 0 0;
-`;
+        {/* Overview */}
+        <div style={sectionCard}>
+          <div style={sectionLabel}>Overview</div>
+          <p style={{ ...bodyText, marginBottom: 12 }}>
+            Collaboratively developed a 1-player 3D action-RPG in a team of four, pair programming weekly and managing releases through GitHub. Planned sprints, assigned tasks, and resolved merge conflicts as a team.
+          </p>
+          <p style={bodyText}>
+            Independently designed all 2D UI assets and the splash screen in Photoshop/Illustrator, wrote all character dialogue and cut-scenes, and co-designed level layouts. Delivered Alpha, Beta, and Gold Master releases, conducted playtests, and iterated on user feedback.
+          </p>
+        </div>
 
-const WholePageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-//   padding-bottom: 90px;
-  padding-left: 150px;
-  padding-right: 150px;
-  min-width: 500px;
-  // position: absolute;
-  text-align: justify;
-  gap:20px;
-  margin-bottom: 200px;
-`;
+        {/* Game Description */}
+        <div style={sectionCard}>
+          <div style={sectionLabel}>The Story</div>
+          <h2 style={h2Style}>Glory awaits…</h2>
+          <p style={bodyText}>
+            Apprentice Harry Rabbit is on a quest to save his mentor High Wizard Pandamaus from the clutches of the evil Vulpes Rebane. Each level presents new enemies to defeat with powerful spells — but beware: let your carrot health-meter hit zero and it's game over.
+          </p>
+        </div>
 
-const ExamplePhoto = styled.img`
-width: 80%;
-display: flex;
-flex-wrap: wrap;
-flex-direction: column;
-align-items: center;
+        {/* Demo */}
+        <div style={sectionCard}>
+          <div style={sectionLabel}>Game Demo</div>
+          <h2 style={h2Style}>See it in action</h2>
+          <p style={{ ...bodyText, marginBottom: 16 }}>
+            Full playthrough demo video — skip to <strong>3:35</strong> for the game trailer.
+          </p>
+          <div style={{ borderRadius: 12, overflow: "hidden", background: "#000" }}>
+            <video
+              controls
+              style={{ width: "100%", display: "block", borderRadius: 12 }}
+            >
+              <source src={require("../../../src/videos/HareOfRuinFinalDemo.mp4")} type="video/mp4" />
+            </video>
+          </div>
+        </div>
 
-`;
+        {/* Level Layouts */}
+        <div style={sectionCard}>
+          <div style={sectionLabel}>Level Layouts</div>
+          <h2 style={h2Style}>Three worlds, three challenges</h2>
+          <p style={{ ...bodyText, marginBottom: 20 }}>
+            Each level was co-designed with increasing difficulty, distinct environments, and new enemy types.
+          </p>
+          <Carousel>
+            {levelImages.map(({ src, label }) => (
+              <CarouselItem key={label}>
+                <div style={{ textAlign: "center" }}>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: accent, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 10 }}>
+                    {label}
+                  </div>
+                  <img src={src} alt={label} style={{ width: "100%", borderRadius: 10, objectFit: "cover" }} />
+                </div>
+              </CarouselItem>
+            ))}
+          </Carousel>
+        </div>
 
-const ExamplePhoto2 = styled.img`
-display: flex;
-width: 80%;
-`;
+        {/* Gold Master GDD */}
+        <div style={sectionCard}>
+          <div style={sectionLabel}>Gold Master Release</div>
+          <h2 style={h2Style}>Game Design Document</h2>
+          <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid rgba(28,25,23,0.08)", marginTop: 8 }}>
+            <iframe
+              src="https://drive.google.com/file/d/1fRuPL6Igf4GNArAYSFg3PemJjivTo67H/preview"
+              style={{ width: "100%", height: 480, border: "none", display: "block" }}
+              allow="autoplay"
+              title="Hare of Ruin Gold Master GDD"
+            />
+          </div>
+        </div>
 
+        {/* Beta GDD */}
+        <div style={sectionCard}>
+          <div style={sectionLabel}>Beta Release</div>
+          <h2 style={h2Style}>GDD & Playtesting Notes</h2>
+          <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid rgba(28,25,23,0.08)", marginTop: 8 }}>
+            <iframe
+              src="https://drive.google.com/file/d/11FXUwsawdpgDTGBiVMo96Q6ZCyngiR1z/preview"
+              style={{ width: "100%", height: 480, border: "none", display: "block" }}
+              allow="autoplay"
+              title="Hare of Ruin Beta GDD"
+            />
+          </div>
+        </div>
 
-const TilitiGif = styled.img`
-display: flex;
-width: 50%;
-margin-top: 20px;
-`;
-
-const DisplayVideo = styled.video`
-display: flex;
-flex-direction: column;
-width: 75%;
-margin-top: 20px;
-background-color: #E0E0E2;
-border-radius: 20px;
-align-items: center;
-display: flex;
-justify-contents: center;
-`;
-
-const DisplayPDF = styled.div`
-display: flex;
-flex-direction: column;
-width: 75%;
-margin-top: 20px;
-background-color: #E0E0E2;
-border-radius: 20px;
-align-items: center;
-display: flex;
-justify-contents: center;
-border-radius: 20px;
-`;
-
-
-const ExamplePhoto3 = styled.img`
-display: flex;
-width: 80%;
-max-height: 300px;
-margin-bottom: 20px;
-margin-top: -20px;
-
-`;
-
-const Col = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-width: 500px;
-`;
-
-const ColImages = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 20px;
-margin-top: 20px;
-`;
-
-const ColImages2 = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 20px;
-`;
-
-const ColImagesPDF = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 20px;
-margin-top: 20px;
-gap:20px;
-`;
-
-const TextWrap = styled.p`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-flex-wrap: wrap;
-width: 400px;
-color: white;
-`;
-
-const TextWrapBody = styled.p`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: flex-start;
-// flex-wrap: wrap;
-color: ${primaryBlue};
-`;
-
-const Row = styled.div`
-display: flex;
-flex-direction: row;
-gap: 80px;
-justify-content: center;
-align-items: center;
-`;
-
-const TopSegment = styled.div`
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  top: 0px;
-  left: 0;
-  right:0;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #1D2B3C;
-  border-radius: 30px;
-    padding: 24px;
-    margin-top: 20px;
-    box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
-`;
-
-
-const TopSegmentCol = styled.div`
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  top: 0px;
-  left: 0;
-  right:0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color: #E0E0E2;
-  border-radius: 30px;
-    padding: 24px;
-    margin-top: 20px;
-    box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
-`;
-
-const TopSegmentImg = styled.div`
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  top: 0px;
-  left: 0;
-  right:0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #E0E0E2;
-  border-radius: 30px;
-    padding: 24px;
-    margin-top: 20px;
-    box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
-`;
-
-const TopSegmentColVideos = styled.div`
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  top: 0px;
-  left: 0;
-  right:0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color: #E0E0E2;
-  border-radius: 30px;
-    padding: 24px;
-    margin-top: 20px;
-    box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
-`;
-
-const ColInfo = styled.div`
-display: flex;
-flex-direction: column;
-gap: 30px;
-align-items: center;
-
-`;
-const ColInfoGif = styled.div`
-display: flex;
-flex-direction: column;
-gap: 10px;
-
-`;
-
-const ColGifs = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-
-`;
-
-const RowInfo = styled.div`
-display: flex;
-gap: 30px;
-`;
-
-const RowVideos = styled.div`
-display: flex;
-gap: 20px;
-flex-wrap: wrap;
-`;
-
-const ChangeMarginText = styled.h1`
-  margin-bottom: -14px;
-`;
-
-const CaseStudyButton = styled.div`
-  width: 169px;
-  height: 42px;
-  border: 1px solid ${primaryBlue};
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${backgroundColorMain};
-  cursor: pointer;
-`;
-
-const RowButtons = styled.div`
-display: flex;
-flex-wrap: wrap;
-flex: 2 0 auto;
-flex-direction: row;
-overflow-x:auto;
-gap: 20px;
-`;
-
-class HareOfRuinCaseStudy extends Component {
-  render() {
-    return (
-      <>
-        <WholePageContainer>
-              {/* update with larger photo */}
-              <TopSegmentImg>
-
-              <ExamplePhoto src={require('../../../src/images/hareofruinstartscreen.jpg')} />
-                
-                </TopSegmentImg>
-                <TopSegmentImg>
-<RowButtons>
-                <CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}
-onClick={()=> window.open("https://github.com/aidancapaldi/HareOfRuinPrototype", "_blank")}
->Github</CaseStudyButton>
-<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}
-onClick={()=> window.open("https://play.unity.com/mg/other/webgl-builds-336086", "_blank")}
->Play Game</CaseStudyButton>
-</RowButtons>
-</TopSegmentImg>
-
-          <TopSegmentCol>
-            <ChangeMarginText className="font-face-header2">Overview/Role</ChangeMarginText>
-            <TextWrapBody className="font-face-body" style={{ color: secondaryGold }}>Scope: January 2023 - May 2023</TextWrapBody>
-            <TextWrapBody className="font-face-body">Collaboratively developed a 1-player 3D action-RPG game using Unity, C#, GitHub, and 3D assets in a team of four. Pair programmed in weekly collaborative meetings and coded independently outside of meetings. Additionally used weekly meetings to plan releases, assign tasks, and manage git conflicts.
- </TextWrapBody> <TextWrapBody className="font-face-body">Independently designed all 2D UI assets and splash screen using Photoshop/Illustrator, ensuring a consistent visual aesthetic and intuitive experience across the game. Solely responsible for writing all character dialogue and creating all cut-scenes, adding depth and engagement to the game experience. Actively participated in the co-design of level layouts and progression, enhancing gameplay and optimizing experience. Additionally, created and deployed Alpha, Beta, and Gold Master releases as a team, conducted playtests and iterated on user feedback, and delivered in-depth game design documentation.
- </TextWrapBody>
-           
-          </TopSegmentCol>
-
-          <TopSegmentCol>
-
-            <ChangeMarginText className="font-face-header2">Game Description</ChangeMarginText>
-            <TextWrapBody className="font-face-body">Join the epic adventure as an adorable but fierce rabbit in our action RPG! Apprentice Harry Rabbit is on
-a quest to save his mentor High Wizard Pandamaus from the clutches of the evil Vulpes Rebane. Each
-level presents new enemies to defeat with powerful spells. Beware of your carrot health-meter dropping to
-zero or it's game over. With stunning graphics and engaging storyline, this game will keep you on the edge
-of your paws. Will you be able to save your mentor and defeat the villain? Will you secure your legacy as
-The Hare of Ruin? Glory awaits…</TextWrapBody>
-          </TopSegmentCol>
-
-          <TopSegmentCol>
-
-            <ChangeMarginText className="font-face-header2">Game Demo</ChangeMarginText>
-            <ColImages2>
-            <DisplayVideo width="100%" controls autoplay><source src={require('../../../src/videos/HareOfRuinFinalDemo.mp4')} type="video/mp4" /></DisplayVideo>
-            <TextWrapBody className="font-face-body" style={{ color: secondaryGold }}>*Skip to 3:35 in Demo Video to view game trailer!*
- </TextWrapBody> 
-            </ColImages2>
-          </TopSegmentCol>
-
-          <TopSegmentCol>
-
-            <ChangeMarginText className="font-face-header2">Gold Master Release GDD</ChangeMarginText>
-            <ColImagesPDF><iframe src="https://drive.google.com/file/d/1fRuPL6Igf4GNArAYSFg3PemJjivTo67H/preview" width="640" height="480" allow="autoplay"></iframe>
-          
-          </ColImagesPDF>
-          </TopSegmentCol>
-
-          <TopSegmentCol>
-
-<ChangeMarginText className="font-face-header2">Level Layouts</ChangeMarginText>
-<ColImages>
-  <Carousel>
-    <CarouselItem><ExamplePhoto2 src={require('../../../src/images/level 1 env.png')} /></CarouselItem>
-    <CarouselItem><ExamplePhoto2 src={require('../../../src/images/level 2 env.png')} /></CarouselItem>
-    <CarouselItem><ExamplePhoto2 src={require('../../../src/images/level 3 env.png')} /></CarouselItem>
-
-  </Carousel>
-
-</ColImages>
-</TopSegmentCol>
-
-          <TopSegmentCol>
-
-<ChangeMarginText className="font-face-header2">Beta Release GDD/Playtesting Notes</ChangeMarginText>
-<ColImagesPDF><iframe src="https://drive.google.com/file/d/11FXUwsawdpgDTGBiVMo96Q6ZCyngiR1z/preview" width="640" height="480" allow="autoplay"></iframe>
-
-</ColImagesPDF></TopSegmentCol>
-
-          <TopSegmentCol>
-
-            <ChangeMarginText className="font-face-header2">Initial Prototype/GDD Pitch</ChangeMarginText>
-            <ColImagesPDF><iframe src="https://drive.google.com/file/d/1Hsi0Dao9C98S2pHTNyPNZSVpmjyXnxEE/preview" width="640" height="480" allow="autoplay"></iframe>
-            <iframe src="https://drive.google.com/file/d/1jE7l7k_QHYlE2oahCNRPMrQ14ijueKrv/preview" width="640" height="480" allow="autoplay"></iframe>
-          </ColImagesPDF></TopSegmentCol>
-          
-
-
-
-          <NavBottom>
-            <ScrollButton />
-            <HorizontalLine />
-            <RowIcons>
-              <a href="mailto:sadie.levy.eng@gmail.com"><IconMail /></a>
-              <a href="https://github.com/levylevylevy/portfolio" target="_blank"><IconGithub /></a>
-              <a href="https://www.linkedin.com/in/sadie-s-l/" target="_blank"><IconLinkedin /></a>
-            </RowIcons>
-          </NavBottom>
-        </WholePageContainer>
-      </>
-    );
-  }
+        {/* Prototype */}
+        <div style={sectionCard}>
+          <div style={sectionLabel}>Initial Prototype</div>
+          <h2 style={h2Style}>GDD Pitch Documents</h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 8 }}>
+            {[
+              { src: "https://drive.google.com/file/d/1Hsi0Dao9C98S2pHTNyPNZSVpmjyXnxEE/preview", title: "Hare of Ruin Level Design 1" },
+              { src: "https://drive.google.com/file/d/1jE7l7k_QHYlE2oahCNRPMrQ14ijueKrv/preview", title: "Hare of Ruin Level Design 2" },
+            ].map(({ src, title }) => (
+              <div key={title} style={{ borderRadius: 12, overflow: "hidden", border: "1px solid rgba(28,25,23,0.08)" }}>
+                <iframe
+                  src={src}
+                  style={{ width: "100%", height: 480, border: "none", display: "block" }}
+                  allow="autoplay"
+                  title={title}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default HareOfRuinCaseStudy; 
+export default HareOfRuinCaseStudy;
