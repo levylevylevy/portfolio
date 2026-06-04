@@ -4,6 +4,7 @@ import { primaryBlue, secondaryGold, backgroundColorMain, white } from './colors
 import HorizontalLine from "./BottomBar.js";
 import { GitHub, Linkedin, Mail, FileText } from 'react-feather';
 import ScrollButton from "./ScrollButton.js";
+import NowPlaying from "./NowPlaying.js";
 
 const BlinqBanner = styled.a`
   display: flex;
@@ -207,6 +208,18 @@ const WholePageContainer = styled.div`
   text-align: justify;
 `;
 
+const NowPlayingWrapper = styled.div`
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 260px;
+  z-index: 100;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 const NavBottom = styled.div`
   display: flex;
   flex-direction: column;
@@ -293,6 +306,9 @@ class Home extends Component {
   render() {
     return (
       <>
+      <NowPlayingWrapper>
+        <NowPlaying />
+      </NowPlayingWrapper>
       <RowContents>
       <WholePageContainer>
 
@@ -320,7 +336,7 @@ class Home extends Component {
 
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Over the past few years I've helped launch AI-powered platforms, renewable energy initiatives, startup products, and consumer-facing experiences. From leading user experience for startups as a freelancer, to helping deliver the first energy-autonomous island in Greece as a Technical Program Manager at Tesla, to building internal AI tools as a Full-Stack Software Engineer at John Hancock, I've always been drawn to innovation.</p>
 
-        <p style={{color: 'primaryBlue'}} className='font-face-body'>When I'm not working, I'm usually planning my next trip, reading fantasy novels, drawing at my easel, playing board games, or listening to live music.</p>
+        <p style={{color: 'primaryBlue'}} className='font-face-body'>When I'm not working, I'm usually planning my next trip, reading fantasy novels, drawing at my easel, baking my friends' birthday cakes, playing board games, or listening to live music.</p>
         
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Take a look around to see some of the projects I've worked on.</p>
 
