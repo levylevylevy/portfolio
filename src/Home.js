@@ -317,9 +317,9 @@ class Home extends Component {
         <ColAboutMe>
         
         <p style={{color: 'primaryBlue'}} className='font-face-body'>My background spans software engineering, product development, UI/UX design, and technical program management, which means I'm often happiest working on messy, ambiguous problems that require both technical depth and creative thinking.</p>
-        
-        <p style={{color: 'primaryBlue'}} className='font-face-body'>Over the past few years I've helped launch AI-powered platforms, renewable energy initiatives, startup products, and consumer-facing experiences.</p>
-        
+
+        <p style={{color: 'primaryBlue'}} className='font-face-body'>Over the past few years I've helped launch AI-powered platforms, renewable energy initiatives, startup products, and consumer-facing experiences. From leading user experience for startups as a freelancer, to helping deliver the first energy-autonomous island in Greece as a Technical Program Manager at Tesla, to building internal AI tools as a Full-Stack Software Engineer at John Hancock, I've always been drawn to innovation.</p>
+
         <p style={{color: 'primaryBlue'}} className='font-face-body'>When I'm not working, I'm usually planning my next trip, reading fantasy novels, drawing at my easel, playing board games, or listening to live music.</p>
         
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Take a look around to see some of the projects I've worked on.</p>

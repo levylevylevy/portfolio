@@ -11,6 +11,7 @@ import {
   import styled from "styled-components";
   import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText } from "../../colors.js";
   import ScrollButton from "../../ScrollButton.js";
+import CardButton from '../../components/ui/CardButton.js'
 
 const RowContents = styled.div`
 display: flex;
@@ -90,11 +91,11 @@ const CaseStudyButton = styled.div`
 <Col>
 <CardTitle className="font-face-header1" style={{color: primaryBlue}}>  Once a Daily Do</CardTitle>
 
-<p className="font-face-body" style={{color: secondaryGold}}>  HopHacks 2020 <span style={{color: primaryBlue}}> </span></p>
-<p className="font-face-subtitle" style={{color: primaryBlue}}>  Activity planner/suggestion app for those struggling with mental health.</p>
-<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}
-onClick={()=> window.open("https://devpost.com/software/once-a-daily-do", "_blank")}
->Devpost</CaseStudyButton>
+<div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 6, marginBottom: 4 }}>
+  <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>HopHacks 2020</span>
+</div>
+<p className="font-face-subtitle" style={{color: primaryBlue, marginTop: 6}}>  Activity planner and suggestion app for those struggling with mental health.</p>
+<CardButton href="https://devpost.com/software/once-a-daily-do" target="_blank" rel="noopener noreferrer" variant="outline">Devpost ↗</CardButton>
 </Col>
 <ExamplePhoto src={require('../../../src/images/onceadaily.gif')} />
 </Row>

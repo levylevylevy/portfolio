@@ -33,8 +33,7 @@ const CardContainers = styled.div`
   flex-direction: column;
   gap: 345px;
   width: 641px;
-  height: 100vh;
-  margin-bottom: -150px;
+  margin-bottom: 175px;
   
   @media (max-width: 968px) {
     width: 90%;
@@ -44,7 +43,7 @@ const CardContainers = styled.div`
   @media (max-width: 768px) {
     width: 85%;
     gap: 280px;
-    margin-bottom: -100px;
+    margin-bottom: 100px;
   }
   
   @media (max-width: 480px) {
@@ -134,8 +133,8 @@ class HackathonPage extends Component {
             <ProjectLayout>
               <CardContainers>
                 <AIScoopCard/>
-                <GardenShareCard/>
                 <VolunteerGoCard/>
+                <GardenShareCard/>
                 <OnceADailyCard/>
               </CardContainers>
             </ProjectLayout>

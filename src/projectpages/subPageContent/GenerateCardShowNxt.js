@@ -10,6 +10,7 @@ import {
   import styled from "styled-components";
   import { primaryBlue, secondaryGold, backgroundColorMain, unselectedBlue, selectedButtonText } from "../../colors.js";
   import ScrollButton from "../../ScrollButton.js";
+import CardButton from '../../components/ui/CardButton.js'
 
 
 const RowContents = styled.div`
@@ -89,10 +90,13 @@ const CaseStudyButton = styled.div`
 <Col>
 <CardTitle className="font-face-header1" style={{color: primaryBlue}}>  ShowNxt</CardTitle>
 
-<p className="font-face-body" style={{color: secondaryGold}}>  Design Lead  <span style={{color: primaryBlue}}> - Figma - Jira - UI/UX - Brand - Management
-Generate Product Development Studio, 2022</span></p>
-<p className="font-face-subtitle" style={{color: primaryBlue}}>  A mobile/web app to connect under-served athletes with college sports recruiters.</p>
-<CaseStudyButton className="font-face-subtitle" style={{color: primaryBlue}}onClick={()=> window.open("https://www.figma.com/file/Q9XuR02L0djGdGgvDcTcyA/ShowNxt-UX%2FUI-(Handoff)?node-id=3%3A17&t=iVzq0S2xbpq9mad9-1", "_blank")}>Figma</CaseStudyButton>
+<div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8, marginBottom: 4 }}>
+  <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>Design Lead</span>
+  <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>Figma · Jira</span>
+  <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>Generate Studio · 2022</span>
+</div>
+<p className="font-face-subtitle" style={{color: primaryBlue, marginTop: 6}}>  A mobile/web app to connect under-served athletes with college sports recruiters.</p>
+<CardButton href="https://www.figma.com/file/Q9XuR02L0djGdGgvDcTcyA/ShowNxt-UX%2FUI-(Handoff)?node-id=3%3A17&t=iVzq0S2xbpq9mad9-1" target="_blank" rel="noopener noreferrer" variant="outline">Figma ↗</CardButton>
 
 </Col>
 <ExamplePhoto src={require('../../../src/images/shownxt-home-betterquality.png')} />
