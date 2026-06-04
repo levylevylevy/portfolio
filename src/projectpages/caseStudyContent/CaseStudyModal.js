@@ -34,6 +34,7 @@ const CaseStudyModal = ({ isOpen, onClose, children }) => {
         justifyContent: "center",
         background: "rgba(28,25,23,0.55)",
         backdropFilter: "blur(4px)",
+        overflow: "hidden",
       }}
       onClick={onClose}
     >
@@ -43,7 +44,7 @@ const CaseStudyModal = ({ isOpen, onClose, children }) => {
           background: "#FAF8F5",
           width: "100%",
           maxWidth: "860px",
-          height: "92vh",
+          height: "92%",
           borderRadius: "20px 20px 0 0",
           display: "flex",
           flexDirection: "column",

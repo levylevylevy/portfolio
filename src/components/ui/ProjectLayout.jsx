@@ -9,8 +9,8 @@ import {
 } from "../../colors.js";
 
 const navItems = [
-  { label: "Generate Product Development Studio", to: "/portfolio/projects/workexperience/generate" },
   { label: "Hackathons", to: "/portfolio/projects/hackathons/hackmit" },
+  { label: "Generate Product Development Studio", to: "/portfolio/projects/workexperience/generate" },
   { label: "Games", to: "/portfolio/projects/makerprojects/games" },
   { label: "ATEM", to: "/portfolio/projects/workexperience/atem" },
 ];

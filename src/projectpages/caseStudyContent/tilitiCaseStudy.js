@@ -123,6 +123,8 @@ function TilitiCaseStudy() {
           alt="Tiliti app"
           style={{
             width: "min(220px, 55%)",
+            height: "auto",
+            objectFit: "contain",
             borderRadius: 16,
             boxShadow: "0 12px 40px rgba(0,0,0,0.35)",
             marginTop: 8,

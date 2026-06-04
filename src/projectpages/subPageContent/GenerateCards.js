@@ -88,6 +88,8 @@ const ExamplePhoto = styled.img`
   display: flex;
   width: 130px;
   min-height: 260px;
+  object-fit: contain;
+  object-position: top;
 
   @media (max-width: 768px) {
     width: 100%;
