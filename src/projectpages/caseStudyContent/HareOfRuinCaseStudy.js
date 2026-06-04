@@ -55,7 +55,7 @@ const RowIcons = styled.div`
 const NavBottom = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #E0E0E2;
+  background-color: #FAF8F5;
   justify-content: center;
   align-items: center;
   height: 50px;
@@ -108,7 +108,7 @@ display: flex;
 flex-direction: column;
 width: 75%;
 margin-top: 20px;
-background-color: #E0E0E2;
+background-color: #FAF8F5;
 border-radius: 20px;
 align-items: center;
 display: flex;
@@ -120,7 +120,7 @@ display: flex;
 flex-direction: column;
 width: 75%;
 margin-top: 20px;
-background-color: #E0E0E2;
+background-color: #FAF8F5;
 border-radius: 20px;
 align-items: center;
 display: flex;
@@ -229,7 +229,7 @@ const TopSegmentCol = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #E0E0E2;
+  background-color: #FAF8F5;
   border-radius: 30px;
     padding: 24px;
     margin-top: 20px;
@@ -249,7 +249,7 @@ const TopSegmentImg = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #E0E0E2;
+  background-color: #FAF8F5;
   border-radius: 30px;
     padding: 24px;
     margin-top: 20px;
@@ -269,7 +269,7 @@ const TopSegmentColVideos = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #E0E0E2;
+  background-color: #FAF8F5;
   border-radius: 30px;
     padding: 24px;
     margin-top: 20px;

@@ -35,6 +35,23 @@ const AppContents = styled.ul`
   margin-right: 94px;
   margin-top: 34px;
   color: ${primaryBlue};
+  
+  @media (max-width: 968px) {
+    margin-right: 50px;
+    gap: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-right: 0;
+    gap: 25px;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 20px;
+    margin-top: 15px;
+  }
 `;
 
 class Nav extends Component {

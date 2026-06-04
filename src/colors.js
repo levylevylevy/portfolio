@@ -1,11 +1,11 @@
-export const primaryBlue = '#27343A';
+export const primaryBlue = '#1C1917';       /* Near-black warm charcoal — text, icons */
 
-export const secondaryGold = '#AD8029';
+export const secondaryGold = '#C2714F';     /* Burnt sienna — accent, active links, headings */
 
-export const unselectedBlue = '#878d91'
+export const unselectedBlue = '#8C9BAB';    /* Cool slate — muted/unselected states */
 
-export const selectedButtonText ='#F6F6F6';
+export const selectedButtonText = '#FAF8F5'; /* Warm off-white — text on dark buttons */
 
-export const backgroundColorMain = '#E0E0E2';
+export const backgroundColorMain = '#FAF8F5'; /* Warm cream — page background */
 
 export const white = '#FFFFFF';

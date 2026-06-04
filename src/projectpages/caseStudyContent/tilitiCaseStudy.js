@@ -53,7 +53,7 @@ const RowIcons = styled.div`
 const NavBottom = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #E0E0E2;
+  background-color: #FAF8F5;
   justify-content: center;
   align-items: center;
   height: 50px;
@@ -78,17 +78,59 @@ const WholePageContainer = styled.div`
   text-align: justify;
   gap:20px;
   margin-bottom: 200px;
+  
+  @media (max-width: 1200px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  
+  @media (max-width: 968px) {
+    padding-left: 50px;
+    padding-right: 50px;
+    min-width: auto;
+  }
+  
+  @media (max-width: 768px) {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 150px;
+  }
+  
+  @media (max-width: 480px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 15px;
+    margin-bottom: 120px;
+  }
 `;
 
 const ExamplePhoto = styled.img`
 width: 241.52px;
 min-height: 480px;
 
+@media (max-width: 768px) {
+  width: 180px;
+  min-height: 360px;
+}
+
+@media (max-width: 480px) {
+  width: 150px;
+  min-height: 300px;
+}
+
 `;
 
 const ExamplePhoto2 = styled.img`
 display: flex;
 width: 80%;
+
+@media (max-width: 768px) {
+  width: 90%;
+}
+
+@media (max-width: 480px) {
+  width: 100%;
+}
 `;
 
 
@@ -96,14 +138,30 @@ const TilitiGif = styled.img`
 display: flex;
 width: 50%;
 margin-top: 20px;
+
+@media (max-width: 768px) {
+  width: 70%;
+}
+
+@media (max-width: 480px) {
+  width: 90%;
+}
 `;
 
 const DisplayVideo = styled.video`
 display: flex;
 width: 20%;
 margin-top: 20px;
-background-color: #E0E0E2;
+background-color: #FAF8F5;
 border-radius: 20px;
+
+@media (max-width: 768px) {
+  width: 40%;
+}
+
+@media (max-width: 480px) {
+  width: 60%;
+}
 `;
 
 const ExamplePhoto3 = styled.img`
@@ -113,6 +171,16 @@ max-height: 300px;
 margin-bottom: 20px;
 margin-top: -20px;
 
+@media (max-width: 768px) {
+  width: 90%;
+  max-height: 250px;
+}
+
+@media (max-width: 480px) {
+  width: 100%;
+  max-height: 200px;
+}
+
 `;
 
 const Col = styled.div`
@@ -120,6 +188,10 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 width: 500px;
+
+@media (max-width: 768px) {
+  width: 100%;
+}
 `;
 
 const ColImages = styled.div`
@@ -127,6 +199,10 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin-bottom: 20px;
+
+@media (max-width: 768px) {
+  margin-bottom: 15px;
+}
 `;
 
 const TextWrap = styled.p`
@@ -136,6 +212,10 @@ align-items: flex-start;
 flex-wrap: wrap;
 width: 400px;
 color: white;
+
+@media (max-width: 768px) {
+  width: 100%;
+}
 `;
 
 const TextWrapBody = styled.p`
@@ -145,6 +225,10 @@ align-items: flex-start;
 justify-content: flex-start;
 // flex-wrap: wrap;
 color: ${primaryBlue};
+
+@media (max-width: 768px) {
+  width: 100%;
+}
 `;
 
 const Row = styled.div`
@@ -189,7 +273,7 @@ const TopSegmentCol = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #E0E0E2;
+  background-color: #FAF8F5;
   border-radius: 30px;
     padding: 24px;
     margin-top: 20px;
@@ -209,7 +293,7 @@ const TopSegmentColVideos = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #E0E0E2;
+  background-color: #FAF8F5;
   border-radius: 30px;
     padding: 24px;
     margin-top: 20px;

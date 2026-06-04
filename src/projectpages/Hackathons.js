@@ -17,6 +17,11 @@ const WholePageContainer = styled.div`
   padding-bottom: 90px;
   gap: 20px;
   text-align: justify;
+  
+  @media (max-width: 768px) {
+    padding-bottom: 70px;
+    gap: 15px;
+  }
 `;
 
 const CardContainers = styled.div`
@@ -27,6 +32,22 @@ const CardContainers = styled.div`
   width: 641px;
   height: 100vh;
   margin-bottom: -150px;
+  
+  @media (max-width: 968px) {
+    width: 90%;
+    max-width: 550px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 85%;
+    gap: 280px;
+    margin-bottom: -100px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 90%;
+    gap: 250px;
+  }
 `;
 
 const Row = styled.div`
@@ -34,6 +55,16 @@ const Row = styled.div`
   flex-direction: row;
   gap: 78px;
   height: 340px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 15px;
+  }
 `;
 
 
@@ -59,6 +90,18 @@ color: ${primaryBlue};
 width: 111px;
 height: 28px;
 
+@media (max-width: 768px) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+}
+
+@media (max-width: 480px) {
+  gap: 10px;
+}
+
 `;
 
 const RowSubMenuContents = styled.div`
@@ -67,6 +110,16 @@ const RowSubMenuContents = styled.div`
   justify-content: center;
   gap: 68px;
   overflowY: scroll;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 20px;
+  }
 `;
 
 class HackathonPage extends Component {

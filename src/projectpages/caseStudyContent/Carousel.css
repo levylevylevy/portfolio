@@ -16,20 +16,35 @@
   .indicators {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
   }
   
   .indicators > button {
     margin: 5px;
     border-radius: 3px;
-    color: #27343A;
-    background-color: #E0E0E2;
-
-
-
+    color: #1C1917;
+    background-color: #FAF8F5;
+  }
+  
+  @media (max-width: 768px) {
+    .indicators > button {
+      margin: 3px;
+      padding: 5px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .indicators > button {
+      margin: 2px;
+      padding: 4px 6px;
+      font-size: 12px;
+    }
   }
   
   .indicators > button.active {
-    background-color: #27343A;
-    color: #E0E0E2;
+    background-color: #1C1917;
+    color: #FAF8F5;
   }
   

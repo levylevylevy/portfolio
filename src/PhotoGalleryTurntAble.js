@@ -10,18 +10,40 @@ const Row = styled.div`
  row-gap: 20px;
  width: 641px;
  height: 160px;
+ 
+ @media (max-width: 968px) {
+   width: 90%;
+   max-width: 550px;
+   height: auto;
+ }
+ 
+ @media (max-width: 768px) {
+   width: 100%;
+   row-gap: 15px;
+   flex-direction: column;
+ }
 
 `;
 
 const ImageContainer = styled.div`
 width: 300px;
 height: 160px;
+
+@media (max-width: 768px) {
+  width: 100%;
+  height: auto;
+}
 `;
 
 const AtemImage = styled.img`
   display: flex;
   max-height: 90%;
   max-width: 90%;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    max-height: 100%;
+  }
 
 `;
 

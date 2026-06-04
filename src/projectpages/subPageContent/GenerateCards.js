@@ -38,11 +38,28 @@ const ProjectCard = styled.div`
 position: absolute; 
 width: 641px;
 height: 265px;
-//background: #DCDCDE;
-background: #E0E0E2;
+//background: #C8C9C3;
+background: #FAF8F5;
 box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 padding: 24px;
+
+@media (max-width: 968px) {
+  width: 90%;
+  max-width: 550px;
+  height: auto;
+  min-height: 265px;
+}
+
+@media (max-width: 768px) {
+  width: 85%;
+  padding: 20px;
+}
+
+@media (max-width: 480px) {
+  width: 90%;
+  padding: 16px;
+}
 
 `;
 
@@ -52,12 +69,31 @@ flex-direction: column;
 margin-top: 32px;
 margin-bottom: -14px;
 
+@media (max-width: 768px) {
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
+
+@media (max-width: 480px) {
+  margin-top: 15px;
+  margin-bottom: -8px;
+}
+
 `;
 const Col = styled.div`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 margin-top: -50px;
+
+@media (max-width: 768px) {
+  margin-top: -30px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  margin-top: -20px;
+}
 `;
 
 const Row = styled.div`
@@ -65,12 +101,34 @@ display: flex;
 flex-direction: row;
 gap: 78px;
 height: 260px;
+
+@media (max-width: 768px) {
+  flex-direction: column;
+  gap: 20px;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  gap: 15px;
+}
 `;
 
 const ExamplePhoto = styled.img`
 display: flex;
 width: 130px;
 min-height: 260px;
+
+@media (max-width: 768px) {
+  width: 100%;
+  max-width: 200px;
+  min-height: auto;
+  height: auto;
+  align-self: center;
+}
+
+@media (max-width: 480px) {
+  max-width: 150px;
+}
 `;
 
 const CaseStudyButton = styled.div`
@@ -83,6 +141,12 @@ const CaseStudyButton = styled.div`
   justify-content: center;
   color: ${backgroundColorMain};
   cursor: pointer;
+  
+  @media (max-width: 480px) {
+    width: 140px;
+    height: 38px;
+    font-size: 14px;
+  }
 `;
 
 

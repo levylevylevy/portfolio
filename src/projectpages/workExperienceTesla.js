@@ -21,12 +21,22 @@ const WholePageContainer = styled.div`
   padding-bottom: 90px;
   // position: absolute;
   gap: 20px;
+  
+  @media (max-width: 768px) {
+    padding-bottom: 70px;
+    gap: 15px;
+  }
 `;
 
 const RowContents = styled.div`
   display: flex;
   justify-content: space-around;
   overflowY: scroll;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const CenterContents = styled.div`
@@ -34,6 +44,21 @@ const CenterContents = styled.div`
   flex-direction: row;
   margin-top: 30px;
   gap: 300px;
+  
+  @media (max-width: 1200px) {
+    gap: 150px;
+  }
+  
+  @media (max-width: 968px) {
+    gap: 80px;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: center;
+  }
 `;
 
 const CardContainers = styled.div`
@@ -44,17 +69,50 @@ const CardContainers = styled.div`
   width: 641px;
   height: 100vh;
   margin-bottom: 175px;
+  
+  @media (max-width: 968px) {
+    width: 90%;
+    max-width: 550px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 85%;
+    gap: 280px;
+    margin-bottom: 100px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 90%;
+    gap: 250px;
+  }
 `;
 const ProjectCard = styled.div`
 
   position: absolute; 
   width: 641px;
   height: 340px;
-  //background: #DCDCDE;
-  background: #E0E0E2;
+  //background: #C8C9C3;
+  background: #FAF8F5;
   box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 24px;
+  
+  @media (max-width: 968px) {
+    width: 90%;
+    max-width: 550px;
+    height: auto;
+    min-height: 320px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 85%;
+    padding: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 16px;
+  }
 
 `;
 
@@ -63,6 +121,16 @@ display: flex;
 flex-direction: column;
 margin-top: 32px;
 margin-bottom: -14px;
+
+@media (max-width: 768px) {
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
+
+@media (max-width: 480px) {
+  margin-top: 15px;
+  margin-bottom: -8px;
+}
 
 `;
 const Col = styled.div`
@@ -73,6 +141,15 @@ const Col = styled.div`
   margin-top: 5px;
   width: 641px;
   text-align: justify;
+  
+  @media (max-width: 968px) {
+    width: 90%;
+    max-width: 550px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   `;
 
@@ -89,6 +166,16 @@ const Row = styled.div`
   flex-direction: row;
   gap: 78px;
   height: 340px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 15px;
+  }
 `;
 
 
@@ -120,6 +207,18 @@ color: ${primaryBlue};
 width: 111px;
 height: 28px;
 
+@media (max-width: 768px) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+}
+
+@media (max-width: 480px) {
+  gap: 10px;
+}
+
 `;
 
 const RowSubMenuContents = styled.div`
@@ -129,11 +228,27 @@ const RowSubMenuContents = styled.div`
   gap: 68px;
   overflowY: scroll;
   // margin-left: 264px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 20px;
+  }
 `;
 
 const ExamplePhoto = styled.img`
 display: flex;
 min-width: 170px;
+
+@media (max-width: 768px) {
+  min-width: auto;
+  width: 100%;
+  max-width: 300px;
+}
 `;
 
 const CaseStudyButton = styled.div`
@@ -145,6 +260,12 @@ const CaseStudyButton = styled.div`
   align-items: center;
   justify-content: center;
   color: ${backgroundColorMain};
+  
+  @media (max-width: 480px) {
+    width: 140px;
+    height: 38px;
+    font-size: 14px;
+  }
 `;
 
 const ChangeMarginText = styled.h1`
