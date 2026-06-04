@@ -76,6 +76,20 @@ gap: 20px;
 flex-wrap: wrap;
 `;
 
+const ExamplePhoto = styled.img`
+display: flex;
+width: 220px;
+height: auto;
+border-radius: 10px;
+align-self: flex-start;
+
+@media (max-width: 768px) {
+  width: 100%;
+  max-width: 220px;
+  align-self: center;
+}
+`;
+
 class MusicaCard extends Component {
   render() {
     return (
@@ -93,7 +107,7 @@ class MusicaCard extends Component {
                 <p className="font-face-subtitle" style={{ color: primaryBlue, marginTop: 6 }}>  Musica is a collaborative music whiteboarding app for musical ideation and remote jamming.</p>
 
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginTop: 8, marginBottom: 6 }}>
-                  {["Figma", "Make", "Supabase"].map(tag => (
+                  {["Figma Make", "Supabase"].map(tag => (
                     <span key={tag} style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "2px 9px", fontSize: 10, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>{tag}</span>
                   ))}
                 </div>
@@ -110,6 +124,7 @@ class MusicaCard extends Component {
                 </RowButtons>
 
               </Col>
+              <ExamplePhoto src={require('../../../src/images/musicalogo.png')} />
             </Row>
           </ProjectCard>
         </CardContainers>

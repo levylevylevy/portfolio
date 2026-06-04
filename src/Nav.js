@@ -71,7 +71,7 @@ class Nav extends Component {
 
             <NavLink                
 
-            to="/portfolio/projects/workexperience/generate/" 
+            to="/portfolio/projects/hackathons/hackmit" 
             className = "font-face-navFont" 
             style={({ isActive }) => ({
               color: isActive || window.location.href.includes('/projects/') ? secondaryGold : primaryBlue,
