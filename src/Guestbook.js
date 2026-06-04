@@ -19,7 +19,7 @@ const PageWrapper = styled.div`
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   @media (max-width: 540px) {
-    padding: 12px 8px 16px;
+    padding: 12px 8px 80px;
   }
 `;
 
@@ -118,9 +118,6 @@ const BookLayout = styled.div`
   align-items: flex-start;
   gap: 0;
   width: 100%;
-  @media (max-width: 540px) {
-    flex-direction: column;
-  }
 `;
 
 const BookWrap = styled.div`
@@ -141,12 +138,6 @@ const CanvasWrapper = styled.div`
   /* 8.5 x 11 aspect ratio */
   aspect-ratio: 8.5 / 11;
   cursor: ${({ $textMode }) => ($textMode ? 'text' : 'crosshair')};
-  @media (max-width: 540px) {
-    /* on small screens cap the height so the whole page fits in view */
-    max-height: calc(100svh - 260px);
-    aspect-ratio: unset;
-    height: calc(100svh - 260px);
-  }
 `;
 
 const TextOverlay = styled.div`
@@ -193,17 +184,12 @@ const Toolbar = styled.div`
   border-radius: 0 10px 10px 0;
   padding: 20px 12px;
   width: 64px;
+  flex-shrink: 0;
   box-shadow: 4px 4px 18px rgba(0,0,0,0.08);
   @media (max-width: 540px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    border-left: 1.5px solid #ddd8ce;
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-    padding: 8px 10px;
-    gap: 7px;
-    justify-content: center;
+    width: 48px;
+    padding: 12px 8px;
+    gap: 10px;
   }
 `;
 
@@ -213,9 +199,7 @@ const Divider = styled.div`
   background: #e5e0d8;
   margin: 2px 0;
   @media (max-width: 540px) {
-    width: 1px;
-    height: 32px;
-    margin: 0 2px;
+    width: 24px;
   }
 `;
 
@@ -240,16 +224,16 @@ const ColorDot = styled.button`
   padding: 0;
   transition: border 0.15s;
   @media (max-width: 540px) {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 `;
 
 const SizeBtn = styled.button`
   width: ${({ $size }) => 10 + $size * 2}px;
   height: ${({ $size }) => 10 + $size * 2}px;
-  max-width: 38px;
-  max-height: 38px;
+  max-width: 30px;
+  max-height: 30px;
   border-radius: 50%;
   background: ${({ $active }) => ($active ? primaryBlue : '#e8e3db')};
   border: none;
@@ -271,6 +255,11 @@ const ToolBtn = styled.button`
   align-items: center;
   justify-content: center;
   transition: background 0.15s;
+  @media (max-width: 540px) {
+    width: 30px;
+    height: 26px;
+    font-size: 0.65rem;
+  }
 `;
 
 const IconBtn = styled.button`
@@ -288,9 +277,9 @@ const IconBtn = styled.button`
   transition: background 0.15s;
   &:hover { background: ${secondaryGold}; color: white; }
   @media (max-width: 540px) {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
   }
 `;
 
