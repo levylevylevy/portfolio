@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.a0cde09e.css",
-    "main.js": "/portfolio/static/js/main.fa8e3636.js",
+    "main.js": "/portfolio/static/js/main.69a4f0cb.js",
     "static/media/HareOfRuinFinalDemo.mp4": "/portfolio/static/media/HareOfRuinFinalDemo.67f0fb952586878059ec.mp4",
     "static/media/sadie_levy_tiliti_final-figma.mp4": "/portfolio/static/media/sadie_levy_tiliti_final-figma.b3a8f7d3a8fe3de31578.mp4",
     "static/media/Persist Energy Workflow.png": "/portfolio/static/media/Persist Energy Workflow.e1a9a1418539dd3c7512.png",
@@ -67,12 +67,13 @@
     "static/media/-cottagecore-mushrooms-icons.webp": "/portfolio/static/media/a4972e98f90c1eba7285456f1237e21f-cottagecore-mushrooms-icons.2c6837a0cdb54cc5bf39.webp",
     "static/media/atem7.jpg": "/portfolio/static/media/atem7.dfd1b0388be42ef8c3f8.jpg",
     "static/media/tilitilogo2.png": "/portfolio/static/media/tilitilogo2.2aeb5b2a50e1235e86ef.png",
+    "static/media/cute-rainbow-pastel-zrkt91j4y8q707fp.webp": "/portfolio/static/media/cute-rainbow-pastel-zrkt91j4y8q707fp.5a53d01b2c5ceb54f39f.webp",
     "index.html": "/portfolio/index.html",
     "main.a0cde09e.css.map": "/portfolio/static/css/main.a0cde09e.css.map",
-    "main.fa8e3636.js.map": "/portfolio/static/js/main.fa8e3636.js.map"
+    "main.69a4f0cb.js.map": "/portfolio/static/js/main.69a4f0cb.js.map"
   },
   "entrypoints": [
     "static/css/main.a0cde09e.css",
-    "static/js/main.fa8e3636.js"
+    "static/js/main.69a4f0cb.js"
   ]
 }
