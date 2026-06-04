@@ -42,9 +42,15 @@ async function getAccessToken() {
 }
 
 export default async function handler(req, res) {
-  // Allow CORS so your GitHub Pages site can call this
+  // Allow CORS so your site can call this
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // Handle preflight
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
 
   try {
     const { access_token } = await getAccessToken();
