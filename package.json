@@ -13,6 +13,7 @@
     "embla-carousel-react": "^8.6.0",
     "feather-icons": "^4.29.0",
     "firebase": "^12.14.0",
+    "html2canvas": "^1.4.1",
     "lucide-react": "^1.17.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

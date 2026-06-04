@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback, useEffect, useImperativeHandle, f
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import useEmblaCarousel from 'embla-carousel-react';
 import styled from 'styled-components';
+import html2canvas from 'html2canvas';
 import { primaryBlue, secondaryGold, backgroundColorMain } from './colors';
 import { db } from './firebase';
 import { collection, addDoc, getDocs, orderBy, query } from 'firebase/firestore';
@@ -275,26 +276,6 @@ const SaveStatus = styled.div`
   min-height: 18px;
 `;
 
-// ─── Saved Entries ─────────────────────────────────────────────────────────────
-
-const SavedOverlay = styled.div`
-  position: absolute;
-  inset: 0;
-  background: #fffef9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 30;
-`;
-
-const SavedImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-`;
-
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
 const COLORS = [
@@ -381,8 +362,14 @@ const GuestbookPage = forwardRef(function GuestbookPage(
     undo() {
       canvasRef.current?.undo();
     },
-    exportImage() {
-      return canvasRef.current?.exportImage('png');
+    async captureImage() {
+      if (!wrapperRef.current) return null;
+      const canvas = await html2canvas(wrapperRef.current, {
+        useCORS: true,
+        backgroundColor: '#fffef9',
+        scale: 2,
+      });
+      return canvas.toDataURL('image/png');
     },
   }));
 
@@ -424,25 +411,35 @@ const GuestbookPage = forwardRef(function GuestbookPage(
       <BookWrap>
         <CanvasWrapper
           ref={wrapperRef}
-          $textMode={textMode && !savedImageUrl}
+          $textMode={textMode}
           onClick={handleCanvasClick}
-          onDragOver={!savedImageUrl ? handleDragOver : undefined}
-          onDrop={!savedImageUrl ? handleDrop : undefined}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
         >
           <ReactSketchCanvas
             ref={canvasRef}
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
             strokeWidth={erasing ? size * 4 : size}
             strokeColor={erasing ? '#fffef9' : color}
-            canvasColor="#fffef9"
+            canvasColor={savedImageUrl ? 'transparent' : '#fffef9'}
             withTimestamp={false}
           />
-          <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 5 }}>
+          {savedImageUrl && (
+            <img
+              src={savedImageUrl}
+              alt=""
+              style={{
+                position: 'absolute', inset: 0, width: '100%', height: '100%',
+                objectFit: 'fill', zIndex: 0, pointerEvents: 'none',
+              }}
+            />
+          )}
+          <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 6 }}>
             {placedStamps.map(s => (
               <PlacedStamp key={s.id} src={s.src} style={{ left: s.x, top: s.y }} alt="" />
             ))}
           </div>
-          <TextOverlay $textMode={textMode && !savedImageUrl}>
+          <TextOverlay $textMode={textMode}>
             {placedTexts.map((t, i) => (
               <PlacedText key={i} style={{ left: t.x, top: t.y }} $fontFamily={t.font} $fontSize={t.fontSize} $color={t.color}>
                 {t.value}
@@ -462,29 +459,21 @@ const GuestbookPage = forwardRef(function GuestbookPage(
               />
             )}
           </TextOverlay>
-          {/* Saved image covers the canvas */}
-          {savedImageUrl && (
-            <SavedOverlay>
-              <SavedImg src={savedImageUrl} alt="saved page" />
-            </SavedOverlay>
-          )}
         </CanvasWrapper>
       </BookWrap>
 
-      {!savedImageUrl && (
-        <StampTray>
-          <StampTrayLabel>Stamps →</StampTrayLabel>
-          {STAMPS.map(stamp => (
-            <StampThumb
-              key={stamp.id}
-              src={stamp.src}
-              alt={stamp.label}
-              draggable
-              onDragStart={e => e.dataTransfer.setData('stampSrc', stamp.src)}
-            />
-          ))}
-        </StampTray>
-      )}
+      <StampTray>
+        <StampTrayLabel>Stamps →</StampTrayLabel>
+        {STAMPS.map(stamp => (
+          <StampThumb
+            key={stamp.id}
+            src={stamp.src}
+            alt={stamp.label}
+            draggable
+            onDragStart={e => e.dataTransfer.setData('stampSrc', stamp.src)}
+          />
+        ))}
+      </StampTray>
     </div>
   );
 });
@@ -507,6 +496,7 @@ export default function Guestbook() {
 
   const [saving, setSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState('');
+  const [loadingPages, setLoadingPages] = useState(true);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, watchDrag: false });
 
@@ -525,30 +515,31 @@ export default function Guestbook() {
   useEffect(() => {
     const load = async () => {
       try {
-        const q = query(collection(db, 'guestbook'), orderBy('pageIndex', 'asc'), orderBy('createdAt', 'asc'));
+        const q = query(collection(db, 'guestbook'), orderBy('createdAt', 'asc'));
         const snap = await getDocs(q);
         const docs = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-
-        // Build pages from Firestore — find max page index
-        if (docs.length === 0) return;
+        if (docs.length === 0) { setLoadingPages(false); return; }
         const maxIdx = Math.max(...docs.map(d => d.pageIndex ?? 0));
         const totalNeeded = Math.max(TOTAL_PAGES, maxIdx + 1);
 
-        const newPages = Array.from({ length: totalNeeded }, (_, i) => {
-          // Take the last saved entry for each pageIndex
-          const entry = [...docs].reverse().find(d => (d.pageIndex ?? 0) === i);
-          return { key: i, savedImageUrl: entry?.imageDataUrl ?? null };
-        });
+        // For each page, pick the most recent saved image (docs sorted asc so last wins)
+        const latestByPage = {};
+        docs.forEach(d => { latestByPage[d.pageIndex ?? 0] = d.imageDataUrl; });
+
+        const newPages = Array.from({ length: totalNeeded }, (_, i) => ({
+          key: i,
+          savedImageUrl: latestByPage[i] ?? null,
+        }));
         setPages(newPages);
 
-        // Scroll to last page that has a saved image, or the last page
-        const lastSaved = [...newPages].reverse().findIndex(p => p.savedImageUrl !== null);
-        const targetIdx = lastSaved >= 0 ? newPages.length - 1 - lastSaved : 0;
-        setSelectedIndex(targetIdx);
-        // Embla scroll after it's ready
-        setTimeout(() => emblaApi?.scrollTo(targetIdx, true), 100);
+        const lastIdx = maxIdx;
+        setSelectedIndex(lastIdx);
+        setTimeout(() => emblaApi?.scrollTo(lastIdx, true), 100);
       } catch (e) {
         console.error('Failed to load entries', e);
+        setSaveStatus('Error loading saves: ' + e.message);
+      } finally {
+        setLoadingPages(false);
       }
     };
     load();
@@ -561,7 +552,7 @@ export default function Guestbook() {
     setSaving(true);
     setSaveStatus('');
     try {
-      const dataUrl = await pageRef.current.exportImage();
+      const dataUrl = await pageRef.current.captureImage();
       await addDoc(collection(db, 'guestbook'), {
         imageDataUrl: dataUrl,
         pageIndex: selectedIndex,
@@ -605,13 +596,16 @@ export default function Guestbook() {
     onSelect();
   }, [emblaApi, onSelect]);
 
-  const currentPageSaved = pages[selectedIndex]?.savedImageUrl != null;
+  const currentPageSaved = false; // no lock — pages stay editable after saving
 
   return (
     <PageWrapper>
       <Title>Guestbook</Title>
 
       <CarouselOuter>
+        {loadingPages ? (
+          <div style={{ textAlign: 'center', color: '#bbb', padding: '60px 0', fontSize: '0.9rem' }}>Loading…</div>
+        ) : (
         <BookLayout>
           <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
             <CarouselViewport ref={emblaRef}>
@@ -640,21 +634,9 @@ export default function Guestbook() {
               <NavBtn $disabled={!canScrollNext} onClick={() => emblaApi?.scrollNext()}>→</NavBtn>
             </CarouselNav>
             <div style={{ display: 'flex', gap: 8, marginTop: 10, justifyContent: 'flex-start' }}>
-              {!currentPageSaved && (
-                <DoneBtn disabled={saving} onClick={handleDone}>
-                  {saving ? 'Saving…' : 'Done'}
-                </DoneBtn>
-              )}
-              {currentPageSaved && (
-                <DoneBtn
-                  onClick={() => setPages(prev => prev.map((p, i) =>
-                    i === selectedIndex ? { ...p, savedImageUrl: null } : p
-                  ))}
-                  style={{ background: 'transparent', color: '#18181b', border: '1.5px solid #18181b' }}
-                >
-                  Edit
-                </DoneBtn>
-              )}
+              <DoneBtn disabled={saving} onClick={handleDone}>
+                {saving ? 'Saving…' : 'Done'}
+              </DoneBtn>
               <AddPageBtn onClick={handleAddPage}>+ Add a page</AddPageBtn>
             </div>
           </div>
@@ -687,6 +669,7 @@ export default function Guestbook() {
             </IconBtn>
           </Toolbar>
         </BookLayout>
+        )}
       </CarouselOuter>
     </PageWrapper>
   );
