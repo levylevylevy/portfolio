@@ -17,8 +17,9 @@ const PageWrapper = styled.div`
   align-items: center;
   padding: 40px 24px 100px;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
   @media (max-width: 540px) {
-    padding: 20px 12px 80px;
+    padding: 12px 8px 16px;
   }
 `;
 
@@ -28,6 +29,10 @@ const Title = styled.h1`
   color: ${primaryBlue};
   margin: 0 0 6px;
   text-align: center;
+  @media (max-width: 540px) {
+    font-size: 1.6rem;
+    margin: 0 0 2px;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -42,6 +47,9 @@ const Subtitle = styled.p`
 const CarouselOuter = styled.div`
   width: 100%;
   max-width: 620px;
+  @media (max-width: 540px) {
+    max-width: 100%;
+  }
 `;
 
 const CarouselViewport = styled.div`
@@ -64,6 +72,10 @@ const CarouselNav = styled.div`
   justify-content: center;
   gap: 20px;
   margin-top: 8px;
+  @media (max-width: 540px) {
+    margin-top: 4px;
+    gap: 12px;
+  }
 `;
 
 const NavBtn = styled.button`
@@ -79,8 +91,14 @@ const NavBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   &:hover {
     background: ${({ $disabled }) => ($disabled ? '#e0dbd3' : secondaryGold)};
+  }
+  @media (max-width: 540px) {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
   }
 `;
 
@@ -123,6 +141,12 @@ const CanvasWrapper = styled.div`
   /* 8.5 x 11 aspect ratio */
   aspect-ratio: 8.5 / 11;
   cursor: ${({ $textMode }) => ($textMode ? 'text' : 'crosshair')};
+  @media (max-width: 540px) {
+    /* on small screens cap the height so the whole page fits in view */
+    max-height: calc(100svh - 260px);
+    aspect-ratio: unset;
+    height: calc(100svh - 260px);
+  }
 `;
 
 const TextOverlay = styled.div`
@@ -177,8 +201,8 @@ const Toolbar = styled.div`
     border-left: 1.5px solid #ddd8ce;
     border-top: none;
     border-radius: 0 0 10px 10px;
-    padding: 10px 12px;
-    gap: 10px;
+    padding: 8px 10px;
+    gap: 7px;
     justify-content: center;
   }
 `;
@@ -215,6 +239,10 @@ const ColorDot = styled.button`
   cursor: pointer;
   padding: 0;
   transition: border 0.15s;
+  @media (max-width: 540px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const SizeBtn = styled.button`
@@ -259,6 +287,11 @@ const IconBtn = styled.button`
   justify-content: center;
   transition: background 0.15s;
   &:hover { background: ${secondaryGold}; color: white; }
+  @media (max-width: 540px) {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
 `;
 
 const DoneBtn = styled.button`
@@ -276,6 +309,11 @@ const DoneBtn = styled.button`
   height: 42px;
   &:hover { background: #3f3f46; }
   &:disabled { background: #d4d4d8; color: #a1a1aa; cursor: default; }
+  @media (max-width: 540px) {
+    height: 36px;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
 `;
 
 const AddPageBtn = styled.button`
@@ -292,6 +330,11 @@ const AddPageBtn = styled.button`
   white-space: nowrap;
   transition: border-color 0.15s, background 0.15s;
   &:hover { background: #f4f4f5; border-color: #a1a1aa; }
+  @media (max-width: 540px) {
+    height: 36px;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
 `;
 
 const SaveStatus = styled.div`
@@ -337,6 +380,8 @@ const StampTray = styled.div`
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    padding: 6px 8px;
+    gap: 6px;
   }
 `;
 
@@ -353,6 +398,10 @@ const StampThumb = styled.img`
   transition: box-shadow 0.15s;
   &:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   &:active { cursor: grabbing; }
+  @media (max-width: 540px) {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 const StampTrayLabel = styled.span`

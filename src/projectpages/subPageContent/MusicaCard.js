@@ -15,7 +15,8 @@ display: block;
 const ProjectCard = styled.div`
 position: absolute; 
 width: 641px;
-height: 265px;
+min-height: 265px;
+height: auto;
 background: #FAF8F5;
 box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
@@ -58,7 +59,8 @@ const Row = styled.div`
 display: flex;
 flex-direction: row;
 gap: 78px;
-height: 260px;
+min-height: 260px;
+height: auto;
 
 @media (max-width: 768px) {
   flex-direction: column;
@@ -67,10 +69,11 @@ height: 260px;
 }
 `;
 
-const ExamplePhoto = styled.img`
+const RowButtons = styled.div`
 display: flex;
-width: 130px;
-min-height: 260px;
+flex-direction: row;
+gap: 20px;
+flex-wrap: wrap;
 `;
 
 class MusicaCard extends Component {
@@ -84,10 +87,27 @@ class MusicaCard extends Component {
                 <CardTitle className="font-face-header1" style={{ color: primaryBlue }}>  Musica</CardTitle>
 
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 6, marginBottom: 4 }}>
-                  <span style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "#FEF3C7", border: "1px solid #FDE68A", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 700, color: "#92400E", letterSpacing: "0.04em" }}>Figma/Contra Makeathon 2025</span>
+                  <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>Figma/Contra Makeathon 2025</span>
                 </div>
 
-                <p className="font-face-subtitle" style={{ color: primaryBlue, marginTop: 6 }}>  Details coming soon.</p>
+                <p className="font-face-subtitle" style={{ color: primaryBlue, marginTop: 6 }}>  Musica is a collaborative music whiteboarding app for musical ideation and remote jamming.</p>
+
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginTop: 8, marginBottom: 6 }}>
+                  {["Figma", "Make", "Supabase"].map(tag => (
+                    <span key={tag} style={{ display: "inline-flex", alignItems: "center", background: "rgba(28,25,23,0.06)", borderRadius: 100, padding: "2px 9px", fontSize: 10, fontWeight: 600, color: "#3D3530", letterSpacing: "0.03em" }}>{tag}</span>
+                  ))}
+                </div>
+
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 10 }}>
+                  {["UI/UX", "Product Design", "Prompt Engineer", "Coding"].map(role => (
+                    <span key={role} style={{ display: "inline-flex", alignItems: "center", background: "rgba(74,125,168,0.10)", borderRadius: 100, padding: "2px 9px", fontSize: 10, fontWeight: 600, color: primaryBlue, letterSpacing: "0.03em" }}>{role}</span>
+                  ))}
+                </div>
+
+                <RowButtons>
+                  <CardButton href="https://www.figma.com/proto/YOUR_FIGMA_LINK" target="_blank" rel="noopener noreferrer" variant="outline">Figma Preview ↗</CardButton>
+                  <CardButton href="https://www.youtube.com/YOUR_YOUTUBE_LINK" target="_blank" rel="noopener noreferrer" variant="outline">Walkthrough ↗</CardButton>
+                </RowButtons>
 
               </Col>
             </Row>
