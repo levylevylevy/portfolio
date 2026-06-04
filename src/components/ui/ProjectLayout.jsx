@@ -21,6 +21,10 @@ const Shell = styled.div`
   flex-direction: row;
   min-height: calc(100vh - 90px);
   padding-bottom: 90px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 /* ── Sidebar ── */

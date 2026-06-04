@@ -9,6 +9,11 @@ import { primaryBlue, backgroundColorMain } from "../../colors.js";
 
 const CardContainers = styled.div`
   display: block;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const ProjectCard = styled.div`
@@ -28,7 +33,11 @@ const ProjectCard = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 85%;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    box-sizing: border-box;
     padding: 20px;
   }
 

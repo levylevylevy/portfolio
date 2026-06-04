@@ -26,6 +26,11 @@ margin-top: 30px;
 
 const CardContainers = styled.div`
 display: block;
+
+@media (max-width: 768px) {
+  width: 100%;
+  height: auto;
+}
 `;
 
 const ProjectCard = styled.div`
@@ -33,12 +38,17 @@ const ProjectCard = styled.div`
 position: absolute; 
 width: 641px;
 height: 265px;
-//background: #DCDCDE;
 background: #FAF8F5;
 box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 padding: 24px;
 
+@media (max-width: 768px) {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
 `;
 
 const CardTitle=styled.h1`
@@ -47,12 +57,21 @@ flex-direction: column;
 margin-top: 32px;
 margin-bottom: -14px;
 
+@media (max-width: 768px) {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
 `;
 const Col = styled.div`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 margin-top: -50px;
+
+@media (max-width: 768px) {
+  margin-top: 0;
+  width: 100%;
+}
 `;
 
 const Row = styled.div`
@@ -60,12 +79,26 @@ display: flex;
 flex-direction: row;
 gap: 78px;
 height: 260px;
+
+@media (max-width: 768px) {
+  flex-direction: column;
+  gap: 16px;
+  height: auto;
+}
 `;
 
 const ExamplePhoto = styled.img`
 display: flex;
 width: 130px;
 min-height: 260px;
+
+@media (max-width: 768px) {
+  width: 100%;
+  max-width: 200px;
+  min-height: auto;
+  height: auto;
+  align-self: center;
+}
 `;
 
 const CaseStudyButton = styled.div`

@@ -46,6 +46,18 @@ const CardContainers = styled.div`
   width: 641px;
   height: 100vh;
   margin-bottom: -150px;
+
+  @media (max-width: 968px) {
+    width: 90%;
+    max-width: 641px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    gap: 24px;
+    height: auto;
+    margin-bottom: 40px;
+  }
 `;
 
 const ProjectCard = styled.div`
@@ -56,6 +68,19 @@ const ProjectCard = styled.div`
   box-shadow: 0px 1.5px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 24px;
+
+  @media (max-width: 968px) {
+    width: 90%;
+    max-width: 550px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
 `;
 
 const CardTitle = styled.h1`

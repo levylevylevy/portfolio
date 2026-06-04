@@ -38,18 +38,14 @@ const CardContainers = styled.div`
   
   @media (max-width: 968px) {
     width: 90%;
-    max-width: 550px;
+    max-width: 641px;
   }
   
   @media (max-width: 768px) {
-    width: 85%;
-    gap: 280px;
-    margin-bottom: 100px;
-  }
-  
-  @media (max-width: 480px) {
-    width: 90%;
-    gap: 250px;
+    width: 100%;
+    gap: 24px;
+    margin-bottom: 40px;
+    height: auto;
   }
 `;
 
