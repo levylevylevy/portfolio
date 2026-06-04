@@ -1,4 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect, useImperativeHandle, forwardRef } from 'react';
+import { createPortal } from 'react-dom';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import useEmblaCarousel from 'embla-carousel-react';
 import styled from 'styled-components';
@@ -16,6 +17,9 @@ const PageWrapper = styled.div`
   align-items: center;
   padding: 40px 24px 100px;
   font-family: 'Poppins', sans-serif;
+  @media (max-width: 540px) {
+    padding: 20px 12px 80px;
+  }
 `;
 
 const Title = styled.h1`
@@ -96,6 +100,9 @@ const BookLayout = styled.div`
   align-items: flex-start;
   gap: 0;
   width: 100%;
+  @media (max-width: 540px) {
+    flex-direction: column;
+  }
 `;
 
 const BookWrap = styled.div`
@@ -163,6 +170,17 @@ const Toolbar = styled.div`
   padding: 20px 12px;
   width: 64px;
   box-shadow: 4px 4px 18px rgba(0,0,0,0.08);
+  @media (max-width: 540px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border-left: 1.5px solid #ddd8ce;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 12px;
+    gap: 10px;
+    justify-content: center;
+  }
 `;
 
 const Divider = styled.div`
@@ -170,6 +188,11 @@ const Divider = styled.div`
   height: 1px;
   background: #e5e0d8;
   margin: 2px 0;
+  @media (max-width: 540px) {
+    width: 1px;
+    height: 32px;
+    margin: 0 2px;
+  }
 `;
 
 const ToolLabel = styled.span`
@@ -177,6 +200,9 @@ const ToolLabel = styled.span`
   color: #bbb;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  @media (max-width: 540px) {
+    display: none;
+  }
 `;
 
 const ColorDot = styled.button`
@@ -307,16 +333,23 @@ const StampTray = styled.div`
   border-radius: 0 0 10px 2px;
   align-items: center;
   flex-wrap: wrap;
+  @media (max-width: 540px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 `;
 
 const StampThumb = styled.img`
   width: 40px;
   height: 40px;
+  flex-shrink: 0;
   object-fit: contain;
   border-radius: 6px;
   border: 1.5px solid #e5e0d8;
   background: #fdfaf5;
   cursor: grab;
+  touch-action: none;
   transition: box-shadow 0.15s;
   &:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   &:active { cursor: grabbing; }
@@ -339,24 +372,38 @@ const PlacedStamp = styled.img`
   user-select: none;
 `;
 
+// Ghost stamp shown while dragging on touch devices
+const GhostStamp = styled.img`
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+`;
+
 // ─── Single Guestbook Page (canvas only) ──────────────────────────────────────
 
 // ─── Single Guestbook Page ─────────────────────────────────────────────────────
 
 const GuestbookPage = forwardRef(function GuestbookPage(
-  { canvasRef, color, size, erasing, textMode, savedImageUrl },
+  { canvasRef, color, size, erasing, textMode, savedImageUrl, placedStamps, placedTexts, onAddStamp, onAddText, onClearPage },
   ref
 ) {
   const wrapperRef = useRef(null);
-  const [placedTexts, setPlacedTexts] = useState([]);
   const [activeInput, setActiveInput] = useState(null);
-  const [placedStamps, setPlacedStamps] = useState([]);
+
+  // Keep latest callbacks in a ref to avoid stale closures in window event listeners
+  const callbackRefs = useRef({ onAddStamp, onAddText, onClearPage });
+  callbackRefs.current = { onAddStamp, onAddText, onClearPage };
 
   useImperativeHandle(ref, () => ({
     clearAll() {
       canvasRef.current?.clearCanvas();
-      setPlacedTexts([]);
-      setPlacedStamps([]);
+      callbackRefs.current.onClearPage();
       setActiveInput(null);
     },
     undo() {
@@ -371,7 +418,10 @@ const GuestbookPage = forwardRef(function GuestbookPage(
       });
       return canvas.toDataURL('image/png');
     },
+    getWrapperEl() { return wrapperRef.current; },
   }));
+
+  // ── Text placement ────────────────────────────────────────────────────────
 
   const handleCanvasClick = (e) => {
     if (!textMode) return;
@@ -379,17 +429,33 @@ const GuestbookPage = forwardRef(function GuestbookPage(
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     if (activeInput && activeInput.value.trim()) {
-      setPlacedTexts(prev => [...prev, { ...activeInput, font: TEXT_FONT, fontSize: TEXT_SIZE, color }]);
+      callbackRefs.current.onAddText({ x: activeInput.x, y: activeInput.y, value: activeInput.value, font: TEXT_FONT, fontSize: TEXT_SIZE, color });
+    }
+    setActiveInput({ x, y, value: '' });
+  };
+
+  // Touch tap on the canvas for text mode
+  const handleCanvasTouchEnd = (e) => {
+    if (!textMode) return;
+    if (e.changedTouches.length === 0) return;
+    const touch = e.changedTouches[0];
+    const rect = wrapperRef.current.getBoundingClientRect();
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+    if (activeInput && activeInput.value.trim()) {
+      callbackRefs.current.onAddText({ x: activeInput.x, y: activeInput.y, value: activeInput.value, font: TEXT_FONT, fontSize: TEXT_SIZE, color });
     }
     setActiveInput({ x, y, value: '' });
   };
 
   const commitActiveInput = () => {
     if (activeInput && activeInput.value.trim()) {
-      setPlacedTexts(prev => [...prev, { ...activeInput, font: TEXT_FONT, fontSize: TEXT_SIZE, color }]);
+      callbackRefs.current.onAddText({ x: activeInput.x, y: activeInput.y, value: activeInput.value, font: TEXT_FONT, fontSize: TEXT_SIZE, color });
     }
     setActiveInput(null);
   };
+
+  // ── Desktop drag-and-drop for stamps ─────────────────────────────────────
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -403,78 +469,69 @@ const GuestbookPage = forwardRef(function GuestbookPage(
     const rect = wrapperRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left - 30;
     const y = e.clientY - rect.top - 30;
-    setPlacedStamps(prev => [...prev, { id: Date.now(), src: stampSrc, x, y }]);
+    callbackRefs.current.onAddStamp({ id: Date.now(), src: stampSrc, x, y });
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <BookWrap>
-        <CanvasWrapper
-          ref={wrapperRef}
-          $textMode={textMode}
-          onClick={handleCanvasClick}
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-        >
-          <ReactSketchCanvas
-            ref={canvasRef}
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
-            strokeWidth={erasing ? size * 4 : size}
-            strokeColor={erasing ? '#fffef9' : color}
-            canvasColor={savedImageUrl ? 'transparent' : '#fffef9'}
-            withTimestamp={false}
+    <BookWrap>
+      <CanvasWrapper
+        ref={wrapperRef}
+        $textMode={textMode}
+        onClick={handleCanvasClick}
+        onTouchEnd={handleCanvasTouchEnd}
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
+      >
+        <ReactSketchCanvas
+          ref={canvasRef}
+          style={{
+            position: 'absolute', inset: 0, width: '100%', height: '100%',
+            zIndex: 2,
+            touchAction: textMode ? 'auto' : 'none',
+            pointerEvents: textMode ? 'none' : 'auto',
+          }}
+          strokeWidth={erasing ? size * 4 : size}
+          strokeColor={erasing ? '#fffef9' : color}
+          canvasColor={savedImageUrl ? 'transparent' : '#fffef9'}
+          withTimestamp={false}
+        />
+        {savedImageUrl && (
+          <img
+            src={savedImageUrl}
+            alt=""
+            style={{
+              position: 'absolute', inset: 0, width: '100%', height: '100%',
+              objectFit: 'fill', zIndex: 0, pointerEvents: 'none',
+            }}
           />
-          {savedImageUrl && (
-            <img
-              src={savedImageUrl}
-              alt=""
-              style={{
-                position: 'absolute', inset: 0, width: '100%', height: '100%',
-                objectFit: 'fill', zIndex: 0, pointerEvents: 'none',
-              }}
+        )}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 6 }}>
+          {placedStamps.map(s => (
+            <PlacedStamp key={s.id} src={s.src} style={{ left: s.x, top: s.y }} alt="" />
+          ))}
+        </div>
+        <TextOverlay $textMode={textMode}>
+          {placedTexts.map((t, i) => (
+            <PlacedText key={i} style={{ left: t.x, top: t.y }} $fontFamily={t.font} $fontSize={t.fontSize} $color={t.color}>
+              {t.value}
+            </PlacedText>
+          ))}
+          {activeInput && (
+            <FloatingInput
+              autoFocus
+              style={{ left: activeInput.x, top: activeInput.y }}
+              $fontFamily={TEXT_FONT}
+              $fontSize={TEXT_SIZE}
+              $color={color}
+              value={activeInput.value}
+              onChange={e => setActiveInput(prev => ({ ...prev, value: e.target.value }))}
+              onKeyDown={e => { if (e.key === 'Enter') commitActiveInput(); if (e.key === 'Escape') setActiveInput(null); }}
+              onBlur={commitActiveInput}
             />
           )}
-          <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 6 }}>
-            {placedStamps.map(s => (
-              <PlacedStamp key={s.id} src={s.src} style={{ left: s.x, top: s.y }} alt="" />
-            ))}
-          </div>
-          <TextOverlay $textMode={textMode}>
-            {placedTexts.map((t, i) => (
-              <PlacedText key={i} style={{ left: t.x, top: t.y }} $fontFamily={t.font} $fontSize={t.fontSize} $color={t.color}>
-                {t.value}
-              </PlacedText>
-            ))}
-            {activeInput && (
-              <FloatingInput
-                autoFocus
-                style={{ left: activeInput.x, top: activeInput.y }}
-                $fontFamily={TEXT_FONT}
-                $fontSize={TEXT_SIZE}
-                $color={color}
-                value={activeInput.value}
-                onChange={e => setActiveInput(prev => ({ ...prev, value: e.target.value }))}
-                onKeyDown={e => { if (e.key === 'Enter') commitActiveInput(); if (e.key === 'Escape') setActiveInput(null); }}
-                onBlur={commitActiveInput}
-              />
-            )}
-          </TextOverlay>
-        </CanvasWrapper>
-      </BookWrap>
-
-      <StampTray>
-        <StampTrayLabel>Stamps →</StampTrayLabel>
-        {STAMPS.map(stamp => (
-          <StampThumb
-            key={stamp.id}
-            src={stamp.src}
-            alt={stamp.label}
-            draggable
-            onDragStart={e => e.dataTransfer.setData('stampSrc', stamp.src)}
-          />
-        ))}
-      </StampTray>
-    </div>
+        </TextOverlay>
+      </CanvasWrapper>
+    </BookWrap>
   );
 });
 
@@ -493,6 +550,14 @@ export default function Guestbook() {
   const [size, setSize] = useState(5);
   const [erasing, setErasing] = useState(false);
   const [textMode, setTextMode] = useState(false);
+
+  // Per-page stamps and texts, keyed by page index
+  const [pageStamps, setPageStamps] = useState(() => Array.from({ length: TOTAL_PAGES }, () => []));
+  const [pageTexts, setPageTexts] = useState(() => Array.from({ length: TOTAL_PAGES }, () => []));
+
+  // Touch drag state for stamp tray
+  const touchDragRef = useRef(null);
+  const [ghostStamp, setGhostStamp] = useState(null);
 
   const [saving, setSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState('');
@@ -531,6 +596,8 @@ export default function Guestbook() {
           savedImageUrl: latestByPage[i] ?? null,
         }));
         setPages(newPages);
+        setPageStamps(Array.from({ length: totalNeeded }, () => []));
+        setPageTexts(Array.from({ length: totalNeeded }, () => []));
 
         const lastIdx = maxIdx;
         setSelectedIndex(lastIdx);
@@ -576,12 +643,57 @@ export default function Guestbook() {
     canvasRefs.current.push(React.createRef());
     pageRefs.current.push(React.createRef());
     setPages(prev => [...prev, { key: Date.now(), savedImageUrl: null }]);
+    setPageStamps(prev => [...prev, []]);
+    setPageTexts(prev => [...prev, []]);
     // Wait for embla to register the new slide, then scroll to it
     setTimeout(() => {
       emblaApi?.reInit();
       setTimeout(() => emblaApi?.scrollTo(newIdx), 50);
     }, 50);
   };
+
+  // ── Touch drag-and-drop for stamps (lives in parent so StampTray is outside the carousel) ──
+  const handleStampTouchStart = (e, stampSrc) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    touchDragRef.current = { src: stampSrc };
+    setGhostStamp({ src: stampSrc, x: touch.clientX, y: touch.clientY });
+  };
+
+  useEffect(() => {
+    const activePageRef = () => pageRefs.current[selectedIndex]?.current;
+
+    const onTouchMove = (e) => {
+      if (!touchDragRef.current) return;
+      const touch = e.touches[0];
+      setGhostStamp(g => g ? { ...g, x: touch.clientX, y: touch.clientY } : null);
+    };
+
+    const onTouchEnd = (e) => {
+      if (!touchDragRef.current) return;
+      const { src } = touchDragRef.current;
+      touchDragRef.current = null;
+      setGhostStamp(null);
+
+      const touch = e.changedTouches[0];
+      const wrapperEl = activePageRef()?.getWrapperEl?.();
+      if (!wrapperEl) return;
+      const rect = wrapperEl.getBoundingClientRect();
+      const x = touch.clientX - rect.left - 30;
+      const y = touch.clientY - rect.top - 30;
+      if (x < -30 || y < -30 || x > rect.width || y > rect.height) return;
+      const idx = selectedIndex;
+      setPageStamps(prev => prev.map((s, i) => i === idx ? [...s, { id: Date.now(), src, x, y }] : s));
+    };
+
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
+    window.addEventListener('touchend', onTouchEnd);
+    return () => {
+      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('touchend', onTouchEnd);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedIndex]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -620,6 +732,14 @@ export default function Guestbook() {
                       erasing={erasing}
                       textMode={textMode}
                       savedImageUrl={page.savedImageUrl}
+                      placedStamps={pageStamps[i] ?? []}
+                      placedTexts={pageTexts[i] ?? []}
+                      onAddStamp={(stamp) => setPageStamps(prev => prev.map((s, idx) => idx === i ? [...s, stamp] : s))}
+                      onAddText={(text) => setPageTexts(prev => prev.map((t, idx) => idx === i ? [...t, text] : t))}
+                      onClearPage={() => {
+                        setPageStamps(prev => prev.map((s, idx) => idx === i ? [] : s));
+                        setPageTexts(prev => prev.map((t, idx) => idx === i ? [] : t));
+                      }}
                     />
                   </CarouselSlide>
                 ))}
@@ -627,6 +747,29 @@ export default function Guestbook() {
             </CarouselViewport>
 
             <SaveStatus $error={saveStatus.startsWith('Error')}>{saveStatus}</SaveStatus>
+
+            <StampTray>
+              <StampTrayLabel>Stamps →</StampTrayLabel>
+              {STAMPS.map(stamp => (
+                <StampThumb
+                  key={stamp.id}
+                  src={stamp.src}
+                  alt={stamp.label}
+                  draggable
+                  onDragStart={e => e.dataTransfer.setData('stampSrc', stamp.src)}
+                  onTouchStart={e => handleStampTouchStart(e, stamp.src)}
+                />
+              ))}
+            </StampTray>
+
+            {ghostStamp && createPortal(
+              <GhostStamp
+                src={ghostStamp.src}
+                alt=""
+                style={{ left: ghostStamp.x, top: ghostStamp.y }}
+              />,
+              document.body
+            )}
 
             <CarouselNav style={{ marginTop: 4 }}>
               <NavBtn $disabled={!canScrollPrev} onClick={() => emblaApi?.scrollPrev()}>←</NavBtn>
