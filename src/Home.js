@@ -342,8 +342,8 @@ class Home extends Component {
 
       <CenterContents>
         <ColAboutMe>
-        
-        <p style={{color: 'primaryBlue'}} className='font-face-body'>My background spans software engineering, product development, UI/UX design, and technical program management, which means I'm often happiest working on messy, ambiguous problems that require both technical depth and creative thinking.</p>
+
+        <p style={{color: 'primaryBlue'}} className='font-face-body'>My background spans software engineering, product development, UI/UX design, and technical program management, which means I'm often happiest working on messy, ambiguous problems that require both technical depth and creative thinking. I love art and design, having completed a conservatory visual arts education in high school, and relishing opportunities like exhibiting my art at the MoMA in the Manhattan Borough Arts Festival in NYC. I use my eye for design to inform my work in technology.</p>
 
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Over the past few years I've helped launch AI-powered platforms, renewable energy initiatives, startup products, and consumer-facing experiences. From leading user experience for startups as a freelancer, to helping deliver the first energy-autonomous island in Greece in a TPM role at Tesla, to building internal AI tools as a Full-Stack Software Engineer at John Hancock, I've always been drawn to innovation.</p>
 
