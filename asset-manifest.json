@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.a0cde09e.css",
-    "main.js": "/portfolio/static/js/main.25575c15.js",
+    "main.js": "/portfolio/static/js/main.6d1479f4.js",
     "static/media/HareOfRuinFinalDemo.mp4": "/portfolio/static/media/HareOfRuinFinalDemo.67f0fb952586878059ec.mp4",
     "static/media/sadie_levy_tiliti_final-figma.mp4": "/portfolio/static/media/sadie_levy_tiliti_final-figma.b3a8f7d3a8fe3de31578.mp4",
     "static/media/Persist Energy Workflow.png": "/portfolio/static/media/Persist Energy Workflow.e1a9a1418539dd3c7512.png",
@@ -33,7 +33,7 @@
     "static/media/AR-keith-haring-person-button_busy_beaver_button_museum.png": "/portfolio/static/media/AR-keith-haring-person-button_busy_beaver_button_museum.6a714c3bf51f27647bd4.png",
     "static/media/tiliti-brand-3.png": "/portfolio/static/media/tiliti-brand-3.da64a04f548ded8884f7.png",
     "static/media/tiliti-home-betterquality.png": "/portfolio/static/media/tiliti-home-betterquality.d6a0d154a8725dbbdc2e.png",
-    "static/media/Sadie-Levy-Resume.pdf": "/portfolio/static/media/Sadie-Levy-Resume.acaf7cca96f16d68c8ff.pdf",
+    "static/media/Sadie-Levy-Resume.pdf": "/portfolio/static/media/Sadie-Levy-Resume.7d8ad24e2616a45e4f75.pdf",
     "static/media/tiliti-brand-7.png": "/portfolio/static/media/tiliti-brand-7.db3bdc80d1d0b6d05132.png",
     "static/media/tiliti-brand-4.png": "/portfolio/static/media/tiliti-brand-4.e455d0549ba4b728e81e.png",
     "static/media/hareofruinstartscreen.jpg": "/portfolio/static/media/hareofruinstartscreen.d07b1158a1efa463e87e.jpg",
@@ -70,10 +70,10 @@
     "static/media/cute-rainbow-pastel-zrkt91j4y8q707fp.webp": "/portfolio/static/media/cute-rainbow-pastel-zrkt91j4y8q707fp.5a53d01b2c5ceb54f39f.webp",
     "index.html": "/portfolio/index.html",
     "main.a0cde09e.css.map": "/portfolio/static/css/main.a0cde09e.css.map",
-    "main.25575c15.js.map": "/portfolio/static/js/main.25575c15.js.map"
+    "main.6d1479f4.js.map": "/portfolio/static/js/main.6d1479f4.js.map"
   },
   "entrypoints": [
     "static/css/main.a0cde09e.css",
-    "static/js/main.25575c15.js"
+    "static/js/main.6d1479f4.js"
   ]
 }
