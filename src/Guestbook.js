@@ -403,8 +403,8 @@ const StampTrayLabel = styled.span`
 
 const PlacedStamp = styled.img`
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
@@ -539,7 +539,7 @@ const GuestbookPage = forwardRef(function GuestbookPage(
             alt=""
             style={{
               position: 'absolute', inset: 0, width: '100%', height: '100%',
-              objectFit: 'fill', zIndex: 0, pointerEvents: 'none',
+              objectFit: 'contain', zIndex: 0, pointerEvents: 'none',
             }}
           />
         )}
@@ -666,6 +666,10 @@ export default function Guestbook() {
       setPages(prev => prev.map((p, i) =>
         i === selectedIndex ? { ...p, savedImageUrl: dataUrl } : p
       ));
+      // Clear live strokes, stamps, and texts — they are now baked into the saved image
+      canvasRefs.current[selectedIndex]?.current?.clearCanvas();
+      setPageStamps(prev => prev.map((s, i) => i === selectedIndex ? [] : s));
+      setPageTexts(prev => prev.map((t, i) => i === selectedIndex ? [] : t));
       setSaveStatus('Saved! ✓');
     } catch (e) {
       console.error(e);
