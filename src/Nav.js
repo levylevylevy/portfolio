@@ -58,12 +58,10 @@ class Nav extends Component {
         }}>
           <AppContents >
             <div>
-            <NavLink  to="/portfolio/"  style={({ isActive }) => ({
-              
-              color: isActive? secondaryGold : primaryBlue,
-              textDecoration: isActive? 'underline' :'none',
-              font: isActive? 'font-face-navFont' : 'font-face-navFont'
-            })} className = "font-face-navFont">
+            <NavLink to="/portfolio/" end style={({ isActive }) => ({
+              color: isActive || window.location.pathname === '/portfolio/' || window.location.pathname === '/portfolio' ? secondaryGold : primaryBlue,
+              textDecoration: isActive || window.location.pathname === '/portfolio/' || window.location.pathname === '/portfolio' ? 'underline' : 'none',
+            })} className="font-face-navFont">
               Home
               </NavLink>
               </div>

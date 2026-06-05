@@ -120,11 +120,11 @@ class MusicaCard extends Component {
 
                 <RowButtons>
                   <CardButton href="https://device-gift-45620193.figma.site/" target="_blank" rel="noopener noreferrer" variant="outline">Figma Preview ↗</CardButton>
-                  <CardButton href="https://www.youtube.com/YOUR_YOUTUBE_LINK" target="_blank" rel="noopener noreferrer" variant="outline">Walkthrough ↗</CardButton>
+                  <CardButton href="https://youtu.be/znax3yVNkC0" target="_blank" rel="noopener noreferrer" variant="outline">Walkthrough ↗</CardButton>
                 </RowButtons>
 
               </Col>
-              <ExamplePhoto src={require('../../../src/images/musicalogo.png')} />
+              <ExamplePhoto src={require('../../../src/images/musica_ss.png')} />
             </Row>
           </ProjectCard>
         </CardContainers>
