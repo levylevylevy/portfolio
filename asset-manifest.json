@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.a0cde09e.css",
-    "main.js": "/portfolio/static/js/main.6d1479f4.js",
+    "main.js": "/portfolio/static/js/main.e9367248.js",
     "static/media/HareOfRuinFinalDemo.mp4": "/portfolio/static/media/HareOfRuinFinalDemo.67f0fb952586878059ec.mp4",
     "static/media/sadie_levy_tiliti_final-figma.mp4": "/portfolio/static/media/sadie_levy_tiliti_final-figma.b3a8f7d3a8fe3de31578.mp4",
     "static/media/Persist Energy Workflow.png": "/portfolio/static/media/Persist Energy Workflow.e1a9a1418539dd3c7512.png",
@@ -22,6 +22,7 @@
     "static/media/tiliti-brand-9.png": "/portfolio/static/media/tiliti-brand-9.9444bb05eb1798e17f24.png",
     "static/media/selfie.jpeg": "/portfolio/static/media/selfie.a835dca1118963db908b.jpeg",
     "static/media/volunteergohomepagequality.png": "/portfolio/static/media/volunteergohomepagequality.7de85415d233d1d87d53.png",
+    "static/media/musica_ss.png": "/portfolio/static/media/musica_ss.a91a5ea1d5922b0444a9.png",
     "static/media/tilitiprofile.png": "/portfolio/static/media/tilitiprofile.b469348ad02cf787b333.png",
     "static/media/tilitihomepagebetterquality.png": "/portfolio/static/media/tilitihomepagebetterquality.882e5e438b63001304a2.png",
     "static/media/shownxt-home-betterquality.png": "/portfolio/static/media/shownxt-home-betterquality.830699cbde613493b536.png",
@@ -30,6 +31,7 @@
     "static/media/tiliti-brand-6.png": "/portfolio/static/media/tiliti-brand-6.e9653a0547de6886f7ff.png",
     "static/media/tiliti-brand-8.png": "/portfolio/static/media/tiliti-brand-8.d63066d1d59b14f3a4a1.png",
     "static/media/tilitiinsights.png": "/portfolio/static/media/tilitiinsights.cf34aa01e2abc8dfc374.png",
+    "static/media/Arrowhead_3.png": "/portfolio/static/media/Arrowhead_3.bf00a3ec455cacafcfa9.png",
     "static/media/AR-keith-haring-person-button_busy_beaver_button_museum.png": "/portfolio/static/media/AR-keith-haring-person-button_busy_beaver_button_museum.6a714c3bf51f27647bd4.png",
     "static/media/tiliti-brand-3.png": "/portfolio/static/media/tiliti-brand-3.da64a04f548ded8884f7.png",
     "static/media/tiliti-home-betterquality.png": "/portfolio/static/media/tiliti-home-betterquality.d6a0d154a8725dbbdc2e.png",
@@ -59,6 +61,7 @@
     "static/media/atem2.jpg": "/portfolio/static/media/atem2.51fec68ec6d5415f612f.jpg",
     "static/media/butterfly-digital-stamp.png": "/portfolio/static/media/butterfly-digital-stamp.e0978da5b0698af3d4c4.png",
     "static/media/atem3.jpg": "/portfolio/static/media/atem3.059773e972983432c2ed.jpg",
+    "static/media/airplane-pink.png": "/portfolio/static/media/airplane-pink.8d6fe195ed40bc4fe25a.png",
     "static/media/atem6.jpg": "/portfolio/static/media/atem6.dcfa62a602e1e4638bd0.jpg",
     "static/media/atem8.jpg": "/portfolio/static/media/atem8.4b0fc3ad92cf6cfff1fa.jpg",
     "static/media/atem11.jpg": "/portfolio/static/media/atem11.bdd1f3435ebf420e9fb1.jpg",
@@ -66,14 +69,15 @@
     "static/media/gardensharehomesmaller.png": "/portfolio/static/media/gardensharehomesmaller.27ce8967ab4bdcf370f4.png",
     "static/media/-cottagecore-mushrooms-icons.webp": "/portfolio/static/media/a4972e98f90c1eba7285456f1237e21f-cottagecore-mushrooms-icons.2c6837a0cdb54cc5bf39.webp",
     "static/media/atem7.jpg": "/portfolio/static/media/atem7.dfd1b0388be42ef8c3f8.jpg",
+    "static/media/Pixar-WallEEva-Agoro-WallELeft.webp": "/portfolio/static/media/Pixar-WallEEva-Agoro-WallELeft.2d5130fa134383e5e428.webp",
     "static/media/tilitilogo2.png": "/portfolio/static/media/tilitilogo2.2aeb5b2a50e1235e86ef.png",
     "static/media/cute-rainbow-pastel-zrkt91j4y8q707fp.webp": "/portfolio/static/media/cute-rainbow-pastel-zrkt91j4y8q707fp.5a53d01b2c5ceb54f39f.webp",
     "index.html": "/portfolio/index.html",
     "main.a0cde09e.css.map": "/portfolio/static/css/main.a0cde09e.css.map",
-    "main.6d1479f4.js.map": "/portfolio/static/js/main.6d1479f4.js.map"
+    "main.e9367248.js.map": "/portfolio/static/js/main.e9367248.js.map"
   },
   "entrypoints": [
     "static/css/main.a0cde09e.css",
-    "static/js/main.6d1479f4.js"
+    "static/js/main.e9367248.js"
   ]
 }
