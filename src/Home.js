@@ -347,7 +347,7 @@ class Home extends Component {
 
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Over the past few years I've helped launch AI-powered platforms, renewable energy initiatives, startup products, and consumer-facing experiences. From leading user experience for startups as a freelancer, to helping deliver the first energy-autonomous island in Greece in a TPM role at Tesla, to building internal AI tools as a Full-Stack Software Engineer at John Hancock, I've always been drawn to innovation.</p>
 
-        <p style={{color: 'primaryBlue'}} className='font-face-body'>When I'm not working, I'm usually planning my next trip, reading fantasy novels, drawing at my easel, baking my friends' birthday cakes, playing board games or with my cat, + listening to live music.</p>
+        <p style={{color: 'primaryBlue'}} className='font-face-body'>When I'm not working, I'm usually planning my next trip, reading fantasy novels, drawing at my easel, baking my friends' birthday cakes, playing board games or with my cat, seeing movies (I am a proud AMC A List-er), or listening to live music.</p>
         
         <p style={{color: 'primaryBlue'}} className='font-face-body'>Take a look around to see some of the projects I've worked on.</p>
 

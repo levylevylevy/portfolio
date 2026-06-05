@@ -119,7 +119,7 @@ class MusicaCard extends Component {
                 </div>
 
                 <RowButtons>
-                  <CardButton href="https://www.figma.com/proto/YOUR_FIGMA_LINK" target="_blank" rel="noopener noreferrer" variant="outline">Figma Preview ↗</CardButton>
+                  <CardButton href="https://device-gift-45620193.figma.site/" target="_blank" rel="noopener noreferrer" variant="outline">Figma Preview ↗</CardButton>
                   <CardButton href="https://www.youtube.com/YOUR_YOUTUBE_LINK" target="_blank" rel="noopener noreferrer" variant="outline">Walkthrough ↗</CardButton>
                 </RowButtons>
 
