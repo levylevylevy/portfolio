@@ -366,11 +366,16 @@ const StampTray = styled.div`
   align-items: center;
   flex-wrap: wrap;
   @media (max-width: 540px) {
+    flex: 1;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding: 6px 8px;
     gap: 6px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar { display: none; }
+    border-radius: 0;
   }
 `;
 
@@ -399,6 +404,35 @@ const StampTrayLabel = styled.span`
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
+`;
+
+const StampTrayWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+`;
+
+const StampArrowBtn = styled.button`
+  display: none;
+  @media (max-width: 540px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${primaryBlue};
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    transition: background 0.15s;
+    &:hover { background: ${secondaryGold}; }
+    &:active { background: ${secondaryGold}; }
+  }
 `;
 
 const PlacedStamp = styled.img`
@@ -597,6 +631,14 @@ export default function Guestbook() {
   const touchDragRef = useRef(null);
   const [ghostStamp, setGhostStamp] = useState(null);
 
+  // Stamp tray scroll ref (for mobile arrow buttons)
+  const stampTrayRef = useRef(null);
+  const scrollStampTray = (dir) => {
+    if (stampTrayRef.current) {
+      stampTrayRef.current.scrollBy({ left: dir * 100, behavior: 'smooth' });
+    }
+  };
+
   const [saving, setSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState('');
   const [loadingPages, setLoadingPages] = useState(true);
@@ -694,13 +736,24 @@ export default function Guestbook() {
     }, 50);
   };
 
-  // ── Touch drag-and-drop for stamps (lives in parent so StampTray is outside the carousel) ──
-  const handleStampTouchStart = (e, stampSrc) => {
-    e.preventDefault();
-    const touch = e.touches[0];
-    touchDragRef.current = { src: stampSrc };
-    setGhostStamp({ src: stampSrc, x: touch.clientX, y: touch.clientY });
-  };
+  // ── Touch drag-and-drop for stamps (non-passive listener so preventDefault works) ──
+  useEffect(() => {
+    const tray = stampTrayRef.current;
+    if (!tray) return;
+
+    const onTouchStart = (e) => {
+      const thumb = e.target.closest('[data-stamp-src]');
+      if (!thumb) return;
+      e.preventDefault(); // must be in a non-passive listener
+      const touch = e.touches[0];
+      const src = thumb.dataset.stampSrc;
+      touchDragRef.current = { src };
+      setGhostStamp({ src, x: touch.clientX, y: touch.clientY });
+    };
+
+    tray.addEventListener('touchstart', onTouchStart, { passive: false });
+    return () => tray.removeEventListener('touchstart', onTouchStart);
+  }, [loadingPages]); // re-run once tray mounts after loading
 
   useEffect(() => {
     const activePageRef = () => pageRefs.current[selectedIndex]?.current;
@@ -790,19 +843,23 @@ export default function Guestbook() {
 
             <SaveStatus $error={saveStatus.startsWith('Error')}>{saveStatus}</SaveStatus>
 
-            <StampTray>
-              <StampTrayLabel>Stamps →</StampTrayLabel>
-              {STAMPS.map(stamp => (
-                <StampThumb
-                  key={stamp.id}
-                  src={stamp.src}
-                  alt={stamp.label}
-                  draggable
-                  onDragStart={e => e.dataTransfer.setData('stampSrc', stamp.src)}
-                  onTouchStart={e => handleStampTouchStart(e, stamp.src)}
-                />
-              ))}
-            </StampTray>
+            <StampTrayWrapper>
+              <StampArrowBtn onClick={() => scrollStampTray(-1)} aria-label="Scroll stamps left">‹</StampArrowBtn>
+              <StampTray ref={stampTrayRef}>
+                <StampTrayLabel>Stamps →</StampTrayLabel>
+                {STAMPS.map(stamp => (
+                  <StampThumb
+                    key={stamp.id}
+                    src={stamp.src}
+                    alt={stamp.label}
+                    data-stamp-src={stamp.src}
+                    draggable
+                    onDragStart={e => e.dataTransfer.setData('stampSrc', stamp.src)}
+                  />
+                ))}
+              </StampTray>
+              <StampArrowBtn onClick={() => scrollStampTray(1)} aria-label="Scroll stamps right">›</StampArrowBtn>
+            </StampTrayWrapper>
 
             {ghostStamp && createPortal(
               <GhostStamp
