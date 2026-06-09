@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.d5167fb7.css",
-    "main.js": "/portfolio/static/js/main.0e27af35.js",
+    "main.js": "/portfolio/static/js/main.537b8b08.js",
     "static/media/HareOfRuinFinalDemo.mp4": "/portfolio/static/media/HareOfRuinFinalDemo.67f0fb952586878059ec.mp4",
     "static/media/sadie_levy_tiliti_final-figma.mp4": "/portfolio/static/media/sadie_levy_tiliti_final-figma.b3a8f7d3a8fe3de31578.mp4",
     "static/media/Persist Energy Workflow.png": "/portfolio/static/media/Persist Energy Workflow.e1a9a1418539dd3c7512.png",
@@ -74,10 +74,10 @@
     "static/media/cute-rainbow-pastel-zrkt91j4y8q707fp.webp": "/portfolio/static/media/cute-rainbow-pastel-zrkt91j4y8q707fp.5a53d01b2c5ceb54f39f.webp",
     "index.html": "/portfolio/index.html",
     "main.d5167fb7.css.map": "/portfolio/static/css/main.d5167fb7.css.map",
-    "main.0e27af35.js.map": "/portfolio/static/js/main.0e27af35.js.map"
+    "main.537b8b08.js.map": "/portfolio/static/js/main.537b8b08.js.map"
   },
   "entrypoints": [
     "static/css/main.d5167fb7.css",
-    "static/js/main.0e27af35.js"
+    "static/js/main.537b8b08.js"
   ]
 }
