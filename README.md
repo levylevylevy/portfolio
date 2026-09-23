@@ -1,6 +1,9 @@
 # Portfolio
 
-Personal portfolio site built with [Create React App](https://create-react-app.dev/), Tailwind CSS, and deployed on [Vercel](https://vercel.com/). Includes a Vercel serverless function at `api/now-playing.js` that powers the "Now Playing" Spotify widget.
+Personal portfolio site built with [Create React App](https://create-react-app.dev/) and Tailwind CSS.
+
+- **Live site:** https://levylevylevy.github.io/portfolio/ (hosted on **GitHub Pages**)
+- **Spotify "Now Playing" API:** the serverless function at `api/now-playing.js` is hosted on **Vercel** and called by the frontend
 
 ---
 
@@ -45,43 +48,49 @@ This serves the React app and the `/api/*` routes together (default: http://loca
 | `npm start` | Run the dev server |
 | `npm run build` | Build a production bundle into `build/` |
 | `npm test` | Run tests in watch mode |
+| `npm run deploy` | Build and publish `build/` to GitHub Pages |
 
 ---
 
 ## Pushing changes & deploying
 
-The project is connected to Vercel, which auto-deploys on push to the `main` branch (config in `vercel.json`).
+The frontend is deployed to **GitHub Pages** using the `gh-pages` package. Pushing to `main` does **not** auto-deploy the site — you have to run the deploy script.
 
-### Standard workflow
+### 1. Commit and push your source changes
 
 ```zsh
-# See what's changed
 git status
-
-# Stage and commit
 git add -A
 git commit -m "describe your change"
-
-# Push — this triggers a Vercel deploy
 git push origin main
 ```
 
-Watch the build progress at https://vercel.com/dashboard. Pushes to other branches create preview deployments.
+This updates the repo but does **not** update the live site yet.
 
-### Tip: verify the build before pushing
+### 2. Deploy the site to GitHub Pages
+
+```zsh
+npm run deploy
+```
+
+Under the hood this runs `npm run build` and then pushes the `build/` folder to the `gh-pages` branch, which GitHub Pages serves at https://levylevylevy.github.io/portfolio/. Give it ~1 minute to go live.
+
+### Deploying the Spotify API (Vercel)
+
+The `/api/now-playing` function lives on Vercel and is connected to this repo. It auto-redeploys when you push to `main`, so if you only changed frontend code you don't need to do anything Vercel-side. To deploy manually:
+
+```zsh
+vercel           # preview
+vercel --prod    # production
+```
+
+### Tip: verify the build before deploying
 
 ```zsh
 npm run build
 ```
 
-Catches build errors locally before Vercel does.
-
-### Manual deploy (without git)
-
-```zsh
-vercel           # deploy a preview URL
-vercel --prod    # deploy to production
-```
+Catches build errors locally before `npm run deploy` does.
 
 ---
 
